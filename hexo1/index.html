@@ -26,7 +26,7 @@
     <link rel="alternative" href="/lifei-2019.github.io/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
   
-    <link rel="icon" href="/lifei-2019.github.io/favicon.ico">
+    <link rel="icon" href="/lifei-2019.github.io/img/favicon.ico">
   
   
     <link rel="apple-touch-icon" href="/lifei-2019.github.io/apple-touch-icon-180x180.png">
@@ -134,7 +134,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
       
-      <a class="forkMe" style="position:absolute;z-index:999;top:0;right:0.5em" href="https://github.com/lifei-2019/.github.io"
+      <a class="forkMe" style="position:absolute;z-index:999;top:0;right:0.5em" href="https://github.com/lifei-2019/lifei-2019.github.io"
         target="_blank"><img width="149" height="149" src="/lifei-2019.github.io/img/forkme.png"
           class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
       
@@ -432,31 +432,32 @@
 
 
 
+  <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'true' == true ? true : false;
+  var verify = 'true' == true ? true : false;
+  new Valine({
+      // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+      av: AV,
+      el: '.valine_comment',
+      emoticon_url: 'https://cloud.panjunwen.com/alu',
+      emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+      app_id: 'G9SMEvt975sgpFg31kVQk5Lw-gzGzoHsz',
+      app_key: 'jW1TnL17cVc5Pqv8FscW8gQ7',
+      placeholder: '留下邮箱我会回复你哦'
+    });
+</script>
 
 
-  
-  <div id="gitment-ctn"></div>
-  
-    <!-- 中文 -->
-    <link rel="stylesheet" href="/lifei-2019.github.io/lib/gitment.css">
-    <script src="/lifei-2019.github.io/lib/gitment.js"></script>
-  
-  <script>
-    <!-- id: "hexo+github建站" -->
-    var gitment = new Gitment({
-      id: "20191010191847",
-      owner: 'lifei-2019',
-      repo: 'lifei-2019.github.io',
-      oauth: {
-        client_id: 'd3735a31b9e40495ff39',
-        client_secret: 'ec657d4da97277691c07e5a4ccd8fda2dff09acb',
-      },
-    })
-    gitment.render('gitment-ctn')
-  </script>
 
 
-  
+
+
 
 
 
@@ -648,7 +649,7 @@
             <li class="search-li">
               <a href="https://github.com/lifei-2019" target="_blank" class="search-title" >
                 
-                  <i class="icon-link icon"></i>
+                  <img src="/lifei-2019.github.io/img/github.png">
                 
                 GitHub
               </a>
@@ -657,7 +658,7 @@
             <li class="search-li">
               <a href="https://gitee.com/lf1997" target="_blank" class="search-title" >
                 
-                  <i class="icon-link icon"></i>
+                  <img src="/lifei-2019.github.io/img/gitee.png">
                 
                 码云
               </a>
@@ -795,8 +796,8 @@
        position: "right", 
        width: 200, 
        height: 400, 
-       hOffset: 80, 
-       vOffset: -30 
+       hOffset: 85, 
+       vOffset: 50 
     },
     mobile: {
        show: false, 
