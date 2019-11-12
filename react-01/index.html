@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="春风十里不如你">
 <meta property="og:description" content="本文主要看阮一峰老师的博客：react入门示例教程 亲测教程中的部分功能在react16后失效（除了python还有不向下兼容的….），欢迎交流，希望大家少走些弯路。 自己学习过程中做的react实例">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-09T13:35:29.732Z">
+<meta property="og:updated_time" content="2019-11-11T10:45:05.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react_01">
 <meta name="twitter:description" content="本文主要看阮一峰老师的博客：react入门示例教程 亲测教程中的部分功能在react16后失效（除了python还有不向下兼容的….），欢迎交流，希望大家少走些弯路。 自己学习过程中做的react实例">
@@ -85,7 +85,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数16
+		总文章数22
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -322,7 +322,7 @@
 
 <br>
 
-<h4 id="五、this-props-children"><a href="#五、this-props-children" class="headerlink" title="五、this.props.children"></a>五、this.props.children</h4><p><strong><code>this.props.children</code>：表示组件的所有子节点。</strong></p>
+<h4 id="五、this-props-children"><a href="#五、this-props-children" class="headerlink" title="五、this.props.children"></a>五、this.props.children</h4><p><strong><code>this.props.children</code>：表示组件的所有子节点。</strong>（关于<a href="https://www.cnblogs.com/suihang/p/9978859.html" target="_blank" rel="noopener">props</a>）</p>
 <p><strong>把<code>NotesList</code>下的所有子节点渲染到 <code>ol li</code>中</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"example"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &lt;script type=<span class="string">"text/babel"</span>&gt;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">NotesList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">        render() &#123;</span><br><span class="line">          <span class="keyword">return</span> (</span><br><span class="line">            &lt;ol&gt;     <span class="comment">//有序序列表</span></span><br><span class="line">              &#123;</span><br><span class="line">                React.Children.map</span><br><span class="line">                  (<span class="keyword">this</span>.props.children , <span class="function"><span class="keyword">function</span> (<span class="params">child</span>) </span>&#123;</span><br><span class="line">                  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;child&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span>;</span><br><span class="line">                  &#125;)</span><br><span class="line">              &#125;</span><br><span class="line">            &lt;<span class="regexp">/ol&gt;</span></span><br><span class="line"><span class="regexp">          );</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ this.props.children 表示组件上的子节点</span></span><br><span class="line"><span class="regexp">     </span></span><br><span class="line"><span class="regexp">      ReactDOM.render(</span></span><br><span class="line"><span class="regexp">        &lt;NotesList&gt;</span></span><br><span class="line"><span class="regexp">          &lt;span&gt;45645&lt;/</span>span&gt;</span><br><span class="line">          &lt;span&gt;hello&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">          &lt;span&gt;world&lt;/</span>span&gt;</span><br><span class="line">        &lt;<span class="regexp">/NotesList&gt;,</span></span><br><span class="line"><span class="regexp">        document.getElementById('example')</span></span><br><span class="line"><span class="regexp">      );</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
 
@@ -501,6 +501,15 @@
 
 <nav id="article-nav">
   
+    <a href="/hexo3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ClustrMaps|支持生成访客地图的统计工具
+        
+      </div>
+    </a>
+  
   
     <a href="/hexo2/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">hexo中插入bilibili视频</div>
@@ -545,27 +554,30 @@
 
 
 
-  <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80NzAzOS8yMzUzOQ==">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
 
 
 
+
+  <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'true' == true ? true : false;
+  var verify = 'true' == true ? true : false;
+  new Valine({
+      // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+      av: AV,
+      el: '.valine_comment',
+      emoticon_url: 'https://cloud.panjunwen.com/alu',
+      emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+      app_id: 'G9SMEvt975sgpFg31kVQk5Lw-gzGzoHsz',
+      app_key: 'jW1TnL17cVc5Pqv8FscW8gQ7',
+      placeholder: 'ヾﾉ≧∀≦)o 来呀！吐槽一番吧！'
+    });
+</script>
 
 
 
@@ -607,7 +619,6 @@
   	</span>
   
 </footer>
-
     </div>
     <script type="text/javascript" src="/click.js"></script>
 <script>
@@ -731,7 +742,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,10 +763,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,10 +775,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英剧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>
