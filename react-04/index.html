@@ -19,7 +19,7 @@
 <meta property="og:description" content="7.在项目中使用React1.运行cnpm i react react-dom -S安装包* react: 专门用于创作组件和虚拟DOM，同时组件的生命周期都在这个包里 * react-dom：专门进行DOM操作，最主要的应用场景，就是ReactDOM.render()">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lifei-2019.github.io/react-04/5.png">
-<meta property="og:updated_time" content="2019-12-09T13:30:45.285Z">
+<meta property="og:updated_time" content="2019-12-10T02:56:19.275Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-04">
 <meta name="twitter:description" content="7.在项目中使用React1.运行cnpm i react react-dom -S安装包* react: 专门用于创作组件和虚拟DOM，同时组件的生命周期都在这个包里 * react-dom：专门进行DOM操作，最主要的应用场景，就是ReactDOM.render()">
@@ -87,7 +87,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数31
+		总文章数36
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -247,7 +247,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">616字</span>
+      <span class="post-count">829字</span>
     </span>
   </span>
 
@@ -256,7 +256,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -315,15 +315,26 @@
 <blockquote>
 <p>编译过程<code>&lt;</code>就把它当作HTML编译，碰到<code>{}</code>就当作普通JS代码。</p>
 </blockquote>
-<p><strong>Tips：</strong></p>
-<ul>
+<h5 id="Tips："><a href="#Tips：" class="headerlink" title="Tips："></a><strong>Tips：</strong></h5><ul>
 <li><p><strong>用([+-/开头的上一段结尾要加分号。</strong></p>
 </li>
 <li><p><img src="/react-04/5.png" alt></p>
 <p>React中需要把key添加给 forEach或map或for循环直接控制的元素</p>
 </li>
 </ul>
+<h4 id="9-React中创建组件"><a href="#9-React中创建组件" class="headerlink" title="9.React中创建组件"></a>9.React中创建组件</h4><h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h5><blockquote>
+<p>使用构造数。如果需要接受外界传递的数据，需要在狗在函数的参数列表中使用props来接收；必须要向外return一个合法的JSX创建的虚拟DOM；</p>
+</blockquote>
+<ul>
+<li><p>创建组件：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//return null</span></span><br><span class="line">	<span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello zujian<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为组件传递数据</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用组件并未组件传递props数据</span></span><br><span class="line">&lt;Hello name=&#123;dog.name&#125; age=&#123;dog.age&#125; gender=&#123;dog.gender&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Hello</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//在构造函数中，使用props形参，接收外界传来的数据</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//如果在一个组件中return一个null，则表示此组件是空的，什么都不会渲染</span></span><br><span class="line">    <span class="comment">//return null</span></span><br><span class="line">    <span class="built_in">console</span>.log(props)</span><br><span class="line">    <span class="comment">//props.name = 'zs'</span></span><br><span class="line">    <span class="comment">//组件中的props都是只读的，不能被重新赋值。</span></span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>zheshige hello <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<h5 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h5>
     
 
     
@@ -474,6 +485,15 @@
 
 <nav id="article-nav">
   
+    <a href="/剑桥倚天屠龙史/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          剑桥倚天屠龙史
+        
+      </div>
+    </a>
+  
   
     <a href="/babel/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">【踩坑】babel二三事</div>
@@ -503,7 +523,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-在项目中使用React"><span class="toc-number">1.</span> <span class="toc-text">7.在项目中使用React</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-运行cnpm-i-react-react-dom-S安装包"><span class="toc-number">1.1.</span> <span class="toc-text">1.运行cnpm i react react-dom -S安装包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-在index-html里，创建容器："><span class="toc-number">1.2.</span> <span class="toc-text">2.在index.html里，创建容器：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-导入包："><span class="toc-number">1.3.</span> <span class="toc-text">3.导入包：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-创建虚拟DOM元素"><span class="toc-number">1.4.</span> <span class="toc-text">4.创建虚拟DOM元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-渲染："><span class="toc-number">1.5.</span> <span class="toc-text">5.渲染：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-JSX语法"><span class="toc-number">2.</span> <span class="toc-text">8.JSX语法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-启用jsx语法"><span class="toc-number">2.1.</span> <span class="toc-text">1.启用jsx语法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-JSX语法本质："><span class="toc-number">2.2.</span> <span class="toc-text">2.JSX语法本质：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-jsx中混合写入js表达式："><span class="toc-number">2.3.</span> <span class="toc-text">3.jsx中混合写入js表达式：</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-在项目中使用React"><span class="toc-number">1.</span> <span class="toc-text">7.在项目中使用React</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-运行cnpm-i-react-react-dom-S安装包"><span class="toc-number">1.1.</span> <span class="toc-text">1.运行cnpm i react react-dom -S安装包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-在index-html里，创建容器："><span class="toc-number">1.2.</span> <span class="toc-text">2.在index.html里，创建容器：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-导入包："><span class="toc-number">1.3.</span> <span class="toc-text">3.导入包：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-创建虚拟DOM元素"><span class="toc-number">1.4.</span> <span class="toc-text">4.创建虚拟DOM元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-渲染："><span class="toc-number">1.5.</span> <span class="toc-text">5.渲染：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-JSX语法"><span class="toc-number">2.</span> <span class="toc-text">8.JSX语法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-启用jsx语法"><span class="toc-number">2.1.</span> <span class="toc-text">1.启用jsx语法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-JSX语法本质："><span class="toc-number">2.2.</span> <span class="toc-text">2.JSX语法本质：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-jsx中混合写入js表达式："><span class="toc-number">2.3.</span> <span class="toc-text">3.jsx中混合写入js表达式：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Tips："><span class="toc-number">2.4.</span> <span class="toc-text">Tips：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-React中创建组件"><span class="toc-number">3.</span> <span class="toc-text">9.React中创建组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#方法一"><span class="toc-number">3.1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#方法二"><span class="toc-number">3.2.</span> <span class="toc-text">方法二</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -558,7 +578,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Raphael_Li
+    		&copy; 2019-2020 Raphael_Li
     	</div>
       	<div class="footer-right">
 			
@@ -698,11 +718,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,15 +726,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">babel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,7 +734,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">babel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -734,15 +746,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -751,6 +767,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英剧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
             
             <div class="clearfix"></div>
