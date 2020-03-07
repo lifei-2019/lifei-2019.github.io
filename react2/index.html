@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lifei-2019.github.io">
-  <title>react-基本配置（2） | 春风十里不如你</title>
+  <title>react-webpack基本配置（2） | 春风十里不如你</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="css预处理和autoprefixernpm i less-loader less –save-dev                打包.less npm i postcss-loader autoprefixer -D        为了打包的css加前缀">
-<meta name="keywords" content="前端,react">
+<meta name="keywords" content="前端,react,webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-基本配置（2）">
+<meta property="og:title" content="react-webpack基本配置（2）">
 <meta property="og:url" content="https://lifei-2019.github.io/react2/index.html">
 <meta property="og:site_name" content="春风十里不如你">
 <meta property="og:description" content="css预处理和autoprefixernpm i less-loader less –save-dev                打包.less npm i postcss-loader autoprefixer -D        为了打包的css加前缀">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-06T14:51:51.405Z">
+<meta property="og:updated_time" content="2020-03-07T14:51:08.524Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-基本配置（2）">
+<meta name="twitter:title" content="react-webpack基本配置（2）">
 <meta name="twitter:description" content="css预处理和autoprefixernpm i less-loader less –save-dev                打包.less npm i postcss-loader autoprefixer -D        为了打包的css加前缀">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
@@ -219,7 +219,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      react-基本配置（2）
+      react-webpack基本配置（2）
     </h1>
   
 
@@ -232,7 +232,7 @@
         </span>
 
 <a href="/react2/" class="archive-article-date">
-        <time datetime="2020-03-06T08:03:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
+        <time datetime="2020-03-07T14:45:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-07</time>
 </a>
 
   
@@ -245,7 +245,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">161字</span>
+      <span class="post-count">441字</span>
     </span>
   </span>
 
@@ -254,7 +254,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -274,7 +274,7 @@
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">        &#123;</span><br><span class="line">            test:<span class="regexp">/\.css$/</span>,</span><br><span class="line">            use: [</span><br><span class="line">                MiniCssExtractPlugin.loader,</span><br><span class="line">                <span class="string">'css-loader'</span>,</span><br><span class="line">                <span class="string">'postcss-loader'</span>                  <span class="comment">//后写的先执行,postcssloader一定要写在后面</span></span><br><span class="line">            ],</span><br><span class="line">            exclude: <span class="regexp">/node_modules/</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            test:<span class="regexp">/\.less$/</span>,</span><br><span class="line">            use: [</span><br><span class="line">                MiniCssExtractPlugin.loader,</span><br><span class="line">                <span class="string">'css-loader'</span>,</span><br><span class="line">                <span class="string">'postcss-loader'</span> ,</span><br><span class="line">                &#123;</span><br><span class="line">                    loader:<span class="string">'less-loader'</span>,</span><br><span class="line">                    options:&#123;</span><br><span class="line">                        </span><br><span class="line">                    &#125; </span><br><span class="line">                &#125;                   <span class="comment">//和上面对比两种写法</span></span><br><span class="line">            ],</span><br><span class="line">            exclude: <span class="regexp">/node_modules/</span></span><br><span class="line">        &#125;,</span><br><span class="line">    ],</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
 <p><br><br></p>
-<p><strong>创建postcss.config.js</strong></p>
+<p><strong>创建postcss.config.js给css加前缀</strong></p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"></span><br><span class="line">  plugins:[</span><br><span class="line"></span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'autoprefixer'</span>)</span><br><span class="line"></span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>在package.json里加入</strong></p>
@@ -284,8 +284,31 @@
 <p><br><br></p>
 <h1 id="处理图片资源"><a href="#处理图片资源" class="headerlink" title="处理图片资源"></a>处理图片资源</h1><p>新建src/assets，放一张照片gundum.jpg。直接编译发现出错</p>
 <p>npm i file-loader –save-dev</p>
+<p>npm install url-loader –save-dev                        url-loader包涵file-loader</p>
+<p>在module的rules里添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">                test: /\.(png|jpe?g|gif)$/i,</span><br><span class="line">                use: [</span><br><span class="line">                        &#123;</span><br><span class="line">                        loader: &apos;url-loader&apos;,</span><br><span class="line">                        options: &#123;</span><br><span class="line">                            limit: 512,                 //小于512则放到css里，大于512以图片</span><br><span class="line">                            name: &apos;images/[name].[ext]&apos;,</span><br><span class="line">                            publicPath: &apos;/&apos;</span><br><span class="line">                        &#125;,</span><br><span class="line">                    &#125;,</span><br><span class="line">                ],</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+
 <p><br><br></p>
-<p><br><br><strong>未完待续</strong></p>
+<p><br><br></p>
+<h1 id="处理静态资源-copy"><a href="#处理静态资源-copy" class="headerlink" title="处理静态资源-copy"></a>处理静态资源-copy</h1><p>npm install copy-webpack-plugin –save-dev</p>
+<p>在webpack.config.js里的plugins里添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">new CopyPlugin([</span><br><span class="line"></span><br><span class="line">      &#123; from: path.resolve(process.cwd(),&apos;src/static/&apos;), </span><br><span class="line"></span><br><span class="line">       to: path.resolve(process.cwd(),&apos;dist/static/&apos;) &#125;,</span><br><span class="line"></span><br><span class="line">     ]),</span><br></pre></td></tr></table></figure>
+
+<h1 id="添加babel"><a href="#添加babel" class="headerlink" title="添加babel"></a>添加babel</h1><p>npm install -D babel-loader @babel/core @babel/preset-env </p>
+<p>在module的rules里添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">                test: /\.m?js$/,</span><br><span class="line">                exclude: /(node_modules|bower_components)/,</span><br><span class="line">                use: &#123;</span><br><span class="line">                  loader: &apos;babel-loader&apos;,</span><br><span class="line">                  options: &#123;</span><br><span class="line">                    presets: [</span><br><span class="line">                        &apos;@babel/preset-env&apos;</span><br><span class="line">                    		 ]</span><br><span class="line">                  		   &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>此处要挖一个node的坑</strong></p>
+<p>可以建立一个test.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export const add = (x,y) =&gt; &#123;</span><br><span class="line">    console.log(x + y)</span><br><span class="line">    console.log(`$&#123;x&#125; + $&#123;y&#125; = $&#123;x + y&#125;`)     //这里一定要用tab上面的反引号。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>并且在index.js中引用test.js里的add</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123;add&#125; from &apos;./test&apos;</span><br><span class="line">add(1,2)</span><br></pre></td></tr></table></figure>
+
+<p><br><br><br><br><br><br></p>
+<p>测试完成后，复制一份webpack.config.js，分为dev和prod版本，同时修改package.json里的scripts里的路径。</p>
+<p>这样做的目的是因为在dev版本里不需要css等静态资源的压缩。</p>
+<p><br><br></p>
 
     
 
@@ -332,7 +355,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lifei-2019.github.io/react2/" title="react-基本配置（2）" target="_blank">https://lifei-2019.github.io/react2/</a>
+          <a href="https://lifei-2019.github.io/react2/" title="react-webpack基本配置（2）" target="_blank">https://lifei-2019.github.io/react2/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -356,6 +379,10 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		
 		</ul>
@@ -439,7 +466,7 @@
   
   
     <a href="/react1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">react-基本环境配置（1）</div>
+      <div class="article-nav-title">react-webpack基本环境配置（1）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -466,7 +493,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css预处理和autoprefixer"><span class="toc-number">1.</span> <span class="toc-text">css预处理和autoprefixer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#处理图片资源"><span class="toc-number">2.</span> <span class="toc-text">处理图片资源</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css预处理和autoprefixer"><span class="toc-number">1.</span> <span class="toc-text">css预处理和autoprefixer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#处理图片资源"><span class="toc-number">2.</span> <span class="toc-text">处理图片资源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#处理静态资源-copy"><span class="toc-number">3.</span> <span class="toc-text">处理静态资源-copy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加babel"><span class="toc-number">4.</span> <span class="toc-text">添加babel</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -669,11 +696,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">babel</a>
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,11 +704,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -697,11 +720,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
+                <a href="javascript:void(0)" class="js-tag color1">babel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,7 +728,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
