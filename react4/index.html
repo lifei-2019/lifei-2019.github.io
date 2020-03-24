@@ -10,19 +10,16 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="npm install –save prop-types   判定数据类型  一个react项目组件化项目的目录形式 组件数据挂载 props和proptypes （类组件前面要加this.props 函数用props） 组件内部数据 state （不知道用state还是props就用props） 模版渲染语法以及props向下传递的技巧  App.js123456789import React,">
-<meta name="keywords" content="前端,react,webpack">
+  <meta name="keywords" content="前端,react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-基础操作（2）">
 <meta property="og:url" content="https://lifei-2019.github.io/react4/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="npm install –save prop-types   判定数据类型  一个react项目组件化项目的目录形式 组件数据挂载 props和proptypes （类组件前面要加this.props 函数用props） 组件内部数据 state （不知道用state还是props就用props） 模版渲染语法以及props向下传递的技巧  App.js123456789import React,">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lifei-2019.github.io/react4/%E7%9B%AE%E5%BD%95.png">
-<meta property="og:updated_time" content="2020-03-24T14:44:34.717Z">
+<meta property="og:updated_time" content="2020-03-24T14:48:50.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-基础操作（2）">
-<meta name="twitter:description" content="npm install –save prop-types   判定数据类型  一个react项目组件化项目的目录形式 组件数据挂载 props和proptypes （类组件前面要加this.props 函数用props） 组件内部数据 state （不知道用state还是props就用props） 模版渲染语法以及props向下传递的技巧  App.js123456789import React,">
 <meta name="twitter:image" content="https://lifei-2019.github.io/react4/%E7%9B%AE%E5%BD%95.png">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
@@ -247,7 +244,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">924字</span>
+      <span class="post-count">928字</span>
     </span>
   </span>
 
@@ -268,14 +265,16 @@
 
   <div class="article-entry" itemprop="articleBody">
     
-    <p>npm install –save prop-types   判定数据类型</p>
-<p><img src="/react4/%E7%9B%AE%E5%BD%95.png" alt="目录结构"></p>
-<p>一个react项目组件化项目的目录形式</p>
-<p>组件数据挂载 props和proptypes</p>
-<p>（类组件前面要加this.props 函数用props）</p>
-<p>组件内部数据 state</p>
+    <p><img src="/react4/%E7%9B%AE%E5%BD%95.png" alt="目录结构"> <a id="more"></a></p>
+<br>
+
+<p>1.一个react项目组件化项目的目录形式</p>
+<p>2.组件数据挂载 props和proptypes</p>
+<p>（npm install –save prop-types   判定数据类型</p>
+<p>​    类组件前面要加this.props 函数用props）</p>
+<p>3.组件内部数据 state</p>
 <p>（不知道用state还是props就用props）</p>
-<p>模版渲染语法以及props向下传递的技巧</p>
+<p>4.模版渲染语法以及props向下传递的技巧</p>
 <p><br><br><br><br></p>
 <h4 id="App-js"><a href="#App-js" class="headerlink" title="App.js"></a><strong>App.js</strong></h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component, Fragment &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span>&#123;</span><br><span class="line">    TodoHeader,</span><br><span class="line">    TodoInput,</span><br><span class="line">    TodoList,</span><br><span class="line">    Like</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'./components'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br></pre></td></tr></table></figure>
 
@@ -395,10 +394,6 @@
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		
 		</ul>
@@ -708,15 +703,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -728,7 +723,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
