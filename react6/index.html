@@ -6,24 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lifei-2019.github.io">
-  <title>react-04 | 春风十里不如你</title>
+  <title>react-基础操作（4）hooks | 春风十里不如你</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="7.在项目中使用React1.运行cnpm i react react-dom -S安装包* react: 专门用于创作组件和虚拟DOM，同时组件的生命周期都在这个包里 * react-dom：专门进行DOM操作，最主要的应用场景，就是ReactDOM.render()">
+  <meta name="description" content="React HooksReact Hooks是react 16.8新增的一项功能。可以在不编写class的情况下使用state。">
 <meta name="keywords" content="前端,react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-04">
-<meta property="og:url" content="https://lifei-2019.github.io/react-04/index.html">
+<meta property="og:title" content="react-基础操作（4）hooks">
+<meta property="og:url" content="https://lifei-2019.github.io/react6/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="7.在项目中使用React1.运行cnpm i react react-dom -S安装包* react: 专门用于创作组件和虚拟DOM，同时组件的生命周期都在这个包里 * react-dom：专门进行DOM操作，最主要的应用场景，就是ReactDOM.render()">
+<meta property="og:description" content="React HooksReact Hooks是react 16.8新增的一项功能。可以在不编写class的情况下使用state。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://lifei-2019.github.io/react-04/5.png">
-<meta property="og:updated_time" content="2019-12-10T02:56:19.275Z">
+<meta property="og:updated_time" content="2020-03-29T15:24:07.317Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-04">
-<meta name="twitter:description" content="7.在项目中使用React1.运行cnpm i react react-dom -S安装包* react: 专门用于创作组件和虚拟DOM，同时组件的生命周期都在这个包里 * react-dom：专门进行DOM操作，最主要的应用场景，就是ReactDOM.render()">
-<meta name="twitter:image" content="https://lifei-2019.github.io/react-04/5.png">
+<meta name="twitter:title" content="react-基础操作（4）hooks">
+<meta name="twitter:description" content="React HooksReact Hooks是react 16.8新增的一项功能。可以在不编写class的情况下使用state。">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -214,14 +212,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-react-04" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react6" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      react-04
+      react-基础操作（4）hooks
     </h1>
   
 
@@ -233,8 +231,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/react-04/" class="archive-article-date">
-        <time datetime="2019-12-09T12:11:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-09</time>
+<a href="/react6/" class="archive-article-date">
+        <time datetime="2020-03-29T15:24:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-29</time>
 </a>
 
   
@@ -247,7 +245,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">829字</span>
+      <span class="post-count">278字</span>
     </span>
   </span>
 
@@ -256,7 +254,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">1分</span>
     </span>
   </span>
 </div>
@@ -268,73 +266,13 @@
 
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="7-在项目中使用React"><a href="#7-在项目中使用React" class="headerlink" title="7.在项目中使用React"></a>7.在项目中使用React</h4><h5 id="1-运行cnpm-i-react-react-dom-S安装包"><a href="#1-运行cnpm-i-react-react-dom-S安装包" class="headerlink" title="1.运行cnpm i react react-dom -S安装包"></a>1.运行cnpm i react react-dom -S安装包</h5><pre><code>* react: 专门用于创作组件和虚拟DOM，同时组件的生命周期都在这个包里
-* react-dom：专门进行DOM操作，最主要的应用场景，就是ReactDOM.render()</code></pre><h5 id="2-在index-html里，创建容器："><a href="#2-在index-html里，创建容器：" class="headerlink" title="2.在index.html里，创建容器："></a><a id="more"></a>2.在index.html里，创建容器：</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;<span class="name">app</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <h1 id="React-Hooks"><a href="#React-Hooks" class="headerlink" title="React Hooks"></a>React Hooks</h1><p>React Hooks是react 16.8新增的一项功能。可以在不编写class的情况下使用state。 <a id="more"></a></p>
+<p>两个常见的api，useState和useEffect，需要先引入</p>
+<p><strong>useState</strong>是一个方法，方法参数是默认值，结果是一个数组，数组的第一个就是state，第二个相当于setState（不一样的地方在于参数，这里的参数是一个新值即可），解构出来数组中的两个值。</p>
+<p><strong>useEffect</strong>的参数是一个回调，不管是组件挂载还是更新，都会触发这个回调方法，类似于componentDidMount和componentDidUpdate的结合</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React ,&#123;useState, useEffect&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Counter = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [count,setCount] = useState(<span class="number">0</span>)</span><br><span class="line">  <span class="comment">//console.log(useState(10))</span></span><br><span class="line">  <span class="comment">// 可以使用多次</span></span><br><span class="line">  <span class="comment">// const [title,setTitle] = useState('abc')</span></span><br><span class="line">  <span class="comment">//console.log(title)</span></span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'渲染了'</span>)</span><br><span class="line">    <span class="built_in">document</span>.title=<span class="string">`当前的数量为<span class="subst">$&#123;count&#125;</span>`</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span>(</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;当前的数量为&#123;count&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; &#123;setCount(count - 1)&#125;&#125;&gt;-&lt;/</span>button&gt;</span><br><span class="line">      &lt;span&gt;&#123;count&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; &#123;setCount(count + 1)&#125;&#125;&gt;+&lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">render(</span></span><br><span class="line"><span class="regexp">  &lt;Counter /</span>&gt;,</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">'#root'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<h5 id="3-导入包："><a href="#3-导入包：" class="headerlink" title="3.导入包："></a>3.导入包：</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>   <span class="comment">//创建组件、虚拟DOM元素，生命周期</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>    <span class="comment">//把创建好的组件和虚拟DOM放到页面上展示</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="4-创建虚拟DOM元素"><a href="#4-创建虚拟DOM元素" class="headerlink" title="4.创建虚拟DOM元素"></a>4.创建虚拟DOM元素</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2.创建虚拟DOM元素</span></span><br><span class="line"><span class="comment">//参数1：   创建的元素的类型，字符串，表示元素的名称</span></span><br><span class="line"><span class="comment">//参数2：   是一个对象或null，表示当前这个DOM元素的属性</span></span><br><span class="line"><span class="comment">//参数3：   子节点（包括其他虚拟DOM获取文本子节点）</span></span><br><span class="line"><span class="comment">//参数n： 其他子节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// &lt;h1 id="myh1" title="this is h1"&gt;&lt;/h1&gt;</span></span><br><span class="line"><span class="comment">//const myh1 = React.cloneElement('h1',null,'这是一个大大的h1')</span></span><br><span class="line"><span class="keyword">const</span> myh1 = React.createElement(<span class="string">'h1'</span>,&#123;<span class="attr">id</span>: <span class="string">'myh1'</span>,<span class="attr">title</span>: <span class="string">'this is h1'</span>&#125;,<span class="string">'这是一个大大的h1'</span>)</span><br></pre></td></tr></table></figure>
-
-<h5 id="5-渲染："><a href="#5-渲染：" class="headerlink" title="5.渲染："></a>5.渲染：</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(myh1,<span class="built_in">document</span>.getElementById(<span class="string">'app'</span>))</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<br>
-
-<p>配置webpack可以看  <a href="https://lifei-2019.github.io/webpack-02">传送门</a></p>
-<h4 id="8-JSX语法"><a href="#8-JSX语法" class="headerlink" title="8.JSX语法"></a>8.JSX语法</h4><blockquote>
-<p>符合xml规范的JS语法；（语法格式上来说，要比HTML严谨）</p>
-</blockquote>
-<h5 id="1-启用jsx语法"><a href="#1-启用jsx语法" class="headerlink" title="1.启用jsx语法"></a>1.启用jsx语法</h5><ul>
-<li><p>安装bable插件</p>
-</li>
-<li><ul>
-<li>运行 <code>cnpm i @babel/core babel-loader babel-plugin-transform-runtime @babel/runtime -D</code></li>
-<li>运行<code>cnpm i @babel/preset-env -D</code>    (语法)</li>
-</ul>
-</li>
-<li><p>安装能够识别转换jsx语法的包<code>babel-preset-react</code>    （JSX变成能识别的react）</p>
-</li>
-<li><ul>
-<li>运行<code>cnpm i @babel/preset-react -D</code></li>
-</ul>
-</li>
-<li><p>添加<code>.babelrc</code>配置文件</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;presets&quot;:[     //语法</span><br><span class="line">        &quot;@babel/preset-env&quot;,</span><br><span class="line">        &quot;@babel/preset-react&quot;</span><br><span class="line">    ], </span><br><span class="line">    </span><br><span class="line">    &quot;plugins&quot;:[     //插件</span><br><span class="line">        &quot;@babel/plugin-transform-runtime&quot;,</span><br><span class="line">        &quot;@babel/plugin-proposal-class-properties&quot;</span><br><span class="line">    ]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="2-JSX语法本质："><a href="#2-JSX语法本质：" class="headerlink" title="2.JSX语法本质："></a>2.JSX语法本质：</h5><p>并不是直接把jsx渲染到页面上，而是在内部转换成createElement形式再渲染的。</p>
-<h5 id="3-jsx中混合写入js表达式："><a href="#3-jsx中混合写入js表达式：" class="headerlink" title="3.jsx中混合写入js表达式："></a>3.jsx中混合写入js表达式：</h5><p>要把js代码写在{}中</p>
-<p>4.注释</p>
-<p>推荐使用｛/* 这是注释 */｝</p>
-<p>5.为元素添加class类名：</p>
-<p>需要用className来替代class；htmlFor替换label的for属性</p>
-<p>6.在JSX创建DOM时，所有的节点，必须有唯一的根元素进行包裹</p>
-<p>7.在JSX语法中，标签必须成对出现，如果是单标签要自闭和（比如&lt;hr/&gt;分割线）</p>
-<blockquote>
-<p>编译过程<code>&lt;</code>就把它当作HTML编译，碰到<code>{}</code>就当作普通JS代码。</p>
-</blockquote>
-<h5 id="Tips："><a href="#Tips：" class="headerlink" title="Tips："></a><strong>Tips：</strong></h5><ul>
-<li><p><strong>用([+-/开头的上一段结尾要加分号。</strong></p>
-</li>
-<li><p><img src="/react-04/5.png" alt></p>
-<p>React中需要把key添加给 forEach或map或for循环直接控制的元素</p>
-</li>
-</ul>
-<h4 id="9-React中创建组件"><a href="#9-React中创建组件" class="headerlink" title="9.React中创建组件"></a>9.React中创建组件</h4><h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h5><blockquote>
-<p>使用构造数。如果需要接受外界传递的数据，需要在狗在函数的参数列表中使用props来接收；必须要向外return一个合法的JSX创建的虚拟DOM；</p>
-</blockquote>
-<ul>
-<li><p>创建组件：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//return null</span></span><br><span class="line">	<span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello zujian<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>为组件传递数据</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用组件并未组件传递props数据</span></span><br><span class="line">&lt;Hello name=&#123;dog.name&#125; age=&#123;dog.age&#125; gender=&#123;dog.gender&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Hello</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//在构造函数中，使用props形参，接收外界传来的数据</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params">props</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//如果在一个组件中return一个null，则表示此组件是空的，什么都不会渲染</span></span><br><span class="line">    <span class="comment">//return null</span></span><br><span class="line">    <span class="built_in">console</span>.log(props)</span><br><span class="line">    <span class="comment">//props.name = 'zs'</span></span><br><span class="line">    <span class="comment">//组件中的props都是只读的，不能被重新赋值。</span></span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>zheshige hello <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h5 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h5>
     
 
     
@@ -380,7 +318,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lifei-2019.github.io/react-04/" title="react-04" target="_blank">https://lifei-2019.github.io/react-04/</a>
+          <a href="https://lifei-2019.github.io/react6/" title="react-基础操作（4）hooks" target="_blank">https://lifei-2019.github.io/react6/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -470,7 +408,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/react-04/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/react6/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -485,18 +423,9 @@
 
 <nav id="article-nav">
   
-    <a href="/剑桥倚天屠龙史/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          剑桥倚天屠龙史
-        
-      </div>
-    </a>
   
-  
-    <a href="/babel/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【踩坑】babel二三事</div>
+    <a href="/react5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react-基础操作（3）生命周期和ajax</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -523,7 +452,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-在项目中使用React"><span class="toc-number">1.</span> <span class="toc-text">7.在项目中使用React</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-运行cnpm-i-react-react-dom-S安装包"><span class="toc-number">1.1.</span> <span class="toc-text">1.运行cnpm i react react-dom -S安装包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-在index-html里，创建容器："><span class="toc-number">1.2.</span> <span class="toc-text">2.在index.html里，创建容器：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-导入包："><span class="toc-number">1.3.</span> <span class="toc-text">3.导入包：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-创建虚拟DOM元素"><span class="toc-number">1.4.</span> <span class="toc-text">4.创建虚拟DOM元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-渲染："><span class="toc-number">1.5.</span> <span class="toc-text">5.渲染：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-JSX语法"><span class="toc-number">2.</span> <span class="toc-text">8.JSX语法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-启用jsx语法"><span class="toc-number">2.1.</span> <span class="toc-text">1.启用jsx语法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-JSX语法本质："><span class="toc-number">2.2.</span> <span class="toc-text">2.JSX语法本质：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-jsx中混合写入js表达式："><span class="toc-number">2.3.</span> <span class="toc-text">3.jsx中混合写入js表达式：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Tips："><span class="toc-number">2.4.</span> <span class="toc-text">Tips：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-React中创建组件"><span class="toc-number">3.</span> <span class="toc-text">9.React中创建组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#方法一"><span class="toc-number">3.1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#方法二"><span class="toc-number">3.2.</span> <span class="toc-text">方法二</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-Hooks"><span class="toc-number">1.</span> <span class="toc-text">React Hooks</span></a></li></ol>
                     </div>
                 </span>
             </div>
