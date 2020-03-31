@@ -6,22 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lifei-2019.github.io">
-  <title>react-基础操作（4）hooks | 春风十里不如你</title>
+  <title>react-基础操作（4）hooks和context | 春风十里不如你</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="React HooksReact Hooks是react 16.8新增的一项功能。可以在不编写class的情况下使用state。">
 <meta name="keywords" content="前端,react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-基础操作（4）hooks">
+<meta property="og:title" content="react-基础操作（4）hooks和context">
 <meta property="og:url" content="https://lifei-2019.github.io/react6/index.html">
 <meta property="og:site_name" content="春风十里不如你">
 <meta property="og:description" content="React HooksReact Hooks是react 16.8新增的一项功能。可以在不编写class的情况下使用state。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-29T15:24:07.317Z">
+<meta property="og:image" content="https://lifei-2019.github.io/react6/%E7%9B%AE%E5%BD%95.png">
+<meta property="og:updated_time" content="2020-03-31T15:10:18.896Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-基础操作（4）hooks">
+<meta name="twitter:title" content="react-基础操作（4）hooks和context">
 <meta name="twitter:description" content="React HooksReact Hooks是react 16.8新增的一项功能。可以在不编写class的情况下使用state。">
+<meta name="twitter:image" content="https://lifei-2019.github.io/react6/%E7%9B%AE%E5%BD%95.png">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -219,7 +221,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      react-基础操作（4）hooks
+      react-基础操作（4）hooks和context
     </h1>
   
 
@@ -232,7 +234,7 @@
         </span>
 
 <a href="/react6/" class="archive-article-date">
-        <time datetime="2020-03-29T15:24:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-29</time>
+        <time datetime="2020-03-31T15:03:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
 </a>
 
   
@@ -245,7 +247,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">278字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -254,7 +256,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">5分</span>
     </span>
   </span>
 </div>
@@ -271,6 +273,26 @@
 <p><strong>useState</strong>是一个方法，方法参数是默认值，结果是一个数组，数组的第一个就是state，第二个相当于setState（不一样的地方在于参数，这里的参数是一个新值即可），解构出来数组中的两个值。</p>
 <p><strong>useEffect</strong>的参数是一个回调，不管是组件挂载还是更新，都会触发这个回调方法，类似于componentDidMount和componentDidUpdate的结合</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React ,&#123;useState, useEffect&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Counter = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [count,setCount] = useState(<span class="number">0</span>)</span><br><span class="line">  <span class="comment">//console.log(useState(10))</span></span><br><span class="line">  <span class="comment">// 可以使用多次</span></span><br><span class="line">  <span class="comment">// const [title,setTitle] = useState('abc')</span></span><br><span class="line">  <span class="comment">//console.log(title)</span></span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'渲染了'</span>)</span><br><span class="line">    <span class="built_in">document</span>.title=<span class="string">`当前的数量为<span class="subst">$&#123;count&#125;</span>`</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span>(</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;当前的数量为&#123;count&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; &#123;setCount(count - 1)&#125;&#125;&gt;-&lt;/</span>button&gt;</span><br><span class="line">      &lt;span&gt;&#123;count&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; &#123;setCount(count + 1)&#125;&#125;&gt;+&lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">render(</span></span><br><span class="line"><span class="regexp">  &lt;Counter /</span>&gt;,</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">'#root'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><br><br></p>
+<h1 id="context"><a href="#context" class="headerlink" title="context"></a>context</h1><p><a href="https://zh-hans.reactjs.org/docs/context.html" target="_blank" rel="noopener">具体介绍</a></p>
+<p>createContext是react提供的一个用于跨组件传值的方法，这个方法的结果是一个对象，里面有两个组件Provider和Consumer。</p>
+<p>Provider用于提供状态</p>
+<p>Consumer用于接受状态，</p>
+<h1 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h1><p><img src="/react6/%E7%9B%AE%E5%BD%95.png" alt="项目目录"></p>
+<h2 id="src-components-Count1-index-js"><a href="#src-components-Count1-index-js" class="headerlink" title="src/components/Count1/index.js"></a>src/components/Count1/index.js</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; CounterConsumer &#125; <span class="keyword">from</span> <span class="string">'../../counterStore'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个Count1组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Count1</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">      <span class="keyword">return</span>(</span><br><span class="line">        <span class="comment">//使用CounterConsumer来接受count，</span></span><br><span class="line">        &lt;CounterConsumer&gt;</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="comment">//注意！！！Consumer的children必须是一个方法，这个方法有一个参数，这个参数就是Provider的value</span></span><br><span class="line">            (&#123;count&#125;)=&gt;&#123;</span><br><span class="line">              <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &lt;<span class="regexp">/CounterConsumer&gt;</span></span><br><span class="line"><span class="regexp">    )&#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="src-components-CountBtn-index-js"><a href="#src-components-CountBtn-index-js" class="headerlink" title="src/components/CountBtn/index.js"></a>src/components/CountBtn/index.js</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; CounterConsumer &#125; <span class="keyword">from</span> <span class="string">'../../counterStore'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">CountBtn</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">CounterConsumer</span>&gt;</span></span></span><br><span class="line"><span class="xml">        &#123;</span></span><br><span class="line"><span class="xml">          (&#123;onincrementCount, ondecrementCount&#125;)=&gt;&#123;</span></span><br><span class="line"><span class="xml">            const handler = this.props.type === 'increment' ? onincrementCount : ondecrementCount</span></span><br><span class="line"><span class="xml">            return <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;handler&#125;</span>&gt;</span>&#123;this.props.children&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">          &#125;</span></span><br><span class="line"><span class="xml">        &#125;</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">CounterConsumer</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="src-components-Counter-index-js"><a href="#src-components-Counter-index-js" class="headerlink" title="src/components/Counter/index.js"></a>src/components/Counter/index.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123;useState, useEffect &#125; from &apos;react&apos;</span><br><span class="line"></span><br><span class="line">export default function Counter() &#123;</span><br><span class="line">    const [count,setCount] = useState(0)</span><br><span class="line">    //console.log(useState(10))</span><br><span class="line">    // 可以使用多次</span><br><span class="line">    // const [title,setTitle] = useState(&apos;abc&apos;)</span><br><span class="line">    //console.log(title)</span><br><span class="line">  </span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">      console.log(&apos;渲染了&apos;)</span><br><span class="line">      document.title=`当前的数量为$&#123;count&#125;`</span><br><span class="line">    &#125;)</span><br><span class="line">  </span><br><span class="line">    return(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;p&gt;当前的数量为&#123;count&#125;&lt;/p&gt;</span><br><span class="line">        &lt;button onClick=&#123;() =&gt; &#123;setCount(count - 1)&#125;&#125;&gt;-&lt;/button&gt;</span><br><span class="line">        &lt;span&gt;&#123;count&#125;&lt;/span&gt;</span><br><span class="line">        &lt;button onClick=&#123;() =&gt; &#123;setCount(count + 1)&#125;&#125;&gt;+&lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="src-components-index-js"><a href="#src-components-index-js" class="headerlink" title="src/components/index.js"></a>src/components/index.js</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123; <span class="keyword">default</span> <span class="keyword">as</span> Counter &#125; <span class="keyword">from</span> <span class="string">'./Counter'</span></span><br><span class="line"><span class="keyword">export</span> &#123; <span class="keyword">default</span> <span class="keyword">as</span> Count1 &#125; <span class="keyword">from</span> <span class="string">'./Count1'</span></span><br><span class="line"><span class="keyword">export</span> &#123; <span class="keyword">default</span> <span class="keyword">as</span> CountBtn &#125; <span class="keyword">from</span> <span class="string">'./CountBtn'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="src-App-js"><a href="#src-App-js" class="headerlink" title="src/App.js"></a>src/App.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;</span><br><span class="line">import&#123;</span><br><span class="line">    CountBtn,</span><br><span class="line">    Count1,</span><br><span class="line">    Counter</span><br><span class="line">  &#125; from &apos;./components&apos;</span><br><span class="line"></span><br><span class="line">export default class App extends Component&#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    return(</span><br><span class="line">    &lt;&gt;</span><br><span class="line">    &lt;Counter /&gt;</span><br><span class="line">    &lt;br&gt;&lt;/br&gt;</span><br><span class="line">    &lt;CountBtn type=&quot;decrement&quot;&gt;-&lt;/CountBtn&gt;</span><br><span class="line">    &lt;Count1 /&gt;</span><br><span class="line">    &lt;CountBtn type=&quot;increment&quot;&gt;+&lt;/CountBtn&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">    )&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="src-counterStore-js"><a href="#src-counterStore-js" class="headerlink" title="src/counterStore.js"></a>src/counterStore.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123;Component,createContext&#125; from &apos;react&apos;</span><br><span class="line"></span><br><span class="line">//console.log(createContext())</span><br><span class="line">const&#123;</span><br><span class="line">    Provider,</span><br><span class="line">    Consumer: CounterConsumer  //结构出来重新赋值给一个CounterConsumer的组件</span><br><span class="line">  &#125; = createContext()</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">//封装一个基本的Provider，因为直接使用Provider不方便管理状态</span><br><span class="line">class CounterProvider extends Component&#123;</span><br><span class="line">    constructor()&#123;</span><br><span class="line">      super()</span><br><span class="line">      //这里的状态就是共享的，任何CounterProvider的后代组件，都可以通过CounterProvider来接受这个值</span><br><span class="line">      this.state=&#123;</span><br><span class="line">        count: 100</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    //这里的方法也会继续通过Provider共享下去</span><br><span class="line">    incrementCount = ()=&gt;&#123;</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        count: this.state.count + 1</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    decrementCount = ()=&gt;&#123;</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        count: this.state.count -1</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">      return(</span><br><span class="line">        //使用Provider这个组件，它必须要有一个value，value里可以传递任何的数据，一般还是传递一个比较合理。</span><br><span class="line">        &lt;Provider value=&#123;&#123;</span><br><span class="line">          count: this.state.count, </span><br><span class="line">          //这两个括号意义不同，可以简单的理解为：</span><br><span class="line">          //外面的花括号是说：我这里面写的是js语句</span><br><span class="line">          //内部的花括号是说：我里面的不是要显示的文字，而是变量，我要把变量的值解析放在这</span><br><span class="line">          onincrementCount:this.incrementCount,</span><br><span class="line">          ondecrementCount:this.decrementCount</span><br><span class="line">        &#125;&#125;  &gt;</span><br><span class="line">          &#123;this.props.children&#125;</span><br><span class="line">        &lt;/Provider&gt;</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  export &#123;</span><br><span class="line">      CounterProvider,</span><br><span class="line">      CounterConsumer</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="src-index-js"><a href="#src-index-js" class="headerlink" title="src/index.js"></a>src/index.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line">import &#123; render &#125; from &apos;react-dom&apos;</span><br><span class="line">import&#123; CounterProvider &#125; from &apos;./counterStore&apos;</span><br><span class="line">import App from &apos;./App&apos;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">render(</span><br><span class="line">  &lt;CounterProvider&gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">  &lt;/CounterProvider&gt;,</span><br><span class="line">  document.querySelector(&apos;#root&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
 
     
@@ -318,7 +340,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lifei-2019.github.io/react6/" title="react-基础操作（4）hooks" target="_blank">https://lifei-2019.github.io/react6/</a>
+          <a href="https://lifei-2019.github.io/react6/" title="react-基础操作（4）hooks和context" target="_blank">https://lifei-2019.github.io/react6/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -452,7 +474,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-Hooks"><span class="toc-number">1.</span> <span class="toc-text">React Hooks</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-Hooks"><span class="toc-number">1.</span> <span class="toc-text">React Hooks</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#context"><span class="toc-number">2.</span> <span class="toc-text">context</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目目录"><span class="toc-number">3.</span> <span class="toc-text">项目目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#src-components-Count1-index-js"><span class="toc-number">3.1.</span> <span class="toc-text">src/components/Count1/index.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#src-components-CountBtn-index-js"><span class="toc-number">3.2.</span> <span class="toc-text">src/components/CountBtn/index.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#src-components-Counter-index-js"><span class="toc-number">3.3.</span> <span class="toc-text">src/components/Counter/index.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#src-components-index-js"><span class="toc-number">3.4.</span> <span class="toc-text">src/components/index.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#src-App-js"><span class="toc-number">3.5.</span> <span class="toc-text">src/App.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#src-counterStore-js"><span class="toc-number">3.6.</span> <span class="toc-text">src/counterStore.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#src-index-js"><span class="toc-number">3.7.</span> <span class="toc-text">src/index.js</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -647,7 +669,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,7 +685,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -687,19 +709,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英剧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
             
             <div class="clearfix"></div>
