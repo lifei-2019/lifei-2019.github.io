@@ -19,7 +19,7 @@
 <meta property="og:description" content="React HooksReact Hooks是react 16.8新增的一项功能。可以在不编写class的情况下使用state。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lifei-2019.github.io/react6/%E7%9B%AE%E5%BD%95.png">
-<meta property="og:updated_time" content="2020-03-31T15:10:18.896Z">
+<meta property="og:updated_time" content="2020-04-02T01:11:45.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-基础操作（4）hooks和context">
 <meta name="twitter:description" content="React HooksReact Hooks是react 16.8新增的一项功能。可以在不编写class的情况下使用state。">
@@ -87,7 +87,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数40
+		总文章数42
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -274,11 +274,12 @@
 <p><strong>useEffect</strong>的参数是一个回调，不管是组件挂载还是更新，都会触发这个回调方法，类似于componentDidMount和componentDidUpdate的结合</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React ,&#123;useState, useEffect&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Counter = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [count,setCount] = useState(<span class="number">0</span>)</span><br><span class="line">  <span class="comment">//console.log(useState(10))</span></span><br><span class="line">  <span class="comment">// 可以使用多次</span></span><br><span class="line">  <span class="comment">// const [title,setTitle] = useState('abc')</span></span><br><span class="line">  <span class="comment">//console.log(title)</span></span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'渲染了'</span>)</span><br><span class="line">    <span class="built_in">document</span>.title=<span class="string">`当前的数量为<span class="subst">$&#123;count&#125;</span>`</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span>(</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt;当前的数量为&#123;count&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; &#123;setCount(count - 1)&#125;&#125;&gt;-&lt;/</span>button&gt;</span><br><span class="line">      &lt;span&gt;&#123;count&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; &#123;setCount(count + 1)&#125;&#125;&gt;+&lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">render(</span></span><br><span class="line"><span class="regexp">  &lt;Counter /</span>&gt;,</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">'#root'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<p><br><br></p>
+<p><br><br><br><br></p>
 <h1 id="context"><a href="#context" class="headerlink" title="context"></a>context</h1><p><a href="https://zh-hans.reactjs.org/docs/context.html" target="_blank" rel="noopener">具体介绍</a></p>
 <p>createContext是react提供的一个用于跨组件传值的方法，这个方法的结果是一个对象，里面有两个组件Provider和Consumer。</p>
 <p>Provider用于提供状态</p>
 <p>Consumer用于接受状态，</p>
+<p><br><br><br><br></p>
 <h1 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h1><p><img src="/react6/%E7%9B%AE%E5%BD%95.png" alt="项目目录"></p>
 <h2 id="src-components-Count1-index-js"><a href="#src-components-Count1-index-js" class="headerlink" title="src/components/Count1/index.js"></a>src/components/Count1/index.js</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; CounterConsumer &#125; <span class="keyword">from</span> <span class="string">'../../counterStore'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一个Count1组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Count1</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">      <span class="keyword">return</span>(</span><br><span class="line">        <span class="comment">//使用CounterConsumer来接受count，</span></span><br><span class="line">        &lt;CounterConsumer&gt;</span><br><span class="line">          &#123;</span><br><span class="line">            <span class="comment">//注意！！！Consumer的children必须是一个方法，这个方法有一个参数，这个参数就是Provider的value</span></span><br><span class="line">            (&#123;count&#125;)=&gt;&#123;</span><br><span class="line">              <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &lt;<span class="regexp">/CounterConsumer&gt;</span></span><br><span class="line"><span class="regexp">    )&#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br></pre></td></tr></table></figure>
 
@@ -444,6 +445,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/react7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          react-基础操作（5）HOC、装饰器模式
+        
+      </div>
+    </a>
   
   
     <a href="/react5/" id="article-nav-older" class="article-nav-link-wrap">
@@ -669,6 +679,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
@@ -678,10 +692,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">babel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
