@@ -10,20 +10,20 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="redux官网 Redux把Flux与函数式编程结合在一起">
+  <meta name="description" content="概念源码在我的github地址react-tuts-04 Redux把Flux与函数式编程结合在一起">
 <meta name="keywords" content="前端,react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-基础操作（5）状态管理以及redux">
 <meta property="og:url" content="https://lifei-2019.github.io/react8/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="redux官网 Redux把Flux与函数式编程结合在一起">
+<meta property="og:description" content="概念源码在我的github地址react-tuts-04 Redux把Flux与函数式编程结合在一起">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lifei-2019.github.io/react8/flux.png">
 <meta property="og:image" content="https://lifei-2019.github.io/react8/redux.jpg">
-<meta property="og:updated_time" content="2020-04-04T14:21:52.473Z">
+<meta property="og:updated_time" content="2020-04-06T15:05:55.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-基础操作（5）状态管理以及redux">
-<meta name="twitter:description" content="redux官网 Redux把Flux与函数式编程结合在一起">
+<meta name="twitter:description" content="概念源码在我的github地址react-tuts-04 Redux把Flux与函数式编程结合在一起">
 <meta name="twitter:image" content="https://lifei-2019.github.io/react8/flux.png">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
@@ -88,7 +88,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数42
+		总文章数43
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -248,7 +248,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">826字</span>
+      <span class="post-count">1k字</span>
     </span>
   </span>
 
@@ -257,7 +257,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -269,9 +269,10 @@
 
   <div class="article-entry" itemprop="articleBody">
     
-    <p><a href="https://www.redux.org.cn/" target="_blank" rel="noopener">redux官网</a></p>
+    <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>源码在我的github地址<a href="https://github.com/lifei-2019/react-demos/tree/master/react-tuts-04" target="_blank" rel="noopener">react-tuts-04</a></p>
 <p>Redux把<code>Flux</code>与<code>函数式编程</code>结合在一起</p>
 <p><img src="/react8/flux.png" alt="Flux"><a id="more"></a></p>
+<p><a href="https://www.redux.org.cn/" target="_blank" rel="noopener">redux官网</a></p>
 <p>如果UI层很简单，就不用Redux</p>
 <p><br><br></p>
 <p><strong>需要Redux的项目：</strong></p>
@@ -308,7 +309,7 @@
 </ol>
 <p>从这个流程中不难看出，Redux 的核心就是一个 <strong>发布-订阅</strong> 模式。一旦 store 发生了变化就会通知所有的订阅者，view 接收到通知之后会进行重新渲染。</p>
 <p><br><br><br><br></p>
-<p>因此我们可以自己实践一下</p>
+<h1 id="自制Redux"><a href="#自制Redux" class="headerlink" title="自制Redux"></a>自制Redux</h1><p>因此我们可以自己实践一下</p>
 <ol>
 <li>新建redux-principle.html，！+Tab新建网页，添加buttom按钮，静态网页界面。</li>
 <li>获取界面上的数字，设置countState；同时编写changeState(state,action)函数，其中state由createStore(changeState)创建，createStore会return三个值getState, dispatch,subscribe，getState是为了返回当前state的状态，（第一次的话就是初始化时候是null）dispatch是为了获changeState执行后state的值，subscribe是为了增加监听器里的数据。</li>
@@ -320,8 +321,24 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>自制redux<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"store.dispatch(&#123;type:'JIAN',n:2&#125;)"</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"countDisplay"</span>&gt;</span>10<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"store.dispatch(&#123;type:'JIA',n:3&#125;)"</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> countDisplay = <span class="built_in">document</span>.querySelector(<span class="string">'#countDisplay'</span>)</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">const</span> countState = &#123;</span></span><br><span class="line">            count:5</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> changeState = <span class="function">(<span class="params">state,action</span>) =&gt;</span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">if</span>(!state)&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">return</span> countState</span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="actionscript">            <span class="keyword">switch</span>(action.type) &#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">case</span> <span class="string">'JIAN'</span>:</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">return</span>&#123;</span></span><br><span class="line">                        ...state,</span><br><span class="line">                        count: state.count - action.n</span><br><span class="line">                    &#125;</span><br><span class="line"><span class="actionscript">                <span class="keyword">case</span> <span class="string">'JIA'</span>:</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">return</span>&#123;</span></span><br><span class="line">                        ...state,</span><br><span class="line">                        count: state.count + action.n</span><br><span class="line">                    &#125;</span><br><span class="line"><span class="actionscript">                <span class="keyword">default</span>:</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">return</span> state</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> createStore = <span class="function">(<span class="params">changeState</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> state = <span class="literal">null</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">const</span> getState = <span class="function"><span class="params">()</span> =&gt;</span> state</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">const</span> listeners = []</span></span><br><span class="line"><span class="javascript">            <span class="keyword">const</span> subscribe = <span class="function">(<span class="params">listener</span>) =&gt;</span> listeners.push(listener)</span></span><br><span class="line"><span class="javascript">            <span class="keyword">const</span> dispatch= <span class="function">(<span class="params">action</span>) =&gt;</span> &#123;</span></span><br><span class="line">                state = changeState(state,action)</span><br><span class="line"><span class="javascript">                listeners.forEach(<span class="function"><span class="params">listener</span> =&gt;</span>listener())</span></span><br><span class="line">            &#125;</span><br><span class="line">            dispatch(&#123;&#125;)</span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span>&#123;</span></span><br><span class="line">                getState,</span><br><span class="line">                dispatch,</span><br><span class="line">                subscribe</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="actionscript">        <span class="keyword">const</span> store = createStore(changeState)</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> renderCount = <span class="function"><span class="params">()</span> =&gt;</span>&#123;</span></span><br><span class="line">            countDisplay.innerHTML= store.getState().count</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        renderCount()</span><br><span class="line"></span><br><span class="line">        store.subscribe(renderCount)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><br><br><br><br></p>
-<p>PS：</p>
-<p>无副作用修改原数组</p>
+<h1 id="使用Redux组件"><a href="#使用Redux组件" class="headerlink" title="使用Redux组件"></a>使用Redux组件</h1><ol>
+<li><p>npm i redux -S</p>
+</li>
+<li><p>建立reducers文件夹，用combineReducers统一导出reducers里的组件；</p>
+<p>每个组件首先要定义一个初始的状态，然后export default｛state,action｝，包括default以及各种情况。</p>
+</li>
+<li><p>把状态导入store，把store引入组件</p>
+</li>
+<li><p>创建action，把actionType定义好，统一导出actions里的组件；</p>
+<p>一般是一个方法，这样在视图里调用时候可以写参数，在哪里用action直接在components的组件里引用store.dispatch(方法名)。</p>
+</li>
+<li><p>如果想修改数据时候同时修改视图层，那么需要在reducers里完善步骤2里的各种情况。</p>
+</li>
+<li><p>如果步骤5里设置完没有响应，那可能是没有设置监听器subscribe</p>
+</li>
+</ol>
+<p><br><br><br><br></p>
+<h1 id="PS："><a href="#PS：" class="headerlink" title="PS："></a>PS：</h1><p>无副作用修改原数组</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;x:1,y:2,z=2&#125;</span><br><span class="line">//方法一</span><br><span class="line">var obj1=Object.assign(&#123;&#125;,obj,&#123;z:4,a:5&#125;)</span><br><span class="line">//方法二</span><br><span class="line">var obj2=&#123;...obj,z:44,a:55&#125;</span><br><span class="line">//方法三</span><br><span class="line">var arr=&#123;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;&#125;</span><br><span class="line">arr2=arr.slice()</span><br></pre></td></tr></table></figure>
 
 
@@ -475,9 +492,18 @@
 
 <nav id="article-nav">
   
+    <a href="/react9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          react-基础操作（6）react-redux
+        
+      </div>
+    </a>
   
-    <a href="/react7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">react-基础操作（5）HOC、装饰器模式</div>
+  
+    <a href="/react6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react-基础操作（4）hooks和context</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -504,7 +530,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自制Redux"><span class="toc-number">2.</span> <span class="toc-text">自制Redux</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用Redux组件"><span class="toc-number">3.</span> <span class="toc-text">使用Redux组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PS："><span class="toc-number">4.</span> <span class="toc-text">PS：</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -719,11 +745,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -739,11 +765,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">
