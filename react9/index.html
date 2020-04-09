@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lifei-2019.github.io">
-  <title>react-基础操作（6）react-redux | 春风十里不如你</title>
+  <title>react-基础操作（6）react-redux和异步action | 春风十里不如你</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="源码在我的github地址react-tuts-05 未完成">
+  <meta name="description" content="源码在我的github地址react-tuts-05 在线写js代码 提供免费的在线REST API">
 <meta name="keywords" content="前端,react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react-基础操作（6）react-redux">
+<meta property="og:title" content="react-基础操作（6）react-redux和异步action">
 <meta property="og:url" content="https://lifei-2019.github.io/react9/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="源码在我的github地址react-tuts-05 未完成">
+<meta property="og:description" content="源码在我的github地址react-tuts-05 在线写js代码 提供免费的在线REST API">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-06T15:07:18.504Z">
+<meta property="og:updated_time" content="2020-04-09T14:00:50.772Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react-基础操作（6）react-redux">
-<meta name="twitter:description" content="源码在我的github地址react-tuts-05 未完成">
+<meta name="twitter:title" content="react-基础操作（6）react-redux和异步action">
+<meta name="twitter:description" content="源码在我的github地址react-tuts-05 在线写js代码 提供免费的在线REST API">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -219,7 +219,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      react-基础操作（6）react-redux
+      react-基础操作（6）react-redux和异步action
     </h1>
   
 
@@ -232,7 +232,7 @@
         </span>
 
 <a href="/react9/" class="archive-article-date">
-        <time datetime="2020-04-06T05:43:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
+        <time datetime="2020-04-09T14:00:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
 </a>
 
   
@@ -245,7 +245,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">19字</span>
+      <span class="post-count">755字</span>
     </span>
   </span>
 
@@ -254,7 +254,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -267,13 +267,48 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p>源码在我的github地址<a href="https://github.com/lifei-2019/react-demos/tree/master/react-tuts-05" target="_blank" rel="noopener">react-tuts-05</a></p>
-<p>未完成</p>
+<p><a href="https://babeljs.io/" target="_blank" rel="noopener">在线写js代码</a></p>
+<p>提供免费的<a href="http://jsonplaceholder.typicode.com/posts" target="_blank" rel="noopener">在线REST API</a></p>
 <a id="more"></a>
 
-<ol>
-<li>npm i react-redux –save</li>
-<li>Provider</li>
+<h1 id="React-redux流程"><a href="#React-redux流程" class="headerlink" title="React-redux流程"></a>React-redux流程</h1><ol>
+<li><p>npm i react-redux –save</p>
+</li>
+<li><p>创建store，createStore是redux提供的一个用于创建store的方法；引入合并后的reducer；createStore的第一个参数必须输一个reducer，如果是多个，要在reducers目录下先试用combineReudcer进行合并之后再导出。</p>
+</li>
+<li><p>在实际的项目中，由于只有单一的store，但是状态会有很多分类，所以我们需要划分reducer，但是createStore的参数只接收一个reducer，所以，redux比较聪明的提供了一个用于合并多个reducer的方法。</p>
+<p>导出后在外部就可以通过store.getState().cart来获取cartReducer里面的state</p>
+</li>
+<li><p>为了避免actionType重复，一般会把actionType放在一个文件里统一进行管理，也可以避免写错actionType。</p>
+<p>创建购物车的reducer，reducer的固定写法是两个参数，第一个state并且有初始值，第二个是action。根据不同的action.type，做不同的处理，每次返回一个新的state，返回的类型一样。一定要有default，当actionType不对的时候，不作任何处理，返回上一次的default。</p>
+</li>
+<li><p>action有两种写法：第一种写成一个对象，是一个标准的action，但是传递不了参数。实际情况常用是使用actionCreator，它是一个方法返回一个对象，这个对象才是真正的action。</p>
+</li>
+<li><p>Provider是react-redux提供的一个组件，一般直接把这个组件放在应用程序的最顶层，这个组件必须有一个store属性，这个store属性的值就是创建的store。只要在最外层包裹了这个Provider，那么所有后代组件都可以使用Redux.connect作连接。</p>
+</li>
+<li><p>connect方法执行之后是一个高阶组件，导入actionCreators；connect方法有四个参数，常用的就是前面两个。第一个参数是mapStateToProps，作用是从store注入到当前组建的props上</p>
+<p>第二个参数可以使mapDispatchToProps，这个得主要作用是把action生成的方法注入到当前组件的props</p>
+<p>但是第二个参数可以直接传递一个对象，这里的对象就是actionCreators，只要传入了actionCreators，在组件内部通过this.props.actionCreator来调用，这样的话，在调用之后，actionCreator会自动帮你把她内部的action dispatch出去。</p>
+<p>PS：此处还可以用装饰器模式。<br><br><br><br></p>
+</li>
 </ol>
+<h1 id="异步action"><a href="#异步action" class="headerlink" title="异步action"></a>异步action</h1><p><strong>普通</strong></p>
+<p>actionCreator =&gt;自动dispatch(actionCreator()) =&gt; reducer =&gt;store =&gt; view</p>
+<p><strong>异步</strong></p>
+<p>actionCreator =&gt;middleware处理生成新的action =&gt; 手动dispatch(action) =&gt; reducer =&gt;store</p>
+<p><br><br></p>
+<p>npm install –save redux-thunk</p>
+<p>修改store.js</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> createStore(</span><br><span class="line">    rootReducer,</span><br><span class="line">    applyMiddleware(thunk)</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+<p>修改action具体的组件</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> decrementAsync =<span class="function"><span class="params">id</span> =&gt;</span><span class="function"><span class="params">dispatch</span> =&gt;</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            dispatch(decrement(id))</span><br><span class="line">        &#125;,<span class="number">2000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><br><br></p>
+<p><strong>关于<a href="https://mp.weixin.qq.com/s/3yoHo6UXI2VOPO9zWI2aCQ" target="_blank" rel="noopener">middleware</a></strong></p>
+<p><br><br><br><br></p>
+<h1 id="标准的redux工作模型"><a href="#标准的redux工作模型" class="headerlink" title="标准的redux工作模型"></a>标准的redux工作模型</h1><p>这里借用blog的发布流程来理解建立一个react-redux的过程。个人理解：</p>
+<p><strong>store.js=&gt;容器组件和展示组件=&gt;reducers=&gt;actions=&gt;完善reducers=&gt;App.js整合组件=&gt;编写index.js</strong></p>
 
     
 
@@ -320,7 +355,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lifei-2019.github.io/react9/" title="react-基础操作（6）react-redux" target="_blank">https://lifei-2019.github.io/react9/</a>
+          <a href="https://lifei-2019.github.io/react9/" title="react-基础操作（6）react-redux和异步action" target="_blank">https://lifei-2019.github.io/react9/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -454,7 +489,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-redux流程"><span class="toc-number">1.</span> <span class="toc-text">React-redux流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#异步action"><span class="toc-number">2.</span> <span class="toc-text">异步action</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#标准的redux工作模型"><span class="toc-number">3.</span> <span class="toc-text">标准的redux工作模型</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -657,6 +692,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -665,15 +704,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,19 +724,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英剧</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英剧</a>
               </li>
             
             <div class="clearfix"></div>
