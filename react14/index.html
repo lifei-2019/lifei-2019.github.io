@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lifei-2019.github.io">
-  <title>Archives | 春风十里不如你</title>
+  <title>react-项目（4）基于redux的通知中心 | 春风十里不如你</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="李飞_技术博客">
-<meta name="keywords" content="李飞，李飞_技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="春风十里不如你">
-<meta property="og:url" content="https://lifei-2019.github.io/archives/index.html">
+  <meta name="description" content="我的项目源码地址">
+<meta name="keywords" content="前端,react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-项目（4）基于redux的通知中心">
+<meta property="og:url" content="https://lifei-2019.github.io/react14/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="李飞_技术博客">
+<meta property="og:description" content="我的项目源码地址">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-05-05T12:44:15.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="春风十里不如你">
-<meta name="twitter:description" content="李飞_技术博客">
+<meta name="twitter:title" content="react-项目（4）基于redux的通知中心">
+<meta name="twitter:description" content="我的项目源码地址">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -211,41 +212,220 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-react14" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      react-项目（4）基于redux的通知中心
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/react14/" class="archive-article-date">
         <time datetime="2020-04-28T14:47:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-28</time>
 </a>
 
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">833字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>我的项目<a href="https://github.com/lifei-2019/react-demos/tree/react-project" target="_blank" rel="noopener">源码地址</a><a id="more"></a></p>
+<h1 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i redux react-redux redux-thunk -S</span><br></pre></td></tr></table></figure>
+
+<p>参考之前<a href="https://lifei-2019.github.io/react8/">我的文章</a></p>
+<ul>
+<li><p>创建store.js </p>
+</li>
+<li><p>reducers/notifications和reducers/index.js</p>
+</li>
+<li><p>在根目录index.js中添加Provider组件 store={store}</p>
+</li>
+<li><p>在views/Notifications/index.js中引入<strong>connect</strong>，console看一下this.props里有没有dispatch，编写mapState函数，编写connect(mapState)，修改form的dataSource</p>
+</li>
+<li><p>actions=&gt;完善reducers=&gt;完善view界面里的标为已读的功能</p>
+</li>
+</ul>
+<p><code>在过程中发现下拉菜单的dot属性不能及时更新，发现是因为之前把下拉菜单写成menu数组，如果想实时更新的话需要把他改成函数即可，可以理解为构造了一个组件。</code></p>
+<ul>
+<li>完善loading</li>
+</ul>
+<p><br><br></p>
+<h1 id="登录页UI的实现"><a href="#登录页UI的实现" class="headerlink" title="登录页UI的实现"></a>登录页UI的实现</h1><p>这里主要采用Card+Form的布局，在设置less的时候遇到<code>transform: translate3d(-50%,-50%,0)</code>设置后页面显示模糊，原因是计算的结果并非整数的像素点，解决方法参见<a href="https://blog.csdn.net/qq_20264891/article/details/87873311" target="_blank" rel="noopener">csdn上的一篇文章</a>。</p>
+<p><br><br></p>
+<h1 id="redux实现登陆页逻辑"><a href="#redux实现登陆页逻辑" class="headerlink" title="redux实现登陆页逻辑"></a>redux实现登陆页逻辑</h1><ul>
+<li><p><strong>在rap2里mock模拟数据</strong>，并在requests里新建对应的axios请求</p>
+</li>
+<li><p><strong>在reducers里新建users</strong>：</p>
+</li>
+</ul>
+<ol>
+<li><p>写initState：id,displayyName,avatar,role,isLoading(如果有token就改为true，但是token本身要存在storage里)</p>
+</li>
+<li><p>写函数</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span>(state=initState,action)=&gt;&#123;</span><br><span class="line">    <span class="keyword">switch</span>(action.type)&#123;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> state</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p><strong>整合到reducers/index.js里</strong></p>
+</li>
+<li><p><strong>修改index.js里以前遗留的问题：需要权限登录才能访问/admin，修改Route里的render，用component={App}代替，具体的权限跳转转到App组件里设置</strong></p>
+</li>
+<li><p><strong>修改App.js：引入connect</strong></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const mapSate=state=&gt;(&#123;</span><br><span class="line">    isLogin:this.props.isLogin</span><br><span class="line">&#125;)</span><br><span class="line">@connect(mapState)</span><br></pre></td></tr></table></figure>
+
+<p>​    修改return里的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.props.isLogin</span><br><span class="line">?</span><br><span class="line">里面的内容</span><br><span class="line">:</span><br><span class="line">&lt;Redirect to=&quot;/login&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>添加actions里面的状态：LOGIN、START_LOGIN、LOGIN_SUCCESS、LOGIN_FAILED</strong></p>
+</li>
+<li><p><strong>新建actions/user.js</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import actionTypes from &apos;./actionTypes&apos;</span><br><span class="line">import &#123;loginRequest&#125; from &apos;../requests&apos;</span><br><span class="line"></span><br><span class="line">const startLogin=()=&gt;&#123;</span><br><span class="line">    return&#123;</span><br><span class="line">        type:actionTypes.START_LOGIN</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const loginSuccess=()=&gt;&#123;</span><br><span class="line">    return&#123;</span><br><span class="line">        type:actionTypes.LOGIN_SUCCESS</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const loginFailed=()=&gt;&#123;</span><br><span class="line">    return&#123;</span><br><span class="line">        type:actionTypes.LOGIN_FAILED</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default login =(userInfo)=&gt;&#123;</span><br><span class="line">    return dispatch=&gt;&#123;</span><br><span class="line">        dispatch(startLogin())</span><br><span class="line">        loginRequest(userInfo)</span><br><span class="line">            .then(resp=&gt;&#123;</span><br><span class="line">                console.log(resp)</span><br><span class="line">            &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>只有同步的东西才能定义actionTypes</code></p>
+</li>
+<li><p><strong>修改login/index.js界面</strong></p>
+<ol>
+<li>写mapState函数，使用connect函数联结</li>
+<li>引入action/user里的login方法</li>
+<li>修改onFinish函数，在onFinish里引用login函数</li>
+</ol>
+</li>
+<li><p><strong>修改actions/user.js</strong></p>
+<p>loginSuccess要加参数，login函数的完善</p>
+<p>做完之后可以去reducers/user里console一下action看是否显示LOGIN_SUCCESS</p>
+</li>
+<li><p><strong>修改reducers/user</strong></p>
+<p>switch语句分别对应三种情况：开始登陆，登陆成功，登陆失败</p>
+</li>
+<li><p><strong>修改Login/index.js</strong></p>
+<p>Redirect，在render时判断isLogin的状态，true则redirect到admin界面，false则仍返回登录界面</p>
+<p><code>细节部分：在input、checkout组件可以设置disabled={this.props.isLoading}，在button组件里可以设置loading属性，即在提交时表单会进入短暂loading状态，更为真实</code></p>
+</li>
+</ul>
+<h1 id="Storage持久化存储"><a href="#Storage持久化存储" class="headerlink" title="Storage持久化存储"></a>Storage持久化存储</h1><p><strong>1.在actions/user.js里</strong></p>
+<ul>
+<li>在login里对获取到的数据进行存储loaclstorage/sessionstorage</li>
+<li>在loginFailed里清除存储的authToken</li>
+</ul>
+<p><strong>2.在reducers/user里，重新定义isLogin的值</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const isLogin = Boolean(window.localStorage.setItem(&apos;authToken&apos;)) || Boolean(window.sessionStorage.setItem(&apos;authToken&apos;))</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.frame组件里</strong></p>
+<ul>
+<li><p>mapstate函数里多返回avatar和displayName</p>
+</li>
+<li><p>在合适的地方加上<code>{this.props.avatar}</code>等等</p>
+</li>
+</ul>
+<p><strong>4.发现上面步骤的头像和名字尚未显示，因为在actions里面只传递了authToken，要加上</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.localStorage.setItem(&apos;userInfo&apos;,JSON.stringify(userInfo))</span><br><span class="line"></span><br><span class="line">window.localStorage.removeItem(&apos;userInfo&apos;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="退出登录"><a href="#退出登录" class="headerlink" title="退出登录"></a>退出登录</h1><p><strong>1.actions/user</strong></p>
+<p>写logout函数</p>
+<p><strong>2.frame</strong></p>
+<p>在onDropdownMenuClick函数里加logout</p>
+<p>3.reducers</p>
+<p>修改loginFailed函数</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你的关注<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/react14/">react-项目（4）基于redux的通知中心</a>
-	
-    </h1>
-  
+      </a>
+    </div>
+    
 
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Raphael_Li
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://lifei-2019.github.io/react14/" title="react-项目（4）基于redux的通知中心" target="_blank">https://lifei-2019.github.io/react14/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
 
-        <div class="article-info info-on-right">
-          
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -261,7 +441,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -274,543 +454,144 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/react14/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/react13/" class="archive-article-date">
-        <time datetime="2020-04-22T15:24:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/react13/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react-项目（3）编辑页面+编辑器+echarts+UI通知中心</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/react13/">react-项目（3）编辑页面+编辑器+echarts+UI通知中心</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#redux"><span class="toc-number">1.</span> <span class="toc-text">redux</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#登录页UI的实现"><span class="toc-number">2.</span> <span class="toc-text">登录页UI的实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#redux实现登陆页逻辑"><span class="toc-number">3.</span> <span class="toc-text">redux实现登陆页逻辑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Storage持久化存储"><span class="toc-number">4.</span> <span class="toc-text">Storage持久化存储</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#退出登录"><span class="toc-number">5.</span> <span class="toc-text">退出登录</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/react12/" class="archive-article-date">
-        <time datetime="2020-04-16T12:34:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/react12/">react-项目（2）Frame组件+mock数据+表格的基本渲染、分页、删除以及一些细节</a>
-	
-    </h1>
-  
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/react11/" class="archive-article-date">
-        <time datetime="2020-04-12T14:46:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/react11/">react-项目（1）配置环境+基本页面及外层路由+内层路由</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/react10/" class="archive-article-date">
-        <time datetime="2020-04-10T13:56:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/react10/">react-基础操作（8）redux-router</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  <div class="valine_comment"></div>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'true' == true ? true : false;
+  var verify = 'true' == true ? true : false;
+  new Valine({
+      // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+      av: AV,
+      el: '.valine_comment',
+      emoticon_url: 'https://cloud.panjunwen.com/alu',
+      emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+      app_id: 'G9SMEvt975sgpFg31kVQk5Lw-gzGzoHsz',
+      app_key: 'jW1TnL17cVc5Pqv8FscW8gQ7',
+      placeholder: 'ヾﾉ≧∀≦)o 来呀！吐槽一番吧！'
+    });
+</script>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/react9/" class="archive-article-date">
-        <time datetime="2020-04-09T14:00:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/react9/">react-基础操作（7）react-redux和异步action</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/react8/" class="archive-article-date">
-        <time datetime="2020-04-04T13:56:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/react8/">react-基础操作（6）状态管理以及redux</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/react7/" class="archive-article-date">
-        <time datetime="2020-03-31T15:03:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/react7/">react-基础操作（5）HOC、装饰器模式</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/react6/" class="archive-article-date">
-        <time datetime="2020-03-31T15:03:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/react6/">react-基础操作（4）hooks和context</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/react5/" class="archive-article-date">
-        <time datetime="2020-03-28T06:34:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/react5/">react-基础操作（3）生命周期和ajax</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -851,8 +632,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="春风十里不如你">
 <meta property="og:description" content="源码在我的github地址react-tuts-05 在线写js代码 提供免费的在线REST API">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-09T14:04:52.969Z">
+<meta property="og:updated_time" content="2020-05-01T04:13:34.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-基础操作（7）react-redux和异步action">
 <meta name="twitter:description" content="源码在我的github地址react-tuts-05 在线写js代码 提供免费的在线REST API">
@@ -85,7 +85,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数45
+		总文章数48
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -245,7 +245,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">755字</span>
+      <span class="post-count">806字</span>
     </span>
   </span>
 
@@ -254,7 +254,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -308,7 +308,12 @@
 <p><strong>关于<a href="https://mp.weixin.qq.com/s/3yoHo6UXI2VOPO9zWI2aCQ" target="_blank" rel="noopener">middleware</a></strong></p>
 <p><br><br><br><br></p>
 <h1 id="标准的redux工作模型"><a href="#标准的redux工作模型" class="headerlink" title="标准的redux工作模型"></a>标准的redux工作模型</h1><p>这里借用blog的发布流程来理解建立一个react-redux的过程。个人理解：</p>
-<p><strong>store.js=&gt;容器组件和展示组件=&gt;reducers=&gt;actions=&gt;完善reducers=&gt;App.js整合组件=&gt;编写index.js</strong></p>
+<p><strong>store.js=&gt;容器组件和展示组件=&gt;reducers=&gt;actions=&gt;完善reducers=&gt;编写根目录下index.js</strong></p>
+<br>
+
+<ul>
+<li>在过程中发现下拉菜单的dot属性不能及时更新，发现是因为之前把下拉菜单写成menu数组，如果想实时更新的话需要把他改成函数。</li>
+</ul>
 
     
 
@@ -697,7 +702,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,19 +722,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -733,19 +738,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英剧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
             
             <div class="clearfix"></div>
