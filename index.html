@@ -352,36 +352,10 @@
 
   <div class="article-entry" itemprop="articleBody">
     
-    <a id="more"></a>
-
-<p>这部分主要介绍了react-immutable和mobx，由于本人前面所学还为完全弄懂，此处仅做了解。<!--more--></p>
-<h1 id="扩展：Immutable的使用"><a href="#扩展：Immutable的使用" class="headerlink" title="扩展：Immutable的使用"></a>扩展：Immutable的使用</h1><p>再讲immutable之前，先要明白浅拷贝和深拷贝的概念。</p>
-<p><strong>浅拷贝</strong>：只拷贝最浅的一层，不改变内存地址，优点是节约内存</p>
-<p><strong>深拷贝</strong>：此时内存地址也发生改变</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import &#123;cloneDeep&#125; from &apos;lodash&apos;</span><br><span class="line"></span><br><span class="line">const state=&#123;</span><br><span class="line">	name:&apos;lf&apos;,</span><br><span class="line">	skills:[&apos;js&apos;,&apos;react&apos;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//方法一：</span><br><span class="line">const newState=cloneDeep(state)</span><br><span class="line">//方法二：</span><br><span class="line">const newState=JSON.parse(JSON.stringify(state))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//测试一下</span><br><span class="line">console.log(newState === state)</span><br><span class="line">//返回false</span><br><span class="line"></span><br><span class="line">newState.skills.push(&apos;UI&apos;)</span><br><span class="line"></span><br><span class="line">console.log(newState,state)</span><br><span class="line">//此时两个数组不同，newState被改变，state不被改变</span><br></pre></td></tr></table></figure>
-
-<p><strong>此处学习参见关于immutable的<a href="https://www.jianshu.com/p/0fa8c7456c15" target="_blank" rel="noopener">一篇文章</a></strong></p>
-<ol>
-<li><p>npm i immutable -S</p>
-</li>
-<li><p>map是用来做对象的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Map&#125; from &apos;immutable&apos;</span><br><span class="line"></span><br><span class="line">const state=&#123;</span><br><span class="line">	name:&apos;lf&apos;,</span><br><span class="line">	skills:[&apos;js&apos;,&apos;react&apos;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const imState = Map(state)</span><br><span class="line"></span><br><span class="line">console.log(state.name,imState.name)</span><br><span class="line">//返回lf undefined</span><br><span class="line"></span><br><span class="line">console.log(state.name,imState.get(&apos;name&apos;))</span><br><span class="line">//返回 lf lf</span><br><span class="line"></span><br><span class="line">const newImState=imState.set(&apos;name&apos;,&apos;lff&apos;)</span><br><span class="line">console.log(imState.get(&apos;name&apos;),newImState.get(&apos;name&apos;))</span><br><span class="line">//返回lf lff</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="3">
-<li><p>list用来做数组</p>
-</li>
-<li><p>fromJS</p>
-</li>
-</ol>
-<p>….(此处博主学识上前，暂时不做深入了解)</p>
-<h1 id="mobx"><a href="#mobx" class="headerlink" title="mobx"></a>mobx</h1><p><a href="https://cn.mobx.js.org/" target="_blank" rel="noopener">官网地址</a></p>
-<p>主要流程</p>
-<p><img src="https://cn.mobx.js.org/flow.png" alt="MobX unidirectional flow"></p>
-
+    <p>这部分主要介绍了react-immutable和mobx，由于本人前面所学还为完全弄懂，此处仅做了解。</p>
+    
+    <a class="article-more-a" href="/react16/#more">more >></a>
+    
     
 
     
@@ -1443,7 +1417,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1451,15 +1429,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">babel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1479,11 +1457,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1492,10 +1470,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英剧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
             
             <div class="clearfix"></div>
