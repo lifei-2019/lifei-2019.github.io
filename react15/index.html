@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lifei-2019.github.io">
-  <title>webpack-01 | 春风十里不如你</title>
+  <title>react-项目（5）页面级的权限管理 | 春风十里不如你</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="看官网源码很重要！！！！">
-<meta name="keywords" content="前端,webpack">
+  <meta name="description" content="我的项目源码地址">
+<meta name="keywords" content="前端,react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack-01">
-<meta property="og:url" content="https://lifei-2019.github.io/webpack-01/index.html">
+<meta property="og:title" content="react-项目（5）页面级的权限管理">
+<meta property="og:url" content="https://lifei-2019.github.io/react15/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="看官网源码很重要！！！！">
+<meta property="og:description" content="我的项目源码地址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-06T08:57:43.800Z">
+<meta property="og:updated_time" content="2020-05-08T03:56:13.128Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack-01">
-<meta name="twitter:description" content="看官网源码很重要！！！！">
+<meta name="twitter:title" content="react-项目（5）页面级的权限管理">
+<meta name="twitter:description" content="我的项目源码地址">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -212,14 +212,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-webpack-01" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react15" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      webpack-01
+      react-项目（5）页面级的权限管理
     </h1>
   
 
@@ -231,8 +231,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/webpack-01/" class="archive-article-date">
-        <time datetime="2020-03-01T02:28:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+<a href="/react15/" class="archive-article-date">
+        <time datetime="2020-05-03T13:34:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
 </a>
 
   
@@ -245,7 +245,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">400字</span>
+      <span class="post-count">221字</span>
     </span>
   </span>
 
@@ -254,7 +254,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">1分</span>
     </span>
   </span>
 </div>
@@ -266,23 +266,37 @@
 
   <div class="article-entry" itemprop="articleBody">
     
-    <p>看官网源码很重要！！！！ <a id="more"></a></p>
-<p><a href="http://www.npmjs.com" target="_blank" rel="noopener">www.npmjs.com</a> npm官网</p>
-<p><a href="http://www.webpackjs.com" target="_blank" rel="noopener">www.webpackjs.com</a> webpack官网</p>
-<p>入口 出口 loader 插件 </p>
-<p>npm i webpack webpack-cli -D</p>
-<p>npm i –save-dev css-loader </p>
-<p>npm i –save-dev webpack-dev-server </p>
-<p>npm i style-loader -D</p>
-<p>npm i -save-dev mini-css-extract-plugin 申请的CSS自动提取</p>
-<p>package.json 修改scripts里  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;webpack-dev-server --mode development --config scripts/webpack.config.js&quot;,</span><br><span class="line"></span><br><span class="line">&quot;build&quot;: &quot;webpack --mode production --config scripts/webpack.config.js&quot;,</span><br><span class="line"></span><br><span class="line">(dev保留代码)</span><br></pre></td></tr></table></figure>
+    <p>我的项目<a href="https://github.com/lifei-2019/react-demos/tree/react-project" target="_blank" rel="noopener">源码地址</a><a id="more"></a></p>
+<h1 id="页面级的权限管理"><a href="#页面级的权限管理" class="headerlink" title="页面级的权限管理"></a>页面级的权限管理</h1><ol>
+<li><p>新建views/NoAuth.js,并配置view/index.js</p>
+</li>
+<li><p>新增routes</p>
+</li>
+<li><p>actions里return的要新增一个role</p>
+</li>
+<li><p>修改App.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const hasPermission =route.roles.includes(this.props.role)</span><br><span class="line">                                return hasPermission?&lt;route.component &#123;...routerProps&#125; /&gt;:&lt;Redirect to=&quot;/admin/noauth&quot; /&gt;</span><br></pre></td></tr></table></figure>
 
-<p>默认入口是src下的index.js  这个很重要 因为如果不是index的话就会listing directory</p>
-<p>修改webpack.config.js里的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">const HtmlWebPackPlugin = require(&apos;html-webpack-plugin&apos;)</span><br><span class="line">const MiniCssExtractPlugin = require(&quot;mini-css-extract-plugin&quot;) </span><br><span class="line"></span><br><span class="line">//创建一个插件的实例对象</span><br><span class="line">const htmlPlugin = new HtmlWebPackPlugin(&#123;</span><br><span class="line">    template: &apos;public/admin.html&apos;,</span><br><span class="line">    title: &apos;webpack&apos;,</span><br><span class="line">    filename: &apos;index.html&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// const minicssPlugin = new MiniCssExtractPlugin(&#123;</span><br><span class="line">//     filename: &apos;static/css/[name].[chunkHash:8].css&apos;,</span><br><span class="line">// &#125;)两种形式</span><br><span class="line"></span><br><span class="line">module.exports = &#123;                                           </span><br><span class="line">    entry: &#123;</span><br><span class="line">        index: &apos;./src/index.js&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(process.cwd(),&quot;dist&quot;),</span><br><span class="line">        filename: &apos;static/js/[name].[hash:8].js&apos;        //可以用chunkHash同一次操作每个文件都不一样</span><br><span class="line">    &#125;,           </span><br><span class="line">    plugins: [</span><br><span class="line">        htmlPlugin,</span><br><span class="line">        new MiniCssExtractPlugin(&#123;</span><br><span class="line">            filename: &apos;static/css/[name].[hash:8].css&apos;,</span><br><span class="line">        &#125;)</span><br><span class="line">    ],</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test:/\.css$/,</span><br><span class="line">                use: [</span><br><span class="line">                    MiniCssExtractPlugin.loader,</span><br><span class="line">                    &apos;css-loader&apos;                    //后写的先执行</span><br><span class="line">                ],</span><br><span class="line">                exclude: /node_modules/</span><br><span class="line">            &#125;,</span><br><span class="line">        ],</span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        publicPath: &quot;/&quot;,</span><br><span class="line">        progress: true,</span><br><span class="line">        //contentBase: &quot;./dist&quot;, //服务启动在哪一个文件夹下</span><br><span class="line">        open: true, // 启动服务时，自动打开浏览器</span><br><span class="line">        port: 3000, // 端口号</span><br><span class="line">        hot: true, // devServer开启Hot Module Replacement的功能 与chunkhash冲突所以原先在此关闭</span><br><span class="line">        hotOnly: false, // 即便HMP的功能没有生效，浏览器也不能自动刷新</span><br><span class="line">        compress: true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>此时发现如果在ajax尚未返回数据时就点击别的会报错，可以加如下代码进行优化（多console）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(!this.updater.isMounted(this)) return</span><br></pre></td></tr></table></figure>
 
-<p>运行npm run build或者npm run dev</p>
+<p><br><br></p>
+<h1 id="个人设置界面"><a href="#个人设置界面" class="headerlink" title="个人设置界面"></a>个人设置界面</h1><p>view-&gt;routes-&gt;frame</p>
+<p><code>tips: hashRouter有#，BrowserRouter没有#但是要加try_files</code></p>
+<p><br><br></p>
+<h2 id="上传图片"><a href="#上传图片" class="headerlink" title="上传图片"></a>上传图片</h2><p>实际上保存的是url</p>
+<p><a href="http://www.tietuku.com/doc" target="_blank" rel="noopener">贴图库</a>（新用户注册可以免费上传7张）</p>
+<p><a href="https://ant.design/components/upload-cn/" target="_blank" rel="noopener">antd官网关于Upload组件的介绍</a>根据里面的示例写views/Profile.js</p>
+<p><br><br></p>
+<h2 id="上传完后自动同步到状态栏"><a href="#上传完后自动同步到状态栏" class="headerlink" title="上传完后自动同步到状态栏"></a>上传完后自动同步到状态栏</h2><ol>
+<li>actionTypes添加修改头像操作</li>
+<li>actions/user里写change函数</li>
+<li>reducers/user里添加case情况</li>
+<li>views/profile界面connect函数联结</li>
+</ol>
+<p><br><br></p>
 
     
 
@@ -329,7 +343,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lifei-2019.github.io/webpack-01/" title="webpack-01" target="_blank">https://lifei-2019.github.io/webpack-01/</a>
+          <a href="https://lifei-2019.github.io/react15/" title="react-项目（5）页面级的权限管理" target="_blank">https://lifei-2019.github.io/react15/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -352,7 +366,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		
 		</ul>
@@ -419,7 +433,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/webpack-01/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/react15/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -434,18 +448,18 @@
 
 <nav id="article-nav">
   
-    <a href="/webpack-03/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/react16/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          webpack-03
+          react-扩展 immutable+mobx
         
       </div>
     </a>
   
   
-    <a href="/国境以南/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">国境以南</div>
+    <a href="/react14/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react-项目（4）基于redux的通知中心+登录+持久化存储</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -472,7 +486,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#页面级的权限管理"><span class="toc-number">1.</span> <span class="toc-text">页面级的权限管理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#个人设置界面"><span class="toc-number">2.</span> <span class="toc-text">个人设置界面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#上传图片"><span class="toc-number">2.1.</span> <span class="toc-text">上传图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传完后自动同步到状态栏"><span class="toc-number">2.2.</span> <span class="toc-text">上传完后自动同步到状态栏</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

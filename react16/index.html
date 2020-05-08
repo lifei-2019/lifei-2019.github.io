@@ -6,22 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lifei-2019.github.io">
-  <title>webpack-01 | 春风十里不如你</title>
+  <title>react-扩展 immutable+mobx | 春风十里不如你</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="看官网源码很重要！！！！">
-<meta name="keywords" content="前端,webpack">
+  <meta name="description" content="这部分主要介绍了react-immutable和mobx，由于本人前面所学还为完全弄懂，此处仅做了解。 扩展：Immutable的使用再讲immutable之前，先要明白浅拷贝和深拷贝的概念。 浅拷贝：只拷贝最浅的一层，不改变内存地址，优点是节约内存 深拷贝：此时内存地址也发生改变 123456789101112131415161718192021222324import &amp;#123;clon">
+<meta name="keywords" content="前端,react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack-01">
-<meta property="og:url" content="https://lifei-2019.github.io/webpack-01/index.html">
+<meta property="og:title" content="react-扩展 immutable+mobx">
+<meta property="og:url" content="https://lifei-2019.github.io/react16/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="看官网源码很重要！！！！">
+<meta property="og:description" content="这部分主要介绍了react-immutable和mobx，由于本人前面所学还为完全弄懂，此处仅做了解。 扩展：Immutable的使用再讲immutable之前，先要明白浅拷贝和深拷贝的概念。 浅拷贝：只拷贝最浅的一层，不改变内存地址，优点是节约内存 深拷贝：此时内存地址也发生改变 123456789101112131415161718192021222324import &amp;#123;clon">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-06T08:57:43.800Z">
+<meta property="og:image" content="https://cn.mobx.js.org/flow.png">
+<meta property="og:updated_time" content="2020-05-08T12:34:13.331Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack-01">
-<meta name="twitter:description" content="看官网源码很重要！！！！">
+<meta name="twitter:title" content="react-扩展 immutable+mobx">
+<meta name="twitter:description" content="这部分主要介绍了react-immutable和mobx，由于本人前面所学还为完全弄懂，此处仅做了解。 扩展：Immutable的使用再讲immutable之前，先要明白浅拷贝和深拷贝的概念。 浅拷贝：只拷贝最浅的一层，不改变内存地址，优点是节约内存 深拷贝：此时内存地址也发生改变 123456789101112131415161718192021222324import &amp;#123;clon">
+<meta name="twitter:image" content="https://cn.mobx.js.org/flow.png">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -212,14 +214,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-webpack-01" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react16" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      webpack-01
+      react-扩展 immutable+mobx
     </h1>
   
 
@@ -231,8 +233,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/webpack-01/" class="archive-article-date">
-        <time datetime="2020-03-01T02:28:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+<a href="/react16/" class="archive-article-date">
+        <time datetime="2020-05-07T15:45:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-07</time>
 </a>
 
   
@@ -245,7 +247,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">400字</span>
+      <span class="post-count">303字</span>
     </span>
   </span>
 
@@ -254,7 +256,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">1分</span>
     </span>
   </span>
 </div>
@@ -266,23 +268,35 @@
 
   <div class="article-entry" itemprop="articleBody">
     
-    <p>看官网源码很重要！！！！ <a id="more"></a></p>
-<p><a href="http://www.npmjs.com" target="_blank" rel="noopener">www.npmjs.com</a> npm官网</p>
-<p><a href="http://www.webpackjs.com" target="_blank" rel="noopener">www.webpackjs.com</a> webpack官网</p>
-<p>入口 出口 loader 插件 </p>
-<p>npm i webpack webpack-cli -D</p>
-<p>npm i –save-dev css-loader </p>
-<p>npm i –save-dev webpack-dev-server </p>
-<p>npm i style-loader -D</p>
-<p>npm i -save-dev mini-css-extract-plugin 申请的CSS自动提取</p>
-<p>package.json 修改scripts里  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;webpack-dev-server --mode development --config scripts/webpack.config.js&quot;,</span><br><span class="line"></span><br><span class="line">&quot;build&quot;: &quot;webpack --mode production --config scripts/webpack.config.js&quot;,</span><br><span class="line"></span><br><span class="line">(dev保留代码)</span><br></pre></td></tr></table></figure>
+    <a id="more"></a>
 
-<p>默认入口是src下的index.js  这个很重要 因为如果不是index的话就会listing directory</p>
-<p>修改webpack.config.js里的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">const HtmlWebPackPlugin = require(&apos;html-webpack-plugin&apos;)</span><br><span class="line">const MiniCssExtractPlugin = require(&quot;mini-css-extract-plugin&quot;) </span><br><span class="line"></span><br><span class="line">//创建一个插件的实例对象</span><br><span class="line">const htmlPlugin = new HtmlWebPackPlugin(&#123;</span><br><span class="line">    template: &apos;public/admin.html&apos;,</span><br><span class="line">    title: &apos;webpack&apos;,</span><br><span class="line">    filename: &apos;index.html&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// const minicssPlugin = new MiniCssExtractPlugin(&#123;</span><br><span class="line">//     filename: &apos;static/css/[name].[chunkHash:8].css&apos;,</span><br><span class="line">// &#125;)两种形式</span><br><span class="line"></span><br><span class="line">module.exports = &#123;                                           </span><br><span class="line">    entry: &#123;</span><br><span class="line">        index: &apos;./src/index.js&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(process.cwd(),&quot;dist&quot;),</span><br><span class="line">        filename: &apos;static/js/[name].[hash:8].js&apos;        //可以用chunkHash同一次操作每个文件都不一样</span><br><span class="line">    &#125;,           </span><br><span class="line">    plugins: [</span><br><span class="line">        htmlPlugin,</span><br><span class="line">        new MiniCssExtractPlugin(&#123;</span><br><span class="line">            filename: &apos;static/css/[name].[hash:8].css&apos;,</span><br><span class="line">        &#125;)</span><br><span class="line">    ],</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">            &#123;</span><br><span class="line">                test:/\.css$/,</span><br><span class="line">                use: [</span><br><span class="line">                    MiniCssExtractPlugin.loader,</span><br><span class="line">                    &apos;css-loader&apos;                    //后写的先执行</span><br><span class="line">                ],</span><br><span class="line">                exclude: /node_modules/</span><br><span class="line">            &#125;,</span><br><span class="line">        ],</span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        publicPath: &quot;/&quot;,</span><br><span class="line">        progress: true,</span><br><span class="line">        //contentBase: &quot;./dist&quot;, //服务启动在哪一个文件夹下</span><br><span class="line">        open: true, // 启动服务时，自动打开浏览器</span><br><span class="line">        port: 3000, // 端口号</span><br><span class="line">        hot: true, // devServer开启Hot Module Replacement的功能 与chunkhash冲突所以原先在此关闭</span><br><span class="line">        hotOnly: false, // 即便HMP的功能没有生效，浏览器也不能自动刷新</span><br><span class="line">        compress: true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这部分主要介绍了react-immutable和mobx，由于本人前面所学还为完全弄懂，此处仅做了解。<!--more--></p>
+<h1 id="扩展：Immutable的使用"><a href="#扩展：Immutable的使用" class="headerlink" title="扩展：Immutable的使用"></a>扩展：Immutable的使用</h1><p>再讲immutable之前，先要明白浅拷贝和深拷贝的概念。</p>
+<p><strong>浅拷贝</strong>：只拷贝最浅的一层，不改变内存地址，优点是节约内存</p>
+<p><strong>深拷贝</strong>：此时内存地址也发生改变</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import &#123;cloneDeep&#125; from &apos;lodash&apos;</span><br><span class="line"></span><br><span class="line">const state=&#123;</span><br><span class="line">	name:&apos;lf&apos;,</span><br><span class="line">	skills:[&apos;js&apos;,&apos;react&apos;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//方法一：</span><br><span class="line">const newState=cloneDeep(state)</span><br><span class="line">//方法二：</span><br><span class="line">const newState=JSON.parse(JSON.stringify(state))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//测试一下</span><br><span class="line">console.log(newState === state)</span><br><span class="line">//返回false</span><br><span class="line"></span><br><span class="line">newState.skills.push(&apos;UI&apos;)</span><br><span class="line"></span><br><span class="line">console.log(newState,state)</span><br><span class="line">//此时两个数组不同，newState被改变，state不被改变</span><br></pre></td></tr></table></figure>
 
-<p>运行npm run build或者npm run dev</p>
+<p><strong>此处学习参见关于immutable的<a href="https://www.jianshu.com/p/0fa8c7456c15" target="_blank" rel="noopener">一篇文章</a></strong></p>
+<ol>
+<li><p>npm i immutable -S</p>
+</li>
+<li><p>map是用来做对象的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import &#123;Map&#125; from &apos;immutable&apos;</span><br><span class="line"></span><br><span class="line">const state=&#123;</span><br><span class="line">	name:&apos;lf&apos;,</span><br><span class="line">	skills:[&apos;js&apos;,&apos;react&apos;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const imState = Map(state)</span><br><span class="line"></span><br><span class="line">console.log(state.name,imState.name)</span><br><span class="line">//返回lf undefined</span><br><span class="line"></span><br><span class="line">console.log(state.name,imState.get(&apos;name&apos;))</span><br><span class="line">//返回 lf lf</span><br><span class="line"></span><br><span class="line">const newImState=imState.set(&apos;name&apos;,&apos;lff&apos;)</span><br><span class="line">console.log(imState.get(&apos;name&apos;),newImState.get(&apos;name&apos;))</span><br><span class="line">//返回lf lff</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>list用来做数组</p>
+</li>
+<li><p>fromJS</p>
+</li>
+</ol>
+<p>….(此处博主学识上前，暂时不做深入了解)</p>
+<h1 id="mobx"><a href="#mobx" class="headerlink" title="mobx"></a>mobx</h1><p><a href="https://cn.mobx.js.org/" target="_blank" rel="noopener">官网地址</a></p>
+<p>主要流程</p>
+<p><img src="https://cn.mobx.js.org/flow.png" alt="MobX unidirectional flow"></p>
 
     
 
@@ -329,7 +343,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lifei-2019.github.io/webpack-01/" title="webpack-01" target="_blank">https://lifei-2019.github.io/webpack-01/</a>
+          <a href="https://lifei-2019.github.io/react16/" title="react-扩展 immutable+mobx" target="_blank">https://lifei-2019.github.io/react16/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -352,7 +366,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		
 		</ul>
@@ -419,7 +433,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/webpack-01/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/react16/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -434,18 +448,9 @@
 
 <nav id="article-nav">
   
-    <a href="/webpack-03/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          webpack-03
-        
-      </div>
-    </a>
   
-  
-    <a href="/国境以南/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">国境以南</div>
+    <a href="/react15/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react-项目（5）页面级的权限管理</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -472,7 +477,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#扩展：Immutable的使用"><span class="toc-number">1.</span> <span class="toc-text">扩展：Immutable的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mobx"><span class="toc-number">2.</span> <span class="toc-text">mobx</span></a></li></ol>
                     </div>
                 </span>
             </div>
