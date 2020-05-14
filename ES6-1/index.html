@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="ES6EcmaScript，是一个制定脚本语言标准的组织  let、const和var的区别let可以重新赋值，const不行     let和const var    能否重复声明变量 不可以 可以   作用域范围 块作用域 函数作用域   块作用域就是大括号内部 在函数里想引用外面的只能用window.变量值 实际写代码时主要用const  箭头函数特点  能够使函数的写法更简洁（一行写完一个">
+  <meta name="description" content="主要是一些ES6基础知识，代码已上传至我的github地址">
 <meta name="keywords" content="ES6,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6-1">
 <meta property="og:url" content="https://lifei-2019.github.io/ES6-1/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="ES6EcmaScript，是一个制定脚本语言标准的组织  let、const和var的区别let可以重新赋值，const不行     let和const var    能否重复声明变量 不可以 可以   作用域范围 块作用域 函数作用域   块作用域就是大括号内部 在函数里想引用外面的只能用window.变量值 实际写代码时主要用const  箭头函数特点  能够使函数的写法更简洁（一行写完一个">
+<meta property="og:description" content="主要是一些ES6基础知识，代码已上传至我的github地址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-13T14:04:29.162Z">
+<meta property="og:updated_time" content="2020-05-14T00:32:08.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6-1">
-<meta name="twitter:description" content="ES6EcmaScript，是一个制定脚本语言标准的组织  let、const和var的区别let可以重新赋值，const不行     let和const var    能否重复声明变量 不可以 可以   作用域范围 块作用域 函数作用域   块作用域就是大括号内部 在函数里想引用外面的只能用window.变量值 实际写代码时主要用const  箭头函数特点  能够使函数的写法更简洁（一行写完一个">
+<meta name="twitter:description" content="主要是一些ES6基础知识，代码已上传至我的github地址">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -245,7 +245,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">630字</span>
+      <span class="post-count">651字</span>
     </span>
   </span>
 
@@ -266,7 +266,8 @@
 
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><p>EcmaScript，是一个制定脚本语言标准的组织</p>
+    <p>主要是一些ES6基础知识，代码已上传至我的github<a href="https://github.com/lifei-2019/ES6" target="_blank" rel="noopener">地址</a><a id="more"></a></p>
+<h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><p>EcmaScript，是一个制定脚本语言标准的组织</p>
 <p><br><br></p>
 <h1 id="let、const和var的区别"><a href="#let、const和var的区别" class="headerlink" title="let、const和var的区别"></a>let、const和var的区别</h1><p>let可以重新赋值，const不行</p>
 <table>
@@ -311,6 +312,7 @@
 <h1 id="Set和Map"><a href="#Set和Map" class="headerlink" title="Set和Map"></a>Set和Map</h1><h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p>可以保证数组里每个元素都是唯一的</p>
 <p>增加用add，删除用delete，遍历用forEach</p>
 <h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>添加用set，删除用delete，判断是否有用has</p>
+<p><br><br></p>
 <h1 id="解构数值"><a href="#解构数值" class="headerlink" title="解构数值"></a>解构数值</h1><p>1.已有数组</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const person =&#123;</span><br><span class="line">        name: &quot;lf&quot;,</span><br><span class="line">        age:&quot;24&quot;,</span><br><span class="line">        city: &apos;nanjing&apos;,</span><br><span class="line">        social:&#123;</span><br><span class="line">            bilibili:&apos;Ts&apos;,</span><br><span class="line">            qq:&apos;94&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">const &#123;name: personName = &apos;guest&apos;, //若没有则赋值默认值</span><br><span class="line">           social:&#123;bilibili&#125;</span><br><span class="line">          &#125; = person</span><br></pre></td></tr></table></figure>
 
@@ -320,7 +322,9 @@
 <p>3.两个值互换</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[b,a]=[a,b]</span><br></pre></td></tr></table></figure>
 
+<p><br><br></p>
 <h1 id="剩余和扩展函数"><a href="#剩余和扩展函数" class="headerlink" title="剩余和扩展函数"></a>剩余和扩展函数</h1><p>牵扯到把多个变量合并成一个数或者把一个数组拆成多个变量的，可以在前面加<code>...</code></p>
+<p><br><br></p>
 <h1 id="函数默认函数值、字符串方法和for-of"><a href="#函数默认函数值、字符串方法和for-of" class="headerlink" title="函数默认函数值、字符串方法和for of"></a>函数默认函数值、字符串方法和for of</h1><p>函数定义有参数，但引用时未传值时返回的是undefined</p>
 <p>字符串方法includes,startswith,endswith</p>
 <p>for of感觉可以用map替代</p>
@@ -707,14 +711,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">babel</a>
               </li>
              
@@ -723,11 +719,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -739,7 +743,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,7 +751,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
