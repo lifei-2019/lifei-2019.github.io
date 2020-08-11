@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lifei-2019.github.io">
-  <title>vue1 | 春风十里不如你</title>
+  <title>interview3 | 春风十里不如你</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="李飞_技术博客">
-<meta name="keywords" content="前端,vue">
+  <meta name="description" content="阿里盒马前端五面问题总结">
+<meta name="keywords" content="前端,面试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue1">
-<meta property="og:url" content="https://lifei-2019.github.io/vue1/index.html">
+<meta property="og:title" content="interview3">
+<meta property="og:url" content="https://lifei-2019.github.io/interview3/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="李飞_技术博客">
+<meta property="og:description" content="阿里盒马前端五面问题总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-25T14:51:23.147Z">
+<meta property="og:updated_time" content="2020-08-11T08:59:03.907Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue1">
-<meta name="twitter:description" content="李飞_技术博客">
+<meta name="twitter:title" content="interview3">
+<meta name="twitter:description" content="阿里盒马前端五面问题总结">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -212,14 +212,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-interview3" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      vue1
+      interview3
     </h1>
   
 
@@ -231,8 +231,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/vue1/" class="archive-article-date">
-        <time datetime="2020-05-22T04:58:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-22</time>
+<a href="/interview3/" class="archive-article-date">
+        <time datetime="2020-08-05T08:26:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-05</time>
 </a>
 
   
@@ -245,7 +245,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
+      <span class="post-count">1.8k字</span>
     </span>
   </span>
 
@@ -254,7 +254,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -266,7 +266,59 @@
 
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <p><a href="https://mp.weixin.qq.com/s/Y9N8exEqs0Gz-Qvbg-0RgQ" target="_blank" rel="noopener">阿里盒马前端</a>五面问题总结</p>
+<a id="more"></a>
+
+<h1 id="1-提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？"><a href="#1-提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？" class="headerlink" title="1.提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？"></a>1.提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？</h1><ul>
+<li>在form表单提交时我们最常用的方式时get和post，form表单提交时最要注意的就是enctype，enctype属性默认是application/x-www-form-urlencoded.</li>
+<li>在get方式时，浏览器会以当前的enctype编码方式将form数据转化成一个字符串，并将改字符串append到url上，以？分割。加载该新的url</li>
+<li>在post方式中：<ul>
+<li>如果form中没有type为file的控件时，form也会以默认enctype进行编码。</li>
+<li>如果是具有type为file的控件时，enctype得设置成multipart/form-data，这样浏览器会将表单以控件为单位分割，并为每个部分加上Content-Disposition（form-data或者时file）、content-type（默认值为text/plain）、name等信息，并加上分割符（boundary）</li>
+</ul>
+</li>
+</ul>
+<h2 id="浏览器请求后发生的完整过程"><a href="#浏览器请求后发生的完整过程" class="headerlink" title="浏览器请求后发生的完整过程"></a>浏览器请求后发生的完整过程</h2><ul>
+<li>浏览器发送请求后，DNS（Domain Name System）解析域名得到相应的IP地址。<ul>
+<li>通过域名访问网页</li>
+<li>将域名发送到解析域名的服务器上，有很多专门解析.org、.cn、.com等，最主要有一台根域名服务器</li>
+<li>找到对应的IP地址</li>
+</ul>
+</li>
+<li>应用层http协议（HyperText Transfer Protocol，超文本传输协议）<ul>
+<li>发送请求的我们称之为客户端（client）、而做出相应的服务器叫做源服务器（origin server）。在客户端和服务端之间可能存在很多中间层，比如代理，网关，隧道等。</li>
+<li>http协议中的请求报文和响应报文（具体格式大家可以百度了解下）</li>
+</ul>
+</li>
+<li>通信层（TCP/IP）：<ul>
+<li>生成http报文及请求</li>
+<li>TCP协议将http请求报文进行分割（为了方便传输），并在每个报文上标记序号和端口号发给网络层（IP协议）</li>
+<li>网络层增加作为通信目的的MAC地址后转发给链路层（建立电路连接，整个网络的物理基础，典型协议为以太网和ADSL等）</li>
+<li>链路层处理后生成的数据包通过物理层传输到接收端</li>
+<li>接收到数据的服务端后按序网上传，</li>
+<li>TCP连接的三次握手四次挥手</li>
+<li>IP协议实现数据传递到对方计算机</li>
+<li>解析请求报文并生成响应报文</li>
+</ul>
+</li>
+</ul>
+<p><strong>参考资料</strong>：<a href="https://blog.csdn.net/weixin_42621338/article/details/87354737" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42621338/article/details/87354737</a></p>
+<p><br><br></p>
+<h1 id="2-post和get的区别，列举一下"><a href="#2-post和get的区别，列举一下" class="headerlink" title="2.post和get的区别，列举一下"></a>2.post和get的区别，列举一下</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>1.get在浏览器后退时无害，不发送请求。post在浏览器后退时会再次发送请求。</p>
+<p>2.get参数通常放在url后面传递，post则通常放在Request body中传递。但实际上，get也可以用body少量传值，post也可以在url中少量传值，这在技术上是完全行的通的，只是不符合http的规定 </p>
+<p>3.get比post更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。 </p>
+<p>4.get在url中传输参数有长度限制，post没有限制。get之所以会限制请求长度，是因为url请求数据量太大对浏览器和服务器都是很大的负担，处理起来有成本，所以浏览器和服务器对单次访问都做了限制。（大多数）浏览器通常都会限制url长度在2K个字节，而（大多数）服务器最多处理64K大小的url。超过的部分，恕不处理。虽然GET可以带request body，也不能保证一定能被接收到。所以此处的不同，是因为HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。所以如果请求参数可能很长很多的话，直接用post即可（如果用get，超过限制，参数传不过去，会报null）！ </p>
+<p>5.GET产生一个TCP数据包；POST产生两个TCP数据包（重点区别！）**。对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。也就是post请求，第一次将header发送过去，确认服务器和网络没问题可以服务，才会将真正的data数据提交。 因为POST需要两步，时间上消耗的要多一点，看起来GET比POST更有效。因此Yahoo团队有推荐用GET替换POST来优化网站性能。但这是一个坑！跳入需谨慎。为什么？ </p>
+<p>5.1. GET与POST都有自己的语义，不能随便混用。<strong>get从指定的资源获取数据，post是向指定的资源提交数据（使用场景！）</strong> </p>
+<p>5.2.在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。也就是网络好的话get和post请求效率基本一样，网络不好的时候post对验证请求数据完整性更有优势。 </p>
+<p>5.3.并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次</p>
+<p><br><br></p>
+<h2 id="联系"><a href="#联系" class="headerlink" title="联系"></a>联系</h2><p>1.get和post只是http请求的两种方式，底层都是TCP/IP协议进行通信的。大致过程：用户发出http请求（此时用户的电脑也是一个端，有自己的ip，通过socket使用tcp协议传送数据），请求数据包会通过tcp协议通过网络传给解析的ip，ip收到数据之后（可能还会使用tcp协议与其他ip进行数据交互），处理完成之后，再通过tcp协议将结果返回给用户。所以get和post本质并无区别，只是被http规定了不同的行为和方式。 </p>
+<p>2.之所以有get和post区分，是因为他们底层数据的传输都是基于tcp协议，如果不做区分，网络中都是某一种服务类别，难免会混乱。为了避免这种情况发生，http协议诞生了。HTTP给网络运输设定了好几个服务类别，有GET, POST, PUT, DELETE等等，HTTP规定，当执行GET请求的时候，要给请求包贴上GET的标签（设置method为GET），而且要求把传送的数据放在url中以方便记录。如果是POST请求，在请求数据包贴上POST的标签。</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>1.get：如果主要是为了获取数据，比如一些获取数据的get请求，且加上请求参数的url不会特别大（小于1k还是2k），且最好没有需要保密的字段，则用get请求； </p>
+<p>2.post：如果主要是为了提交一些数据，比如提交一些数据给后台保存，删除等（通常是一些写方法），无论是否有一定数据量均可使用post； </p>
+<p>3.以上没有严格划分，即使使用post提交请求来get一些数据也是可以的</p>
+
     
 
     
@@ -312,7 +364,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lifei-2019.github.io/vue1/" title="vue1" target="_blank">https://lifei-2019.github.io/vue1/</a>
+          <a href="https://lifei-2019.github.io/interview3/" title="interview3" target="_blank">https://lifei-2019.github.io/interview3/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -335,7 +387,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		
 		</ul>
@@ -402,7 +454,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/vue1/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/interview3/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -417,18 +469,18 @@
 
 <nav id="article-nav">
   
-    <a href="/chrome devtools/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/3d特效/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          chrome devtools
+          3d特效
         
       </div>
     </a>
   
   
-    <a href="/node1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Node.js简介</div>
+    <a href="/interview2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue框架篇</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -455,7 +507,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？"><span class="toc-number">1.</span> <span class="toc-text">1.提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器请求后发生的完整过程"><span class="toc-number">1.1.</span> <span class="toc-text">浏览器请求后发生的完整过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-post和get的区别，列举一下"><span class="toc-number">2.</span> <span class="toc-text">2.post和get的区别，列举一下</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#区别"><span class="toc-number">2.1.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#联系"><span class="toc-number">2.2.</span> <span class="toc-text">联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-number">2.3.</span> <span class="toc-text">用法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -650,15 +702,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,15 +718,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Eslint</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -694,7 +738,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -706,15 +762,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -722,11 +770,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">

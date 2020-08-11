@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="春风十里不如你">
 <meta property="og:description" content="两个月之前在项目中就开始使用 Eslint ，当时直接 copy 别人的 .eslintrc.js 文件，感觉好复杂，一直没吃透，中间去把 Eslint 官方文档看了数遍，依然无果。今天刚好没事，回过头来想整理一下 Eslint 的使用，突然发现变得好简单。总结下在这过程中走得弯路。  先要知道 Lint 是什么，Eslint 又是什么； 因为想要的太多（想把 Eslint 官方文档里每个字都记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-16T07:08:22.812Z">
+<meta property="og:updated_time" content="2020-08-10T02:45:14.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eslint入门">
 <meta name="twitter:description" content="两个月之前在项目中就开始使用 Eslint ，当时直接 copy 别人的 .eslintrc.js 文件，感觉好复杂，一直没吃透，中间去把 Eslint 官方文档看了数遍，依然无果。今天刚好没事，回过头来想整理一下 Eslint 的使用，突然发现变得好简单。总结下在这过程中走得弯路。  先要知道 Lint 是什么，Eslint 又是什么； 因为想要的太多（想把 Eslint 官方文档里每个字都记">
@@ -274,6 +274,8 @@
 </ul>
 </blockquote>
 <h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>学习完本教程希望对下面这个 <code>.eslintrc.js</code> 文件能够做到心里有数。</p>
+<a id="more"></a>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .eslintrc.js </span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="string">"extends"</span>: <span class="string">"airbnb"</span>,</span><br><span class="line">  <span class="string">"rules"</span>: &#123;</span><br><span class="line">    <span class="string">"semi"</span>: [<span class="number">2</span>, <span class="string">"never"</span>],</span><br><span class="line">    <span class="string">"no-console"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"comma-dangle"</span>: [<span class="number">2</span>, <span class="string">"always-multiline"</span>],</span><br><span class="line">    <span class="string">"max-len"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"react/jsx-first-prop-new-line"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"react/jsx-filename-extension"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"space-before-function-paren"</span>: [<span class="number">2</span>, <span class="string">"always"</span>],</span><br><span class="line">    <span class="string">"no-unused-expressions"</span>: [<span class="number">0</span>, &#123;</span><br><span class="line">      <span class="string">"allowShortCircuit"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">"allowTernary"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;],</span><br><span class="line">    <span class="string">"arrow-body-style"</span>: [<span class="number">0</span>, <span class="string">"never"</span>],</span><br><span class="line">    <span class="string">"func-names"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"prefer-const"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"no-extend-native"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"no-param-reassign"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"no-restricted-syntax"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"no-eval"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"no-continue"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"react/jsx-no-bind"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"no-unused-vars"</span>: [<span class="number">2</span>, &#123; <span class="string">"ignoreRestSiblings"</span>: <span class="literal">true</span> &#125;],</span><br><span class="line">    <span class="string">"no-underscore-dangle"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"global-require"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"import/no-unresolved"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"import/extensions"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"jsx-a11y/href-no-hash"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"react/no-array-index-key"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"react/require-default-props"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"react/forbid-prop-types"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"react/no-string-refs"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"react/no-find-dom-node"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"import/no-extraneous-dependencies"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"import/prefer-default-export"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"react/no-danger"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"jsx-a11y/no-static-element-interactions"</span>: <span class="number">0</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"parser"</span>: <span class="string">"babel-eslint"</span>,</span><br><span class="line">  <span class="string">"parserOptions"</span>: &#123;</span><br><span class="line">    <span class="string">"sourceType"</span>: <span class="string">"module"</span>,</span><br><span class="line">    <span class="string">"ecmaVersion"</span>: <span class="number">8</span>,</span><br><span class="line">    <span class="string">"ecmaFeatures"</span>: &#123;</span><br><span class="line">      <span class="string">"jsx"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">"experimentalObjectRestSpread"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"settings"</span>: &#123;</span><br><span class="line">    <span class="string">"import/resolver"</span>: <span class="string">"node"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h1 id="Eslint-是什么"><a href="#Eslint-是什么" class="headerlink" title="Eslint 是什么"></a>Eslint 是什么</h1><h2 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h2><p>每个程序员都有自己的编码习惯，最常见的莫过于：</p>
@@ -781,15 +783,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -801,15 +799,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Eslint</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -825,7 +819,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -837,15 +843,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,11 +851,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -18,10 +18,13 @@
 <meta property="og:site_name" content="春风十里不如你">
 <meta property="og:description" content="闭包找到的是同一地址中父级函数中对应变量最终的值">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-07T07:14:17.287Z">
+<meta property="og:image" content="https://lifei-2019.github.io/interview1/token.jpg">
+<meta property="og:image" content="https://lifei-2019.github.io/interview1/css%E9%80%89%E6%8B%A9%E5%99%A8.png">
+<meta property="og:updated_time" content="2020-08-11T06:07:28.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础篇">
 <meta name="twitter:description" content="闭包找到的是同一地址中父级函数中对应变量最终的值">
+<meta name="twitter:image" content="https://lifei-2019.github.io/interview1/token.jpg">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -245,7 +248,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">283字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -254,7 +257,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -288,7 +291,39 @@
 <p>将被理解为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">  console.log(1);</span><br><span class="line">&#125;</span><br><span class="line">foo(); // 1</span><br><span class="line">foo = function()&#123;</span><br><span class="line">  console.log(2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="token"><a href="#token" class="headerlink" title="token"></a>token</h1><h1 id="CSS选择器权重"><a href="#CSS选择器权重" class="headerlink" title="CSS选择器权重"></a>CSS选择器权重</h1>
+<h1 id="session-token-cokkies"><a href="#session-token-cokkies" class="headerlink" title="session,token,cokkies"></a>session,token,cokkies</h1><p><a href="https://zhuanlan.zhihu.com/p/63061864" target="_blank" rel="noopener">知乎高赞</a>的一篇文章，写的很不错。</p>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>session 从字面上讲，就是会话。这个就类似于你和一个人交谈，你怎么知道当前和你交谈的是张三而不是李四呢？对方肯定有某种特征（长相等）表明他就是张三。</p>
+<p>session 也是类似的道理，服务器要知道当前发请求给自己的是谁。为了做这种区分，服务器就要给每个客户端分配不同的“身份标识”，然后客户端每次向服务器发请求的时候，都带上这个“身份标识”，服务器就知道这个请求来自于谁了。至于客户端怎么保存这个“身份标识”，可以有很多种方式，对于浏览器客户端，大家都默认采用 cookie 的方式。</p>
+<p>服务器使用session把用户的信息临时保存在了服务器上，用户离开网站后session会被销毁。这种用户信息存储方式相对cookie来说更安全，可是session有一个缺陷：如果web服务器做了负载均衡，那么下一个操作请求到了另一台服务器的时候session会丢失。</p>
+<h2 id="tokens"><a href="#tokens" class="headerlink" title="tokens"></a>tokens</h2><p><img src="/interview1/token.jpg" alt></p>
+<br>
+
+<br>
+
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>cookie 是一个非常具体的东西，指的就是浏览器里面能永久存储的一种数据，仅仅是浏览器实现的一种数据存储功能。</p>
+<p>cookie由服务器生成，发送给浏览器，浏览器把cookie以kv形式保存到某个目录下的文本文件内，下一次请求同一网站时会把该cookie发送给服务器。由于cookie是存在客户端上的，所以浏览器加入了一些限制确保cookie不会被恶意使用，同时不会占据太多磁盘空间，所以每个域的cookie数量是有限的。</p>
+<br>
+
+<br>
+
+<h1 id="CSS选择器权重"><a href="#CSS选择器权重" class="headerlink" title="CSS选择器权重"></a>CSS选择器权重</h1><p><strong>!important</strong>                            Infinity(正无穷) </p>
+<p><strong>行间样式</strong>                             1000 </p>
+<p><strong>id</strong>                                        100 </p>
+<p><strong>class|属性|伪类</strong>                     10 </p>
+<p><strong>标签|伪元素</strong>                           1 </p>
+<p><strong>通用选择器(*) |子选择器(&gt;)|相邻选择器(+)|同胞选择器（~）</strong>                      0</p>
+<h2 id="权值可以相加"><a href="#权值可以相加" class="headerlink" title="权值可以相加"></a>权值可以相加</h2><p><img src="/interview1/css%E9%80%89%E6%8B%A9%E5%99%A8.png" alt></p>
+<p>span的权值为 = id选择器100+类选择器10+元素选择器1 = 111</p>
+<h2 id="权值相同时"><a href="#权值相同时" class="headerlink" title="权值相同时"></a>权值相同时</h2><p>由于HTML代码的执行特点时从上往下执行，因此在权值相同的情况下，<strong>后面的选择器会覆盖前面的选择器相同的属性</strong></p>
+<h2 id="权值不同时"><a href="#权值不同时" class="headerlink" title="权值不同时"></a>权值不同时</h2><p>两种选择器覆盖了同一属性，此时<strong>权重高的选择器生效</strong>。</p>
+<h2 id="权值跃迁"><a href="#权值跃迁" class="headerlink" title="权值跃迁"></a>权值跃迁</h2><p>​       权值跃迁讨论的问题是，当有11个元素选择器和1个类选择器同时选中同一元素时，哪个选择器的样式会生效。<br>​       </p>
+<p>​        结论是：权级高的选择器的样式会生效。</p>
+<br>
+
+<br>
+
+<p><strong>理解方式1</strong><br>       因为权值不能跃迁，也就意味着无论有多少个0级的选择器，生效的仍然是1级选择器，因   为<strong>选择器的权级无法跃迁</strong>。<br><strong>理解方式2</strong><br>       CSS里面的进制并不是10进制，而是256进制，所以10个低级选择器并不能等于1个高级选择器</p>
+
     
 
     
@@ -477,7 +512,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#闭包"><span class="toc-number">1.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量提升"><span class="toc-number">2.</span> <span class="toc-text">变量提升</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#token"><span class="toc-number">3.</span> <span class="toc-text">token</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS选择器权重"><span class="toc-number">4.</span> <span class="toc-text">CSS选择器权重</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#闭包"><span class="toc-number">1.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量提升"><span class="toc-number">2.</span> <span class="toc-text">变量提升</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#session-token-cokkies"><span class="toc-number">3.</span> <span class="toc-text">session,token,cokkies</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Session"><span class="toc-number">3.1.</span> <span class="toc-text">Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tokens"><span class="toc-number">3.2.</span> <span class="toc-text">tokens</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie"><span class="toc-number">3.3.</span> <span class="toc-text">Cookie</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS选择器权重"><span class="toc-number">4.</span> <span class="toc-text">CSS选择器权重</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#权值可以相加"><span class="toc-number">4.1.</span> <span class="toc-text">权值可以相加</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权值相同时"><span class="toc-number">4.2.</span> <span class="toc-text">权值相同时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权值不同时"><span class="toc-number">4.3.</span> <span class="toc-text">权值不同时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权值跃迁"><span class="toc-number">4.4.</span> <span class="toc-text">权值跃迁</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -672,15 +707,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -692,15 +723,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Eslint</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -716,7 +743,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -728,15 +767,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -744,11 +775,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="为什么会有路由元信息这个东西？ 我们在做网站登录验证的时候，可以使用到beforeEach 钩子函数进行验证操作，如下面代码 ，如果页面path为’/goodsList’，那么就让它跳转到登录页面，实现了验证登录。 123456router.beforeEach((to, from, next) =&amp;gt; &amp;#123;  if (to.path === &apos;/goodsList&apos;) &amp;#123;">
+  <meta name="description" content="为什么会有路由元信息这个东西？我们在做网站登录验证的时候，可以使用到beforeEach 钩子函数进行验证操作，如下面代码 ，如果页面path为’/goodsList’，那么就让它跳转到登录页面，实现了验证登录。">
 <meta name="keywords" content="前端,vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="终于搞明白了路由元信息是个啥了">
 <meta property="og:url" content="https://lifei-2019.github.io/vue-路由元信息/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="为什么会有路由元信息这个东西？ 我们在做网站登录验证的时候，可以使用到beforeEach 钩子函数进行验证操作，如下面代码 ，如果页面path为’/goodsList’，那么就让它跳转到登录页面，实现了验证登录。 123456router.beforeEach((to, from, next) =&amp;gt; &amp;#123;  if (to.path === &apos;/goodsList&apos;) &amp;#123;">
+<meta property="og:description" content="为什么会有路由元信息这个东西？我们在做网站登录验证的时候，可以使用到beforeEach 钩子函数进行验证操作，如下面代码 ，如果页面path为’/goodsList’，那么就让它跳转到登录页面，实现了验证登录。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-18T03:52:36.898Z">
+<meta property="og:updated_time" content="2020-08-10T02:47:24.315Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="终于搞明白了路由元信息是个啥了">
-<meta name="twitter:description" content="为什么会有路由元信息这个东西？ 我们在做网站登录验证的时候，可以使用到beforeEach 钩子函数进行验证操作，如下面代码 ，如果页面path为’/goodsList’，那么就让它跳转到登录页面，实现了验证登录。 123456router.beforeEach((to, from, next) =&amp;gt; &amp;#123;  if (to.path === &apos;/goodsList&apos;) &amp;#123;">
+<meta name="twitter:description" content="为什么会有路由元信息这个东西？我们在做网站登录验证的时候，可以使用到beforeEach 钩子函数进行验证操作，如下面代码 ，如果页面path为’/goodsList’，那么就让它跳转到登录页面，实现了验证登录。">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -266,8 +266,9 @@
 
   <div class="article-entry" itemprop="articleBody">
     
-    <p>为什么会有路由元信息这个东西？</p>
-<p>我们在做网站登录验证的时候，可以使用到beforeEach 钩子函数进行验证操作，如下面代码 ，如果页面path为’/goodsList’，那么就让它跳转到登录页面，实现了验证登录。</p>
+    <h1 id="为什么会有路由元信息这个东西？"><a href="#为什么会有路由元信息这个东西？" class="headerlink" title="为什么会有路由元信息这个东西？"></a>为什么会有路由元信息这个东西？</h1><p>我们在做网站登录验证的时候，可以使用到beforeEach 钩子函数进行验证操作，如下面代码 ，如果页面path为’/goodsList’，那么就让它跳转到登录页面，实现了验证登录。</p>
+<a id="more"></a>
+
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach(<span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (to.path === <span class="string">'/goodsList'</span>) &#123;</span><br><span class="line">    next(<span class="string">'/login'</span>)</span><br><span class="line">  &#125; <span class="keyword">else</span> </span><br><span class="line">    next()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <p>如果需要登录验证的网页多了怎么办？</p>
@@ -487,7 +488,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#为什么会有路由元信息这个东西？"><span class="toc-number">1.</span> <span class="toc-text">为什么会有路由元信息这个东西？</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -682,15 +683,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -702,15 +699,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Eslint</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,7 +719,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -738,15 +743,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -754,11 +751,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
