@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lifei-2019.github.io">
-  <title>前端概念 | 春风十里不如你</title>
+  <title>element-ui全部引入和按需引入 | 春风十里不如你</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="昨天看了知乎@陈龙的一篇文章，对前端有了一个系统化的认识。   首先，必须分清六个基本概念：Library，Toolkit，Framework，Design，Boilerplate，Scaffolding。在很多人（包括我）脑子里都只有框架这一个概念，啥都是框架。">
-<meta name="keywords" content="前端">
+  <meta name="description" content="UI组件–element-ui–全部引入和按需引入主要就是一句话, 如果用到的组件少, 要按需引入, 如果用到的组件很多,就全部引入, 因为按需引入全部的, 和全部引入效果一样 完整引入在 main.js 中写入以下内容： 1234567891011import Vue from &amp;apos;vue&amp;apos;;import ElementUI from &amp;apos;element-ui&amp;apos">
+<meta name="keywords" content="李飞，李飞_技术博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端概念">
-<meta property="og:url" content="https://lifei-2019.github.io/前端概念/index.html">
+<meta property="og:title" content="element-ui全部引入和按需引入">
+<meta property="og:url" content="https://lifei-2019.github.io/element-ui-1/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="昨天看了知乎@陈龙的一篇文章，对前端有了一个系统化的认识。   首先，必须分清六个基本概念：Library，Toolkit，Framework，Design，Boilerplate，Scaffolding。在很多人（包括我）脑子里都只有框架这一个概念，啥都是框架。">
+<meta property="og:description" content="UI组件–element-ui–全部引入和按需引入主要就是一句话, 如果用到的组件少, 要按需引入, 如果用到的组件很多,就全部引入, 因为按需引入全部的, 和全部引入效果一样 完整引入在 main.js 中写入以下内容： 1234567891011import Vue from &amp;apos;vue&amp;apos;;import ElementUI from &amp;apos;element-ui&amp;apos">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-09T09:06:56.695Z">
+<meta property="og:updated_time" content="2020-08-14T03:41:29.726Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端概念">
-<meta name="twitter:description" content="昨天看了知乎@陈龙的一篇文章，对前端有了一个系统化的认识。   首先，必须分清六个基本概念：Library，Toolkit，Framework，Design，Boilerplate，Scaffolding。在很多人（包括我）脑子里都只有框架这一个概念，啥都是框架。">
+<meta name="twitter:title" content="element-ui全部引入和按需引入">
+<meta name="twitter:description" content="UI组件–element-ui–全部引入和按需引入主要就是一句话, 如果用到的组件少, 要按需引入, 如果用到的组件很多,就全部引入, 因为按需引入全部的, 和全部引入效果一样 完整引入在 main.js 中写入以下内容： 1234567891011import Vue from &amp;apos;vue&amp;apos;;import ElementUI from &amp;apos;element-ui&amp;apos">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -212,14 +212,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-前端概念" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-element-ui-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      前端概念
+      element-ui全部引入和按需引入
     </h1>
   
 
@@ -231,8 +231,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/前端概念/" class="archive-article-date">
-        <time datetime="2019-11-08T06:38:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+<a href="/element-ui-1/" class="archive-article-date">
+        <time datetime="2020-08-14T03:34:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
 </a>
 
   
@@ -245,7 +245,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.4k字</span>
+      <span class="post-count">770字</span>
     </span>
   </span>
 
@@ -254,7 +254,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">5分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -266,50 +266,23 @@
 
   <div class="article-entry" itemprop="articleBody">
     
-    <p>昨天看了知乎<strong>@陈龙</strong>的一篇文章，对前端有了一个系统化的认识。</p>
-<br>
+    <h1 id="UI组件–element-ui–全部引入和按需引入"><a href="#UI组件–element-ui–全部引入和按需引入" class="headerlink" title="UI组件–element-ui–全部引入和按需引入"></a>UI组件–element-ui–全部引入和按需引入</h1><p>主要就是一句话, 如果用到的组件少, 要按需引入, 如果用到的组件很多,就全部引入, 因为按需引入全部的, 和全部引入效果一样</p>
+<h4 id="完整引入"><a href="#完整引入" class="headerlink" title="完整引入"></a>完整引入</h4><p>在 main.js 中写入以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import ElementUI from &apos;element-ui&apos;;</span><br><span class="line">import &apos;element-ui/lib/theme-chalk/index.css&apos;;</span><br><span class="line">import App from &apos;./App.vue&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(ElementUI);</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  render: h =&gt; h(App)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<p>首先，必须分清六个基本概念：<strong>Library，Toolkit，Framework，Design，Boilerplate，Scaffolding</strong>。在很多人（包括我）脑子里都只有框架这一个概念，啥都是框架。 <a id="more"></a></p>
-<br>
+<p>以上代码便完成了 Element 的引入。需要注意的是，样式文件需要单独引入, 如果自定义主题, 则引入自定义主题.</p>
+<h4 id="按需引入"><a href="#按需引入" class="headerlink" title="按需引入"></a>按需引入</h4><p>借助 <a href="https://github.com/QingWei-Li/babel-plugin-component" target="_blank" rel="noopener">babel-plugin-component</a>，我们可以只引入需要的组件，以达到减小项目体积的目的。</p>
+<p>首先，安装 babel-plugin-component：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-plugin-component -D</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line">yarn add babel-plugin-component --dev</span><br></pre></td></tr></table></figure>
 
-<br>
+<p>然后，将 .babel.config.js修改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [[&quot;es2015&quot;, &#123; &quot;modules&quot;: false &#125;]],</span><br><span class="line">  &quot;plugins&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;component&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;libraryName&quot;: &quot;element-ui&quot;,</span><br><span class="line">        &quot;styleLibraryName&quot;: &quot;theme-chalk&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">根据原来的模板文件, 我的改为了:</span><br><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [&quot;env&quot;, &#123;</span><br><span class="line">      &quot;modules&quot;: false,</span><br><span class="line">      &quot;targets&quot;: &#123;</span><br><span class="line">        &quot;browsers&quot;: [&quot;&gt; 1%&quot;, &quot;last 2 versions&quot;, &quot;not ie &lt;= 8&quot;]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;],</span><br><span class="line">    &quot;stage-2&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;plugins&quot;: [</span><br><span class="line">    &quot;transform-vue-jsx&quot;, &quot;transform-runtime&quot;,</span><br><span class="line">    [</span><br><span class="line">      &quot;component&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;libraryName&quot;: &quot;element-ui&quot;,</span><br><span class="line">        &quot;styleLibraryName&quot;: &quot;~theme&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>Library</strong>就是库，而且分为两类。</p>
-<p>一类是方法库，用来实现特定需求的一组API集合。最常见的就是jQuery，它是一系列操作DOM和AJAX的API组成的方法库。除了jQuery，还有早期的Prototype，Dojo，Mootools，后面这三个在当时也被称为三大前端工具库。</p>
-<p>操作Data的有UnderScore和Lodash，操作Event的有现在流行的RxJS，他们都是Library，在需要的时候，正确调用他们提供的方法就可以。</p>
-<p>一类是UI组件库，满足特定业务需要的高可复用的常见UI组件集合。例如Ant Design of React/Ant Design of Angular(NG-ZORRO)，Element UI，LayUI，EasyUI。早期的Yahoo UI，Extjs，jQuery UI。</p>
-<p><br><br></p>
-<p>Bootstrap是一个<strong>Toolkit</strong>(工具箱)，给你提供创建现代响应式页面所需要的工具，包含一套完整的响应式CSS类库，字体，同时还有一套很完整的UI组件。只是这些组件原生是用jQuery写的，不适用于现在主流的前端。所以产生了很多衍生UI库，例如Angular实现的ng-bootstrap和ngx-bootstrap，React实现的react-bootstrap，Vue实现的bootstrap-vue。</p>
-<p><br><br></p>
-<p><strong>Framework</strong>是框架，用来构建一个应用的主体结构。然后你在这个主体结构上添砖加瓦，实现自己的需求。Web服务器端的框架基本实现的都是MVC设计模式，你在Model、View、Controller层分别去添加代码。Web前端，Angular(以及它的前身Angularjs)实现的都是MVP模式，是Model、View、Presenter三层。老一辈的其他前端框架，例如Backbone、Ember，实现的是所谓MVVM。</p>
-<p>当前<strong>所谓</strong>的前端三大框架，只有Angular算作严格意义上的Framework，而且是一个<strong>Opinionated</strong> Framework，其他两个不算。</p>
-<p>Vue官网首页最大的字说：</p>
-<blockquote>
-<p>The Progressive<br>JavaScript Framework</p>
-</blockquote>
-<p>但是，在Guide页面说：</p>
-<blockquote>
-<p>Vue (pronounced /vjuː/, like <strong>view</strong>) is a <strong>progressive framework</strong> for building user interfaces.<br>The core <strong>library</strong> is focused on the view layer only, and is easy to pick up and integrate with other <strong>libraries</strong> or existing projects.</p>
-</blockquote>
-<p>所以，Vue(法文View的意思)本质上是一个解决View层的Library</p>
-<p>React官网就没这么遮遮掩掩了，首页最大的字：</p>
-<blockquote>
-<p>A JavaScript <strong>library</strong> for building user interfaces</p>
-</blockquote>
-<p>所以，Vue和React都是关注于View这一层的Library。也正因如此，用React或Vue搭建项目就还需要一系列其他周边库做补充支持。例如React本身没有实现路由导航，就需要react-router。等等，还有很多，俗称全家桶。</p>
-<p><br><br></p>
-<p><strong>Design</strong>是设计语言。当说到xxx Design的时候，前端应该经常听到Material Design和Ant Design，分别是Google和阿里的推出的两种前端UI设计语言。</p>
-<p>设计语言(或者说设计风格)，是指导UI设计需要遵循的一些约束。这些约束包括：色彩、布局、层次、交互反馈等等。就像我们说建筑，有哥特式的、中国古典式的、希腊式的。买衣服，我们知道韩版、英伦风格、波斯米亚风格。</p>
-<p>Design和具体实现是松耦合的，没有直接必然关联。规范只规定这种设计语言的风格是什么样子的，从来不指定具体实现，谁都可以实现。就是Specification和Implementation的关系。就好像中国古典建筑，古时候多用木材，现在用钢筋混凝土一样可以建造出同样的风格。就好像程序员喜欢的格子衫(一种风格)，可以用法兰绒的，也可以棉麻的。</p>
-<p>Material Design起初是指导Andoid界面的，但是也存在很多Web UI的实现，例如基于Bootstrap开源的有Bootstrap Material。</p>
-<p>Ant Design也是一样。只是最开始只有React的实现Ant Design of React。阿里团队后期发布了Angular的实现Ant Design of Angular(NG-ZORRO)。</p>
-<p><br><br></p>
-<p><strong>Boilerplate</strong>是模板、样板的意思。一般程序员很少了解这个概念，而是Library和Framework知道的多一些。上面说过了，当你用React开发的时候，React本身不能满足全部需求，就需要周边辅助的项目。如何把这些全家桶用最佳实践(Best Practice)的方式组合在一起？就需要有人给一个样板，Ant Design Pro就产生了。所以Ant Design是设计语言、Ant Design of React是遵循这门设计语言并且用React实现的UI组件库，Ant Design Pro就是模板。</p>
-<p><br><br></p>
-<p><strong>Scaffolding</strong>是脚手架工具。前端的脚手架工具一般都是用cli提供的，cli是(Command Line Interface的缩写)，不是Client的前三个字母。例如ng-cli, create-react-app, vue cli，以及用Yeoman(YO)做出来的许多generator。</p>
-<p>脚手架这个词看似陌生，但其实大家都见过。就是建筑工地大楼施工时候外面那一层钢管搭建的架子，还有很多绿色的网起到保护作用。<strong>Scaffolding的作用就是辅助你快速搭建项目。但是Scaffolding不是最终成果物的一部分</strong>！</p>
-<p>不管用了jQuery也好，用了Vue也好，用了Bootstrap也好，这些东西的代码都会成为你最终编译成果的一部分，而Scaffolding不会。所以大楼建成以后，外面的脚手架是要被拆掉的，不会和大楼一起交付给业主！</p>
+<p>接下来，如果你只希望引入部分组件，比如 Button 和 Select，那么需要在 main.js 中写入以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import &#123; Button, Select &#125; from &apos;element-ui&apos;;</span><br><span class="line">import App from &apos;./App.vue&apos;;</span><br><span class="line"></span><br><span class="line">Vue.component(Button.name, Button);</span><br><span class="line">Vue.component(Select.name, Select);</span><br><span class="line">/* 或写为</span><br><span class="line"> * Vue.use(Button)</span><br><span class="line"> * Vue.use(Select)</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  render: h =&gt; h(App)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
+<p>完整组件列表和引入方式（完整组件列表以 <a href="https://github.com/ElemeFE/element/blob/master/components.json" target="_blank" rel="noopener">components.json</a> 为准）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">  Pagination,</span><br><span class="line">  Dialog,</span><br><span class="line">  Autocomplete,</span><br><span class="line">  Dropdown,</span><br><span class="line">  DropdownMenu,</span><br><span class="line">  DropdownItem,</span><br><span class="line">  Menu,</span><br><span class="line">  Submenu,</span><br><span class="line">  MenuItem,</span><br><span class="line">  MenuItemGroup,</span><br><span class="line">  Input,</span><br><span class="line">  InputNumber,</span><br><span class="line">  Radio,</span><br><span class="line">  RadioGroup,</span><br><span class="line">  RadioButton,</span><br><span class="line">  Checkbox,</span><br><span class="line">  CheckboxButton,</span><br><span class="line">  CheckboxGroup,</span><br><span class="line">  Switch,</span><br><span class="line">  Select,</span><br><span class="line">  Option,</span><br><span class="line">  OptionGroup,</span><br><span class="line">  Button,</span><br><span class="line">  ButtonGroup,</span><br><span class="line">  Table,</span><br><span class="line">  TableColumn,</span><br><span class="line">  DatePicker,</span><br><span class="line">  TimeSelect,</span><br><span class="line">  TimePicker,</span><br><span class="line">  Popover,</span><br><span class="line">  Tooltip,</span><br><span class="line">  Breadcrumb,</span><br><span class="line">  BreadcrumbItem,</span><br><span class="line">  Form,</span><br><span class="line">  FormItem,</span><br><span class="line">  Tabs,</span><br><span class="line">  TabPane,</span><br><span class="line">  Tag,</span><br><span class="line">  Tree,</span><br><span class="line">  Alert,</span><br><span class="line">  Slider,</span><br><span class="line">  Icon,</span><br><span class="line">  Row,</span><br><span class="line">  Col,</span><br><span class="line">  Upload,</span><br><span class="line">  Progress,</span><br><span class="line">  Badge,</span><br><span class="line">  Card,</span><br><span class="line">  Rate,</span><br><span class="line">  Steps,</span><br><span class="line">  Step,</span><br><span class="line">  Carousel,</span><br><span class="line">  CarouselItem,</span><br><span class="line">  Collapse,</span><br><span class="line">  CollapseItem,</span><br><span class="line">  Cascader,</span><br><span class="line">  ColorPicker,</span><br><span class="line">  Transfer,</span><br><span class="line">  Container,</span><br><span class="line">  Header,</span><br><span class="line">  Aside,</span><br><span class="line">  Main,</span><br><span class="line">  Footer,</span><br><span class="line">  Loading,</span><br><span class="line">  MessageBox,</span><br><span class="line">  Message,</span><br><span class="line">  Notification</span><br><span class="line">&#125; from &apos;element-ui&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(Pagination);</span><br><span class="line">Vue.use(Dialog);</span><br><span class="line">Vue.use(Autocomplete);</span><br><span class="line">Vue.use(Dropdown);</span><br><span class="line">Vue.use(DropdownMenu);</span><br><span class="line">Vue.use(DropdownItem);</span><br><span class="line">Vue.use(Menu);</span><br><span class="line">Vue.use(Submenu);</span><br><span class="line">Vue.use(MenuItem);</span><br><span class="line">Vue.use(MenuItemGroup);</span><br><span class="line">Vue.use(Input);</span><br><span class="line">Vue.use(InputNumber);</span><br><span class="line">Vue.use(Radio);</span><br><span class="line">Vue.use(RadioGroup);</span><br><span class="line">Vue.use(RadioButton);</span><br><span class="line">Vue.use(Checkbox);</span><br><span class="line">Vue.use(CheckboxButton);</span><br><span class="line">Vue.use(CheckboxGroup);</span><br><span class="line">Vue.use(Switch);</span><br><span class="line">Vue.use(Select);</span><br><span class="line">Vue.use(Option);</span><br><span class="line">Vue.use(OptionGroup);</span><br><span class="line">Vue.use(Button);</span><br><span class="line">Vue.use(ButtonGroup);</span><br><span class="line">Vue.use(Table);</span><br><span class="line">Vue.use(TableColumn);</span><br><span class="line">Vue.use(DatePicker);</span><br><span class="line">Vue.use(TimeSelect);</span><br><span class="line">Vue.use(TimePicker);</span><br><span class="line">Vue.use(Popover);</span><br><span class="line">Vue.use(Tooltip);</span><br><span class="line">Vue.use(Breadcrumb);</span><br><span class="line">Vue.use(BreadcrumbItem);</span><br><span class="line">Vue.use(Form);</span><br><span class="line">Vue.use(FormItem);</span><br><span class="line">Vue.use(Tabs);</span><br><span class="line">Vue.use(TabPane);</span><br><span class="line">Vue.use(Tag);</span><br><span class="line">Vue.use(Tree);</span><br><span class="line">Vue.use(Alert);</span><br><span class="line">Vue.use(Slider);</span><br><span class="line">Vue.use(Icon);</span><br><span class="line">Vue.use(Row);</span><br><span class="line">Vue.use(Col);</span><br><span class="line">Vue.use(Upload);</span><br><span class="line">Vue.use(Progress);</span><br><span class="line">Vue.use(Badge);</span><br><span class="line">Vue.use(Card);</span><br><span class="line">Vue.use(Rate);</span><br><span class="line">Vue.use(Steps);</span><br><span class="line">Vue.use(Step);</span><br><span class="line">Vue.use(Carousel);</span><br><span class="line">Vue.use(CarouselItem);</span><br><span class="line">Vue.use(Collapse);</span><br><span class="line">Vue.use(CollapseItem);</span><br><span class="line">Vue.use(Cascader);</span><br><span class="line">Vue.use(ColorPicker);</span><br><span class="line">Vue.use(Transfer);</span><br><span class="line">Vue.use(Container);</span><br><span class="line">Vue.use(Header);</span><br><span class="line">Vue.use(Aside);</span><br><span class="line">Vue.use(Main);</span><br><span class="line">Vue.use(Footer);</span><br><span class="line"></span><br><span class="line">Vue.use(Loading.directive);</span><br><span class="line"></span><br><span class="line">Vue.prototype.$loading = Loading.service;</span><br><span class="line">Vue.prototype.$msgbox = MessageBox;</span><br><span class="line">Vue.prototype.$alert = MessageBox.alert;</span><br><span class="line">Vue.prototype.$confirm = MessageBox.confirm;</span><br><span class="line">Vue.prototype.$prompt = MessageBox.prompt;</span><br><span class="line">Vue.prototype.$notify = Notification;</span><br><span class="line">Vue.prototype.$message = Message;</span><br></pre></td></tr></table></figure>
     
 
     
@@ -355,7 +328,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lifei-2019.github.io/前端概念/" title="前端概念" target="_blank">https://lifei-2019.github.io/前端概念/</a>
+          <a href="https://lifei-2019.github.io/element-ui-1/" title="element-ui全部引入和按需引入" target="_blank">https://lifei-2019.github.io/element-ui-1/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -369,29 +342,7 @@
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
 
@@ -441,7 +392,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/前端概念/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/element-ui-1/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -456,18 +407,9 @@
 
 <nav id="article-nav">
   
-    <a href="/hexo2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          hexo中插入bilibili视频
-        
-      </div>
-    </a>
   
-  
-    <a href="/sentences/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Stay hungry,Stay foolish.【持续更新】</div>
+    <a href="/3d特效/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">3d特效</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -494,7 +436,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UI组件–element-ui–全部引入和按需引入"><span class="toc-number">1.</span> <span class="toc-text">UI组件–element-ui–全部引入和按需引入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#完整引入"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">完整引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按需引入"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">按需引入</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

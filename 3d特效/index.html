@@ -19,7 +19,8 @@
 <meta property="og:description" content="项目地址">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lifei-2019.github.io/3d特效/perspective.png">
-<meta property="og:updated_time" content="2020-08-11T03:04:00.315Z">
+<meta property="og:image" content="https://lifei-2019.github.io/3d特效/arc.png">
+<meta property="og:updated_time" content="2020-08-12T10:32:35.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3d特效">
 <meta name="twitter:description" content="项目地址">
@@ -87,7 +88,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数66
+		总文章数67
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -247,7 +248,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">198字</span>
+      <span class="post-count">283字</span>
     </span>
   </span>
 
@@ -276,24 +277,20 @@
 <h4 id="transform："><a href="#transform：" class="headerlink" title="transform："></a><strong>transform</strong>：</h4><p>translate平移 rotate旋转</p>
 <p>translateX(x px)        retateX(x deg)</p>
 <p>[transform-style:preserve-3d]意思是transform操作是对3D进行的</p>
-<p><strong>transfom-origin 调整旋转中心</strong></p>
-<p>x轴left center right </p>
+<h4 id="transfom-origin-调整旋转中心"><a href="#transfom-origin-调整旋转中心" class="headerlink" title="transfom-origin 调整旋转中心"></a><strong>transfom-origin 调整旋转中心</strong></h4><p>x轴left center right </p>
 <p>y轴 top center bottom</p>
 <p>z轴 length px</p>
-<p><strong>transition: &lt;过渡属性名称&gt;&lt;过渡时间&gt;&lt;过渡模式&gt;</strong></p>
-<p>-weebkit-transition                Safari、chrome</p>
+<h4 id="transition-lt-过渡属性名称-gt-lt-过渡时间-gt-lt-过渡模式-gt"><a href="#transition-lt-过渡属性名称-gt-lt-过渡时间-gt-lt-过渡模式-gt" class="headerlink" title="transition: &lt;过渡属性名称&gt;&lt;过渡时间&gt;&lt;过渡模式&gt;"></a><strong>transition: &lt;过渡属性名称&gt;&lt;过渡时间&gt;&lt;过渡模式&gt;</strong></h4><p>-weebkit-transition                Safari、chrome</p>
 <p>-moz-transition                      Firefox</p>
 <p>-o-transition                            Opera</p>
-<p><strong>过渡模式:</strong></p>
-<p>​    ease                  缓慢开始缓慢结束</p>
+<h5 id="过渡模式"><a href="#过渡模式" class="headerlink" title="过渡模式:"></a><strong>过渡模式:</strong></h5><p>​    ease                  缓慢开始缓慢结束</p>
 <p>​    linear                匀速</p>
 <p>​    ease-in             缓慢开始</p>
 <p>​    ease-out          缓慢结束</p>
 <p>​    ease-in-out</p>
 <p>颜色变色1s：</p>
 <p>-weebkit-transition: color 1s</p>
-<p><strong>Draw</strong></p>
-<p>context.moveTo(x,y)        一个点</p>
+<h2 id="Draw"><a href="#Draw" class="headerlink" title="Draw"></a><strong>Draw</strong></h2><p>context.moveTo(x,y)        一个点</p>
 <p>context.lineTo(x,y)            画线</p>
 <p>context.lineWidth             线条宽度</p>
 <p>context.strokeStyle          线条颜色</p>
@@ -302,6 +299,20 @@
 <p>context.fill()                       绘制填色块                    </p>
 <p>context.beginPath()         开始绘制一段</p>
 <p>context.closePath            结束</p>
+<h2 id="Draw-an-arc"><a href="#Draw-an-arc" class="headerlink" title="Draw an arc"></a>Draw an arc</h2><p>context.arc(centerx,centery,radius,startingAngle,endingAngle,anticlockwise=false)</p>
+<p>参数分别对应圆心x、y值、半径、开始弧度、结束弧度、顺/逆时针</p>
+<p><img src="/3d特效/arc.png" alt></p>
+<p>其中无论顺/逆时针，0.5π的位置不会变</p>
+<h2 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h2><p>setInterval(</p>
+<p>function(){</p>
+<p>render()</p>
+<p>uppdate()</p>
+<p>},50)</p>
+<p><br><br></p>
+<p><strong>context.clearRect (x,y,width,height)</strong></p>
+<p>对空间内的矩形图像刷新</p>
+<p><strong>context.canvas</strong></p>
+<p>找到上下文对应的画布</p>
 
     
 
@@ -457,6 +468,15 @@
 
 <nav id="article-nav">
   
+    <a href="/element-ui-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          element-ui全部引入和按需引入
+        
+      </div>
+    </a>
+  
   
     <a href="/interview3/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">interview3</div>
@@ -486,7 +506,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用CSS3创建简单的3D场景"><span class="toc-number">1.</span> <span class="toc-text">使用CSS3创建简单的3D场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#perspective；perspective-origin"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">perspective；perspective-origin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#transform："><span class="toc-number">1.0.0.2.</span> <span class="toc-text">transform：</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用CSS3创建简单的3D场景"><span class="toc-number">1.</span> <span class="toc-text">使用CSS3创建简单的3D场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#perspective；perspective-origin"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">perspective；perspective-origin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#transform："><span class="toc-number">1.0.0.2.</span> <span class="toc-text">transform：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#transfom-origin-调整旋转中心"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">transfom-origin 调整旋转中心</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#transition-lt-过渡属性名称-gt-lt-过渡时间-gt-lt-过渡模式-gt"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">transition: &lt;过渡属性名称&gt;&lt;过渡时间&gt;&lt;过渡模式&gt;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#过渡模式"><span class="toc-number">1.0.0.4.1.</span> <span class="toc-text">过渡模式:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Draw"><span class="toc-number">1.1.</span> <span class="toc-text">Draw</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Draw-an-arc"><span class="toc-number">1.2.</span> <span class="toc-text">Draw an arc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Animation"><span class="toc-number">1.3.</span> <span class="toc-text">Animation</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -681,6 +701,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
@@ -694,10 +718,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">3D</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -737,11 +757,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
