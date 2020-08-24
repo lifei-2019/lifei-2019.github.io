@@ -6,28 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lifei-2019.github.io">
-  <title>promise、async等 | 春风十里不如你</title>
+  <title>Typescript | 春风十里不如你</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="前言文本主要内容：  Promise（比较重要）  Symbol  async函数">
-<meta name="keywords" content="前端,ES6">
+  <meta name="description" content="Typescript简介TypeScript是由微软公司在2012年正式发布，现在也有8年的不断更新和维护了，TypeScript的成长速度是非常快的，现在已经变成了前端必会的一门技能。TypeScript其实就是JavaScript的超集，也就是说TypeScript是建立在JavaScript之上的，最后都会转变成JavaScript。这就好比漫威里的钢铁侠，没穿装甲之前，他实力一般，虽然聪明">
+<meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="promise、async等">
-<meta property="og:url" content="https://lifei-2019.github.io/ES6-5/index.html">
+<meta property="og:title" content="Typescript">
+<meta property="og:url" content="https://lifei-2019.github.io/Typescript/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="前言文本主要内容：  Promise（比较重要）  Symbol  async函数">
+<meta property="og:description" content="Typescript简介TypeScript是由微软公司在2012年正式发布，现在也有8年的不断更新和维护了，TypeScript的成长速度是非常快的，现在已经变成了前端必会的一门技能。TypeScript其实就是JavaScript的超集，也就是说TypeScript是建立在JavaScript之上的，最后都会转变成JavaScript。这就好比漫威里的钢铁侠，没穿装甲之前，他实力一般，虽然聪明">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.smyhvae.com/20180317_1134.png">
-<meta property="og:image" content="http://img.smyhvae.com/20180317_1134.png">
-<meta property="og:image" content="http://img.smyhvae.com/20180317_1134.png">
-<meta property="og:image" content="http://img.smyhvae.com/20180317_1134.png">
-<meta property="og:image" content="http://img.smyhvae.com/20180317_1134.png">
-<meta property="og:updated_time" content="2020-05-17T12:48:15.610Z">
+<meta property="og:image" content="https://lifei-2019.github.io/Typescript/demo2.png">
+<meta property="og:updated_time" content="2020-08-24T07:59:18.670Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="promise、async等">
-<meta name="twitter:description" content="前言文本主要内容：  Promise（比较重要）  Symbol  async函数">
-<meta name="twitter:image" content="http://img.smyhvae.com/20180317_1134.png">
+<meta name="twitter:title" content="Typescript">
+<meta name="twitter:description" content="Typescript简介TypeScript是由微软公司在2012年正式发布，现在也有8年的不断更新和维护了，TypeScript的成长速度是非常快的，现在已经变成了前端必会的一门技能。TypeScript其实就是JavaScript的超集，也就是说TypeScript是建立在JavaScript之上的，最后都会转变成JavaScript。这就好比漫威里的钢铁侠，没穿装甲之前，他实力一般，虽然聪明">
+<meta name="twitter:image" content="https://lifei-2019.github.io/Typescript/demo2.png">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -218,14 +214,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ES6-5" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Typescript" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      promise、async等
+      Typescript
     </h1>
   
 
@@ -237,8 +233,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/ES6-5/" class="archive-article-date">
-        <time datetime="2020-05-15T15:36:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
+<a href="/Typescript/" class="archive-article-date">
+        <time datetime="2020-08-23T01:53:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-23</time>
 </a>
 
   
@@ -251,7 +247,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.9k字</span>
+      <span class="post-count">7.3k字</span>
     </span>
   </span>
 
@@ -260,7 +256,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">7分</span>
+      <span class="post-count">27分</span>
     </span>
   </span>
 </div>
@@ -272,108 +268,272 @@
 
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>文本主要内容：</p>
+    <h1 id="Typescript简介"><a href="#Typescript简介" class="headerlink" title="Typescript简介"></a>Typescript简介</h1><p>TypeScript是由微软公司在2012年正式发布，现在也有8年的不断更新和维护了，TypeScript的成长速度是非常快的，现在已经变成了前端必会的一门技能。TypeScript其实就是JavaScript的超集，也就是说TypeScript是建立在JavaScript之上的，最后都会转变成JavaScript。这就好比漫威里的钢铁侠，没穿装甲之前，他实力一般，虽然聪明有钱，但还是接近人类。但是有了装甲，他就厉害太多了，甚至可以和神干一架。</p>
+<a id="more"></a>
+
+<h1 id="TypeScript开发环境搭建"><a href="#TypeScript开发环境搭建" class="headerlink" title="TypeScript开发环境搭建"></a>TypeScript开发环境搭建</h1><p>如果你想使用TypeScript来编写代码，你需要先安装一下它的开发环境，这并不复杂。</p>
+<h2 id="1-安装Node的运行环境"><a href="#1-安装Node的运行环境" class="headerlink" title="1.安装Node的运行环境"></a><strong>1.安装Node的运行环境</strong></h2><p>你可以到<code>Node.js</code>官网去下载Node进行安装(<a href="https://node.js.org/" target="_blank" rel="noopener">https://node.js.org</a>)，建议你下载<code>LTS</code>版本,也就是长期支持版本。安装的过程我就不演示了，这个过程就和安装QQ一样，没有任何难度。</p>
+<p>如果你已经安装了，可以打开命令行工具，然后使用<code>node -v</code>命令查看安装的版本，但是一般还有一个命令需要检测一下，就是<code>npm -v</code>,如果两个命令都可以输出版本号，说明你的Node安装已经没有任何问题了。</p>
+<h2 id="2-全局安装TypeScript"><a href="#2-全局安装TypeScript" class="headerlink" title="2.全局安装TypeScript"></a><strong>2.全局安装TypeScript</strong></h2><p>你要使用TypeScript先要在你的系统中全局安装一下<code>TypeScript</code>，这里你可以直接在VSCode中进行安装，安装命令可以使用npm也可以使用yarn</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install typescript -g</span><br><span class="line">yarn global add typescript</span><br></pre></td></tr></table></figure>
+
+<p>这两个你使用那个都是可以的，根据喜好自行选择，我在视频中使用的<code>npm</code>进行安装。</p>
+<h2 id="3-建立项目目录和编译TS文件"><a href="#3-建立项目目录和编译TS文件" class="headerlink" title="3.建立项目目录和编译TS文件"></a><strong>3.建立项目目录和编译TS文件</strong></h2><p>在<code>E盘</code>(当然你可以在你喜欢的任何一个地方安装)，新建一个目录，我这里起的目录名字叫做<code>TypeScriptDemo</code>，然后把这个文件在VSCode中打开。 我在视频里用了命令行的形式建立，直接使用<code>ctrl+r</code>打开运行，然后在运行的文本框里输入<code>cmd</code>，回车后，打开命令行工具，在命令行中输入下面的命令。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e:</span><br><span class="line">mkdir TypeScriptDemo</span><br></pre></td></tr></table></figure>
+
+<p>完成后，打开E盘，打开VSCode，把新建立的文件夹拖入到VSCode当中，新建一个demo1.ts`文件，写入下面代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsfei</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="keyword">let</span> web: string=<span class="string">"Hello World"</span></span><br><span class="line">   <span class="built_in">console</span>.log(web)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">jsfei()</span><br></pre></td></tr></table></figure>
+
+<p>这时候你使用<code>node demo1.ts</code>是执行不成功的，因为Node不能直接运行<code>TypeScript</code>文件，需要用<code>tsc demo1.ts</code>转换一下，转换完成后<code>typeScript</code>代码被编译成了<code>javaScript</code>代码,新生成一个<code>demo1.js</code>的文件，这时候你在命令行输入<code>node demo1.js</code>,在终端里就可以顺利的输出<code>jsfei</code>的字符了。</p>
+<h2 id="4-ts-node的安装和使用"><a href="#4-ts-node的安装和使用" class="headerlink" title="4.ts-node的安装和使用"></a><strong>4.ts-node的安装和使用</strong></h2><p>但是这样操作的效率实在是太低了，你可以使用<code>ts-node</code>插件来解决这个问题，有了这个插件，我们就不用再编译了，而使用<code>ts-node</code>就可以直接看到编写结果。</p>
+<p>使用<code>npm</code>命令来全局安装，直接在命令行输入下面的命令：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g ts-node</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，就可以在命令中直接输入如下命令，来查看结果了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ts-node Demo1.ts</span><br></pre></td></tr></table></figure>
+
+<h1 id="TypeScript的静态类型"><a href="#TypeScript的静态类型" class="headerlink" title="TypeScript的静态类型"></a>TypeScript的静态类型</h1><p>TypeScript的一个最主要特点就是可以定义静态类型，英文是Static Typing。那到底是什么意思那？太复杂的概念性东西这里就不讲了，你可以简单的理解“静态类型”为，就是你一旦定义了，就不可以再改变了。比如你是男人就是男人，一辈子都要作男人；是女人就是女人，一辈子都是女人。这个事不可以改变！呃….好像现在也可以随便变来变去啊，这里说的是正常情况。但是它还有一些特性，这个并不像表面的那么简单。现在我们就来学习。</p>
+<h2 id="如何定义静态类型"><a href="#如何定义静态类型" class="headerlink" title="如何定义静态类型"></a>如何定义静态类型</h2><p>建立一个新的<code>demo2.ts</code>文件，然后写下这段代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> count : number = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这就是最简单的定义一个数字类型的<code>count</code>的变量，这里的<code>: number</code>就是定义了一个静态类型。这样定义后<code>count</code>这个变量在程序中就永远都是数字类型了，不可以改变了。比如我们这时候给<code>count</code>复制一个字符串，它就报错了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//错误代码</span></span><br><span class="line"><span class="keyword">const</span> count : number = <span class="number">1</span>;</span><br><span class="line">count = <span class="string">'jsfei'</span></span><br></pre></td></tr></table></figure>
+
+<p>但这只是最简单的理解，再往深一层次理解，你会发现这时候的<code>count</code>变量,可以使用<code>number</code>类型上所有的属性和方法。我们可以通过在<code>count</code>后边打上一个<code>.</code>看出这个特性，并且编辑器会给你非常好的提示。这也是为什么我喜欢用<code>VScode</code>编辑器的一个原因。</p>
+<p><img src="/Typescript/demo2.png" alt></p>
+<h2 id="自定义静态类型"><a href="#自定义静态类型" class="headerlink" title="自定义静态类型"></a>自定义静态类型</h2><p>你还可以自己去定义一个静态类型，比如现在你定义一个<code>小姐姐</code>的类型，然后在声明变量的时候，就可以使用这个静态类型了，看下面的代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">interface XiaoJieJie &#123;</span><br><span class="line">    uname: string ,</span><br><span class="line">    age:number</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span>  xiaohong : XiaoJieJie =&#123;</span><br><span class="line">    uname: <span class="string">'小红'</span>,</span><br><span class="line">    age: <span class="number">18</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这时候你如果声明变量，跟自定义不一样，<code>VSCode</code>直接就会报错。需要注意的是，这时候<code>xiaohong</code>变量也具有<code>uname</code>和<code>age</code>属性了。</p>
+<p>这个地方你需要记住的是，如果使用了静态类型，不仅意味着变量的类型不可以改变，还意味着类型的属性和方法也跟着确定了。这个特点就大大提高了程序的健壮性，并且编辑器这时候也会给你很好的语法提示，加快了你的开发效率。</p>
+<p>随着你不断的深入学习，你会对这两个优点有更深的理解。</p>
+<h1 id="TypeScript基础静态类型和对象类型"><a href="#TypeScript基础静态类型和对象类型" class="headerlink" title="TypeScript基础静态类型和对象类型"></a>TypeScript基础静态类型和对象类型</h1><p>在TypeScript静态类型分为两种，一种是基础静态类型，一种是对象类型，这两种都经常使用，非常重要，我们先来看一下什么是基础静态类型。</p>
+<h2 id="基础静态类型"><a href="#基础静态类型" class="headerlink" title="基础静态类型"></a>基础静态类型</h2><p>基础静态类型非常简单，只要在声明变量的后边加一个<code>:</code>号，然后加上对应的类型哦。比如下面的代码，就是声明了一个数字类型的变量，叫做<code>count</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> count : number = <span class="number">918</span>;</span><br><span class="line"><span class="keyword">const</span> myName ：string = <span class="string">'jsfei'</span></span><br></pre></td></tr></table></figure>
+
+<p>类似这样常用的基础类型还有，我这里就举几个最常用的哦,<code>null</code>,<code>undefinde</code>,<code>symbol</code>,<code>boolean</code>，<code>void</code>这些都是最常用的基础数据类型，至于例子，我这里就不详细的写了，后面碰到，我们再继续讲解。</p>
+<h2 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h2><p>我们先来看一个例子，通过例子有经验的小伙伴就知道个大概了，然后我们再来讲解。新建一个文件<code>demo3.ts</code>（你可以跟我不一样）,然后写下如下代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xiaoJieJie:&#123;</span><br><span class="line">    name:string,</span><br><span class="line">    age:number</span><br><span class="line">&#125; = &#123;</span><br><span class="line">    name:<span class="string">'大脚'</span>,</span><br><span class="line">    age:<span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(xiaoJieJie.name)</span><br></pre></td></tr></table></figure>
+
+<p>写完后，我们在<code>terminal</code>（终端）中输入<code>ts-node demo3.ts</code>，可以看到结果输出了<code>大脚</code>。这就是一个经典的对象类型，也是最简单的对象类型。对象类型也可以是数组，比如现在我们需要很多小姐姐，我们就可以这样写。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xiaoJieJies : <span class="built_in">String</span> [] = [<span class="string">'谢大脚'</span>,<span class="string">'刘英'</span>,<span class="string">'小红'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>这时候的意思是，变量<code>xiaoJieJies</code>必须是一个数组，数组里的内容必须是字符串。你可以试着把字符串改为数字，<code>VSCode</code>会直接给我们报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xiaoJieJies : <span class="built_in">String</span> [] = [<span class="string">'谢大脚'</span>,<span class="string">'刘英'</span>,<span class="number">123</span>]</span><br></pre></td></tr></table></figure>
+
+<p>现在都讲究面向对象编程，我这面向对象编程这么多年了，也没再多编出来一个。我们再来看看下面的代码。这个代码就是用类的形式，来定义变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;&#125;</span><br><span class="line"><span class="keyword">const</span> dajiao : Person = <span class="keyword">new</span> Person()</span><br></pre></td></tr></table></figure>
+
+<p>这个意思就是<code>dajiao</code>必须是一个<code>Person</code>类对应的对象才可以。我们还可以定义一个函数类型，并确定返回值。代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jianXiaoJieJie : <span class="function"><span class="params">()</span>=&gt;</span> string =<span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="keyword">return</span> <span class="string">'大脚'</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那我们现在总结一下对象类型可以有几种形式：</p>
 <ul>
-<li><p>Promise（比较重要）</p>
-</li>
-<li><p>Symbol</p>
-</li>
-<li><p>async函数<a id="more"></a></p>
-</li>
+<li>对象类型</li>
+<li>数组类型</li>
+<li>类类型</li>
+<li>函数类型</li>
 </ul>
-<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Promise对象: 代表了未来某个将要发生的事件(通常是一个异步操作)。</p>
-<p>ES6中的promise对象, 可以<strong>将异步操作以同步的流程表达出来，</strong>很好地解决了<strong>回调地狱</strong>的问题（避免了层层嵌套的回调函数）。在使用ES5的时候，在多层嵌套回调时，写完的代码层次过多，很难进行维护和二次开发。</p>
-<h3 id="回调地狱的举例"><a href="#回调地狱的举例" class="headerlink" title="回调地狱的举例"></a>回调地狱的举例</h3><p>假设买菜、做饭、洗碗都是异步的。</p>
-<p>现在的流程是：买菜成功之后，才能开始做饭。做饭成功后，才能开始洗碗。这里面就涉及到了回调的嵌套。</p>
-<p>ES6的Promise是一个构造函数, 用来生成promise实例。</p>
-<h3 id="promise对象的3个状态"><a href="#promise对象的3个状态" class="headerlink" title="promise对象的3个状态"></a>promise对象的3个状态</h3><ul>
-<li><p>初始化状态（等待状态）：pending</p>
-</li>
-<li><p>成功状态：fullfilled</p>
-</li>
-<li><p>失败状态：rejected</p>
-</li>
+<p>这几种形式我们在<code>TypeScript</code>里叫做对象类型。</p>
+<h1 id="TypeScript中的类型注释和类型推断"><a href="#TypeScript中的类型注释和类型推断" class="headerlink" title="TypeScript中的类型注释和类型推断"></a>TypeScript中的类型注释和类型推断</h1><p>TypeScript中的两个基本概念：<code>类型注解</code>和<code>类型推断</code>，这两个概念在我们编写TypeScript代码时会一直使用(重点)，但很多教程都没有讲解，不过在官方文档中有比较好的解释。你现在可能还不能完全理解我说的这两个概念，但是你看完文章后就会有很直观的了解啦。</p>
+<h2 id="type-annotation-类型注解"><a href="#type-annotation-类型注解" class="headerlink" title="type annotation 类型注解"></a>type annotation 类型注解</h2><p>这个概念我们在前三节课中一直使用，只是我没明确这个概念和关系，所以你会觉的很陌生。这就好比，你身边有一个特别漂亮的姑娘，她一直很喜欢你，你也很喜欢她，但窗户纸一直没捅破，直到有一天你们喝多后，去了如家酒店（谈了谈心），你们的关系就明确了。</p>
+<p>学程序并没有这么复杂，我们直接点，新建一个文件<code>demo4.ts</code> ,然后看代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> count : number; </span><br><span class="line">count = <span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<p>这段代码就是类型注解，意思是显示的告诉代码，我们的<code>count</code>变量就是一个数字类型，这就叫做<code>类型注解</code>。是不是一下就明白了，其实程序这东西就这么简单，真正复杂的是人。</p>
+<h2 id="type-inferrence-类型推断"><a href="#type-inferrence-类型推断" class="headerlink" title="type inferrence 类型推断"></a>type inferrence 类型推断</h2><p>当你明白了<code>类型注解</code>的概念之后，再学类型推断就更简单了，先来看一段代码。还是在<code>Demo4.ts</code>文件中写入下面的代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> countInference = <span class="number">123</span></span><br></pre></td></tr></table></figure>
+
+<p>这时候我并没有显示的告诉你变量<code>countInference</code>是一个数字类型，但是如果你把鼠标放到变量上时，你会发现TypeScript自动把变量注释为了<code>number</code>（数字）类型，也就是说它是有某种推断能力的，通过你的代码TS会自动的去尝试分析变量的类型。这个就彷佛是人的情商比较高，还没等女生表白那，你就已经看出她的心思。</p>
+<h2 id="工作使用问题（潜规则）"><a href="#工作使用问题（潜规则）" class="headerlink" title="工作使用问题（潜规则）"></a>工作使用问题（潜规则）</h2><ul>
+<li>如果 <code>TS</code> 能够自动分析变量类型， 我们就什么也不需要做了</li>
+<li>如果 <code>TS</code> 无法分析变量类型的话， 我们就需要使用类型注解</li>
 </ul>
-<h3 id="使用promise的基本步骤"><a href="#使用promise的基本步骤" class="headerlink" title="使用promise的基本步骤"></a>使用promise的基本步骤</h3><p>（1）创建promise对象</p>
-<p>（2）调用promise的<strong>回调函数</strong>then()</p>
-<p>代码格式如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//进来之后，状态为pending</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'111'</span>);  <span class="comment">//这一行代码是同步的</span></span><br><span class="line">    <span class="comment">//开始执行异步操作（这里开始，写异步的代码，比如ajax请求 or 开启定时器）</span></span><br><span class="line">    <span class="keyword">if</span> (异步的ajax请求成功) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'333'</span>);</span><br><span class="line">        resolve();<span class="comment">//如果请求成功了，请写resolve()，此时，promise的状态会被自动修改为fullfilled</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject();<span class="comment">//如果请求失败了，请写reject()，此时，promise的状态会被自动修改为rejected</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'222'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用promise的then()</span></span><br><span class="line">promise.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">//如果promise的状态为fullfilled，则执行这里的代码</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'成功了'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    , () =&gt; &#123;</span><br><span class="line">        <span class="comment">//如果promise的状态为rejected，则执行这里的代码</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'失败了'</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>先来看一个不用写类型注解的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> one = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> two = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">const</span> three = one + two;</span><br></pre></td></tr></table></figure>
 
-<p>代码解释：</p>
-<p>（1）当new Promise()执行之后，promise对象的状态会被初始化为<code>pending</code>，这个状态是初始化状态。<code>new Promise()</code>这行代码，括号里的内容是同步执行的。括号里定义一个function，function有两个参数：resolve和reject。如下：</p>
-<ul>
-<li><p>如果请求成功了，请写resolve()，此时，promise的状态会被自动修改为fullfilled。</p>
-</li>
-<li><p>如果请求失败了，请写reject()，此时，promise的状态会被自动修改为rejected</p>
-</li>
-</ul>
-<p>（2）promise.then()方法，括号里面有两个参数，分别代表两个函数 function1 和 function2：</p>
-<ul>
-<li><p>如果promise的状态为fullfilled（意思是：如果请求成功），则执行function1里的内容</p>
-</li>
-<li><p>如果promise的状态为rejected（意思是，如果请求失败），则执行function2里的内容</p>
-</li>
-</ul>
-<p>另外，resolve()和reject()这两个方法，是可以给promise.then()传递参数的。如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//进来之后，状态为pending</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'111'</span>);  <span class="comment">//这行代码是同步的</span></span><br><span class="line">    <span class="comment">//开始执行异步操作（这里开始，写异步的代码，比如ajax请求 or 开启定时器）</span></span><br><span class="line">    <span class="keyword">if</span> (异步的ajax请求成功) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'333'</span>);</span><br><span class="line">        resolve(<span class="string">'haha'</span>);<span class="comment">//如果请求成功了，请写resolve()，此时，promise的状态会被自动修改为fullfilled</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(<span class="string">'555'</span>);<span class="comment">//如果请求失败了，请写reject()，此时，promise的状态会被自动修改为rejected</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'222'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用promise的then()</span></span><br><span class="line">promise.then(<span class="function">(<span class="params">successMsg</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">//如果promise的状态为fullfilled，则执行这里的代码</span></span><br><span class="line">        <span class="built_in">console</span>.log(successMsg, <span class="string">'成功了'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    , (errorMsg) =&gt; &#123;</span><br><span class="line">        <span class="comment">//如果promise的状态为rejected，则执行这里的代码</span></span><br><span class="line">        <span class="built_in">console</span>.log(errorMsg, <span class="string">'失败了'</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>再来看一个用写类型注解的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTotal</span>(<span class="params">one , two</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> one + two</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> total = getTotal(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
-<h3 id="ajax请求的举例（涉及到嵌套的回调）"><a href="#ajax请求的举例（涉及到嵌套的回调）" class="headerlink" title="ajax请求的举例（涉及到嵌套的回调）"></a>ajax请求的举例（涉及到嵌套的回调）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个请求news的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNews</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//创建一个promise对象</span></span><br><span class="line">    <span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">//初始化promise状态为pending</span></span><br><span class="line">        <span class="comment">//启动异步任务</span></span><br><span class="line">        <span class="keyword">let</span> request = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">        request.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (request.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (request.status === <span class="number">200</span>) &#123;</span><br><span class="line">                    <span class="keyword">let</span> news = request.response;</span><br><span class="line">                    resolve(news);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    reject(<span class="string">'请求失败了。。。'</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        request.responseType = <span class="string">'json'</span>;<span class="comment">//设置返回的数据类型</span></span><br><span class="line">        request.open(<span class="string">"GET"</span>, url);<span class="comment">//规定请求的方法，创建链接</span></span><br><span class="line">        request.send();<span class="comment">//发送</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> promise;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getNews(<span class="string">'http://localhost:3000/news?id=2'</span>)</span><br><span class="line">    .then(<span class="function">(<span class="params">news</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(news);</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="built_in">JSON</span>.stringify(news));</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'http://localhost:3000'</span> + news.commentsUrl);</span><br><span class="line">        <span class="keyword">return</span> getNews(<span class="string">'http://localhost:3000'</span> + news.commentsUrl);</span><br><span class="line">    &#125;, (error) =&gt; &#123;</span><br><span class="line">        alert(error);</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function">(<span class="params">comments</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(comments);</span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">'&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;'</span> + <span class="built_in">JSON</span>.stringify(comments));</span><br><span class="line">    &#125;, (error) =&gt; &#123;</span><br><span class="line">        alert(error);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<p>这种形式，就需要用到类型注释了，因为这里的<code>one</code>和<code>two</code>会显示为<code>any</code>类型。这时候如果你传字符串，你的业务逻辑就是错误的，所以你必须加一个<code>类型注解</code>，把上面的代码写成下面的样子。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTotal</span>(<span class="params">one : number, two :number</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> one + two</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> total = getTotal(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
-<h2 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>背景：ES5中对象的属性名都是字符串，容易造成重名，污染环境。</p>
-<p><strong>概念</strong>：ES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p>
-<p><strong>特点：</strong></p>
-<ul>
-<li><p>Symbol属性对应的值是唯一的，解决<strong>命名冲突问题</strong></p>
-</li>
-<li><p>Symbol值不能与其他数据进行计算，包括同字符串拼串</p>
-</li>
-<li><p>for in、for of 遍历时不会遍历Symbol属性。</p>
-</li>
-</ul>
-<h3 id="创建Symbol属性值"><a href="#创建Symbol属性值" class="headerlink" title="创建Symbol属性值"></a>创建Symbol属性值</h3><p>Symbol是函数，但并不是构造函数。创建一个Symbol数据类型：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> mySymbol);  <span class="comment">//打印结果：symbol</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol);         <span class="comment">//打印结果：Symbol()</span></span><br></pre></td></tr></table></figure>
+<p>这里有的一个问题是，为什么<code>total</code>这个变量不需要加类型注解，因为当<code>one</code>和<code>two</code>两个变量加上注解后，TypeScript就可以自动通过类型推断，分析出变量的类型。</p>
+<p>当然TypeScript也可以推断出对象中属性的类型，比如现在写一个小姐姐的对象，然后里边有两个属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> XiaoJieJie = &#123;</span><br><span class="line">    name:<span class="string">'刘英'</span>,</span><br><span class="line">    age:<span class="number">18</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>打印结果：</p>
-<p><img src="http://img.smyhvae.com/20180317_1134.png" alt></p>
-<p>下面来讲一下Symbol的使用。</p>
-<h3 id="1、将Symbol作为对象的属性值"><a href="#1、将Symbol作为对象的属性值" class="headerlink" title="1、将Symbol作为对象的属性值"></a>1、将Symbol作为对象的属性值</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'smyhvae'</span>,</span><br><span class="line">    age: <span class="number">26</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//obj.mySymbol = 'male'; //错误：不能用 . 这个符号给对象添加 Symbol 属性。</span></span><br><span class="line">obj[mySymbol] = <span class="string">'hello'</span>;    <span class="comment">//正确：通过**属性选择器**给对象添加 Symbol 属性。后面的属性值随便写。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure>
+<p>写完后你把鼠标放在<code>XiaoJieJie</code>对象上面，就会提示出他里边的属性，这表明TypeScript也分析出了对象的属性的类型。</p>
+<p>在写TypeScript代码的一个重要宗旨就是每个变量，每个对象的属性类型都应该是固定的，如果你推断就让它推断，推断不出来的时候你要进行注释。</p>
+<h1 id="TypeScript函数参数和返回类型定义"><a href="#TypeScript函数参数和返回类型定义" class="headerlink" title="TypeScript函数参数和返回类型定义"></a>TypeScript函数参数和返回类型定义</h1><p>这节主要学习一下函数的参数类型定义和返回值的定义，学完这节内容后，你会对函数的参数和返回值类型定义都有通透的了解。</p>
+<h2 id="简单类型定义"><a href="#简单类型定义" class="headerlink" title="简单类型定义"></a>简单类型定义</h2><p>上节课我们写了一个<code>getTotal</code>的函数，并且对传入的参数作了定义，我们再复习一遍。</p>
+<p>新建一个文件<code>demo5.ts</code>,然后写入代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTotal</span>(<span class="params">one : number, two :number</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> one + two</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> total = getTotal(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
-<p>上面的代码中，我们尝试给obj添加一个Symbol类型的属性值，但是添加的时候，不能采用<code>.</code>这个符号，而是应该用<code>属性选择器</code>的方式。打印结果：</p>
-<p><img src="http://img.smyhvae.com/20180317_1134.png" alt></p>
-<p>现在我们用for in尝试对上面的obj进行遍历：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mySymbol = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'smyhvae'</span>,</span><br><span class="line">    age: <span class="number">26</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj[mySymbol] = <span class="string">'hello'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历obj</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这时候我们写的代码其实是有一个小坑的，就是我们并没有定义<code>getTotal</code>的返回值类型，虽然<code>TypeScript</code>可以自己推断出返回值是<code>number</code>类型。 但是如果这时候我们的代码写错了，比如写程了下面这个样子。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTotal</span>(<span class="params">one : number, two :number</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> one + two+ <span class="string">''</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> total = getTotal(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
-<p>打印结果：</p>
-<p><img src="http://img.smyhvae.com/20180317_1134.png" alt></p>
-<p>从打印结果中可以看到：for in、for of 遍历时不会遍历Symbol属性。</p>
-<h3 id="创建Symbol属性值时，传参作为标识"><a href="#创建Symbol属性值时，传参作为标识" class="headerlink" title="创建Symbol属性值时，传参作为标识"></a>创建Symbol属性值时，传参作为标识</h3><p>如果我通过 Symbol()函数创建了两个值，这两个值是不一样的：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mySymbol1 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">let</span> mySymbol2 = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol1 == mySymbol2); <span class="comment">//打印结果：false</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol1);         <span class="comment">//打印结果：Symbol()</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol2);         <span class="comment">//打印结果：Symbol()</span></span><br></pre></td></tr></table></figure>
+<p>这时候<code>total</code>的值就不是<code>number</code>类型了，但是不会报错。有的小伙伴这时候可能会说，可以直接给<code>total</code>一个类型注解，比如写成这个样子。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> total : number =getTotal(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
-<p><img src="http://img.smyhvae.com/20180317_1134.png" alt></p>
-<p>上面代码中，倒数第三行的打印结果也就表明了，二者的值确实是不相等的。</p>
-<p>最后两行的打印结果却发现，二者的打印输出，肉眼看到的却相同。那该怎么区分它们呢？</p>
-<p>既然Symbol()是函数，函数就可以传入参数，我们可以通过参数的不同来作为<strong>标识</strong>。比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在括号里加入参数，来标识不同的Symbol</span></span><br><span class="line"><span class="keyword">let</span> mySymbol1 = <span class="built_in">Symbol</span>(<span class="string">'one'</span>);</span><br><span class="line"><span class="keyword">let</span> mySymbol2 = <span class="built_in">Symbol</span>(<span class="string">'two'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol1 == mySymbol2); <span class="comment">//打印结果：false</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol1);         <span class="comment">//打印结果：Symbol(one)</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol2);         <span class="comment">//打印结果：Symbol(two)。颜色为红色。</span></span><br><span class="line"><span class="built_in">console</span>.log(mySymbol2.toString());<span class="comment">//打印结果：Symbol(two)。颜色为黑色。</span></span><br></pre></td></tr></table></figure>
+<p>这样写虽然可以让编辑器报错，但是这还不是很高明的算法，因为你没有找到错误的根本，这时错误的根本是<code>getTotal()</code>函数的错误，所以合适的做法是给函数的返回值加上类型注解，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTotal</span>(<span class="params">one : number, two :number</span>) : <span class="title">number</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> one + two</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> total = getTotal(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
-<p>打印结果：</p>
-<p><img src="http://img.smyhvae.com/20180317_1134.png" alt></p>
-<h3 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h3><p>Symbol 可以用来定义常量：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MY_NAME = <span class="built_in">Symbol</span>(<span class="string">'my_name'</span>);</span><br></pre></td></tr></table></figure>
+<p>这段代码就比较严谨了，所以小伙伴们在写代码时，尽量让自己的代码更加严谨。</p>
+<h2 id="函数无返回值时定义方法"><a href="#函数无返回值时定义方法" class="headerlink" title="函数无返回值时定义方法"></a>函数无返回值时定义方法</h2><p>有时候函数是没有返回值的，比如现在定义一个<code>sayHello</code>的函数，这个函数只是简单的<code>terminal</code>打印，并没有返回值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello world'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="async函数（异步函数）"><a href="#async函数（异步函数）" class="headerlink" title="async函数（异步函数）"></a>async函数（异步函数）</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><blockquote>
-<p>async 函数是在 ES2017 引入的。</p>
+<p>这就是没有返回值的函数，我们就可以给他一个类型注解<code>void</code>，代表没有任何返回值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>) : <span class="title">void</span></span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello world'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果这样定义后，你再加入任何返回值，程序都会报错。</p>
+<h2 id="never返回值类型"><a href="#never返回值类型" class="headerlink" title="never返回值类型"></a>never返回值类型</h2><p>如果一个函数是永远也执行不完的，就可以定义返回值为<code>never</code>，那什么样的函数是永远也执行不完的那?我们先来写一个这样的函数(比如执行执行的时候，抛出了异常，这时候就无法执行完了)。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">errorFuntion</span>(<span class="params"></span>) : <span class="title">never</span></span>&#123; </span><br><span class="line">   <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>()</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'Hello World'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还有一种是一直循环，也是我们常说的死循环，这样也运行不完，比如下面的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">forNever</span>(<span class="params"></span>) : <span class="title">never</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)&#123;&#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello JSPang'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数参数为对象-解构-时"><a href="#函数参数为对象-解构-时" class="headerlink" title="函数参数为对象(解构)时"></a>函数参数为对象(解构)时</h2><p>这个坑有很多小伙伴掉下去过，就是当一个函数的参数是对象时，我们如何定义参数对象的属性类型。我先写个一般<code>javaScript</code>的写法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params">&#123;one , two&#125;</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> one + two</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> total = add(&#123;<span class="attr">one</span>:<span class="number">1</span>,<span class="attr">two</span>:<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器中你会看到直接报错了，意思是<code>total</code>有可能会是任何类型，那我们要如何给这样的参数加<code>类型注解</code>那？最初你可能会这样写。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params">&#123;one :number , two :number&#125;</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> one + two</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> total = add(&#123;<span class="attr">one</span>:<span class="number">1</span>,<span class="attr">two</span>:<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>你在编辑器中会看到这种写法是完全错误的。那正确的写法应该是这样的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span> (<span class="params">&#123;one , two &#125; : &#123;one:number, two:number&#125;</span>) :<span class="title">number</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> one + two</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> three = add(&#123;<span class="attr">one</span>:<span class="number">1</span>,<span class="attr">two</span>:<span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>如果参数是对象，并且里边只有一个属性时，我们更容易写错。 错误代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNumber</span> (<span class="params">&#123;one &#125;:number</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">return</span> one;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">const</span> one = getNumber(&#123;<span class="attr">one</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>看着好像没什么问题，但实际这是有问题的，正确的代码应该时这样的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNumber</span> (<span class="params">&#123;one &#125; :&#123;one:number&#125;</span>) :<span class="title">number</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> one;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> one = getNumber(&#123;<span class="attr">one</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这样写才是正确的写法，小伙伴们赶快动手练习一下吧，刚开始学你可能会觉的很麻烦，但是你写的时间长了，你就会发现有规矩还是好的。人向往自由，缺鲜有人能屈驾自由。</p>
+<h1 id="TypeScript中数组类型的定义"><a href="#TypeScript中数组类型的定义" class="headerlink" title="TypeScript中数组类型的定义"></a>TypeScript中数组类型的定义</h1><p>这节课学习一下TypeScript中的数组类型，一般的数组类型定义我们已经接触过了，只是没有单独拿出来讲，所以先来复习一下。</p>
+<h2 id="一般数组类型的定义"><a href="#一般数组类型的定义" class="headerlink" title="一般数组类型的定义"></a>一般数组类型的定义</h2><p>现在我们可以定义一个最简单的数组类型，比如就是数字类型，那么就可以这么写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numberArr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<p>这时候你把鼠标放在<code>numberArr</code>上面可以看出，这个数组的类型就是number类型。这是TypeScript通过<code>类型推断</code>自己推断出来的。 如果你要显示的注解，也非常简单，可以写成下面的形式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numberArr:number[] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<p>同样道理，如果你的数组各项是字符串，你就可以写成这样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> stringArr : string [] = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>也就是说你可以定义任意类型的数组，比如是<code>undefined</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> undefinedArr : <span class="literal">undefined</span>[]=[<span class="literal">undefined</span>,<span class="literal">undefined</span>]</span><br></pre></td></tr></table></figure>
+
+<p>这时候问题来了，如果数组中有多种类型，比如既有数字类型，又有字符串的时候。那我们要如何定义那。 很简单，只要加个<code>()</code>，然后在里边加上<code>|</code>就可以了，具体看代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr: ( number| string )[] = [<span class="number">1</span>,<span class="string">'string'</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+<p>数组简单类型的定义就是这样了，并不难。</p>
+<h2 id="数组中对象类型的定义"><a href="#数组中对象类型的定义" class="headerlink" title="数组中对象类型的定义"></a>数组中对象类型的定义</h2><p>如果你作过一些项目，你就会知道真实的项目中数组中一定会有对象的出现。那对于这类带有对象的数组定义就稍微麻烦点了。 比如现在我们要定义一个有很多小姐姐的数组，每一个小姐姐都是一个对象。这是的定义就编程了这样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xiaoJieJies : &#123;<span class="attr">name</span>:string , <span class="attr">age</span>:<span class="built_in">Number</span>&#125;[] = [</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'刘英'</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'谢大脚'</span>,<span class="attr">age</span>:<span class="number">28</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>这种形式看起来比较麻烦，而且如果有同样类型的数组，写代码也比较麻烦，TypeScript为我们准备了一个概念，叫做<code>类型别名</code>(type alias)。</p>
+<p>比如刚才的代码，就可以定义一个<code>类型别名</code>，定义别名的时候要以<code>type</code>关键字开始。现在定义一个<code>Lady</code>的别名。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type  Lady  =  &#123;<span class="attr">name</span>:string , <span class="attr">age</span>:<span class="built_in">Number</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>有了这样的类型别名以后哦，就可以把上面的代码改为下面的形式了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">type  Lady  =  &#123;<span class="attr">name</span>:string , <span class="attr">age</span>:<span class="built_in">Number</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> xiaoJieJies : Lady[] = [</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'刘英'</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'谢大脚'</span>,<span class="attr">age</span>:<span class="number">28</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>这样定义是完全起作用的，比如我们下面在对象里再加入一个属性，这时候编译器就会直接给我们报错了。</p>
+<p>这时候有的小伙伴就会问了，我用类进行定义可以吗？答案是可以的，比如我们定义一个<code>Madam</code>的类,然后用这个类来限制数组的类型也是可以的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Madam</span> </span>&#123;</span><br><span class="line">    name: string ;</span><br><span class="line">    age:number ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> xiaoJieJies : Madam[] = [</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'刘英'</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'谢大脚'</span>,<span class="attr">age</span>:<span class="number">28</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>可以看到结果，我们这么写也是完全可以的。</p>
+<h1 id="TypeScript中元组的使用和类型约束"><a href="#TypeScript中元组的使用和类型约束" class="headerlink" title="TypeScript中元组的使用和类型约束"></a>TypeScript中元组的使用和类型约束</h1><p>TypeScript中提供了<code>元组</code>的概念，这个概念是<code>JavaScript</code>中没有的。但是不要慌张，其实元组在开发中并不常用，也可能是我的经历还不够。一般只在数据源是<code>CSV</code>这种文件的时候，会使用元组。其实你可以把元组看成数组的一个加强，它可以更好的控制或者说规范里边的类型。</p>
+<h2 id="元组的基本应用"><a href="#元组的基本应用" class="headerlink" title="元组的基本应用"></a>元组的基本应用</h2><p>我们先来看一个数组和这个数组注解的缺点，比如我们有一个小姐姐数组，数组中有姓名、职业和年龄，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xiaojiejie  = [<span class="string">'dajiao'</span>,<span class="string">'teacher'</span>,<span class="number">28</span>]</span><br></pre></td></tr></table></figure>
+
+<p>这时候把鼠标放到<code>xiaojiejie</code>变量上面，可以看出推断出来的类型。我们就用类型注解的形式给他作一个注解，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xiaojiejie :(string | number)[]  = [<span class="string">'dajiao'</span>,<span class="string">'teacher'</span>,<span class="number">28</span>]</span><br></pre></td></tr></table></figure>
+
+<p>这时候你已经增加了代码注解，但是这并不能很好的限制，比如我们把代码改成下面的样子，<code>TypeScript</code>依然不会报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xiaojiejie :(string | number)[]  = [<span class="string">'dajiao'</span>,<span class="number">28</span>,<span class="string">'teacher'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>我们只是简单的把数组中的位置调换了一下，但是<code>TypeScript</code>并不能发现问题，这时候我们需要一个更强大的类型，来解决这个问题，这就是元组。</p>
+<p>元组和数组类似，但是类型注解时会不一样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xiaojiejie : [string,string ,number]  = [<span class="string">'dajiao'</span>,<span class="string">'teacher'</span>,<span class="number">28</span>]</span><br></pre></td></tr></table></figure>
+
+<p>这时候我们就把数组中的每个元素类型的位置给固定住了，这就叫做元组。</p>
+<h2 id="元组的使用"><a href="#元组的使用" class="headerlink" title="元组的使用"></a>元组的使用</h2><p>目前我的工作中不经常使用元组，因为如果要使用元组，完全可以使用对象的形式来代替，但是如果你维护老系统，你会发现有一种数据源时<code>CSV</code>,这种文件提供的就是用逗号隔开的，如果要严谨的编程就需要用到元组了。例如我们有这样一组由<code>CSV</code>提供的（注意这里只是模拟数据）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'dajiao'</span>,<span class="string">'teacher'</span>,<span class="number">28</span></span><br><span class="line"><span class="string">'liuying'</span>,<span class="string">'teacher'</span>,<span class="number">18</span></span><br><span class="line"><span class="string">'cuihua'</span>,<span class="string">'teacher'</span>,<span class="number">25</span></span><br></pre></td></tr></table></figure>
+
+<p>如果数据源得到的数据时这样的，你就可以使用元组了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xiaojiejies:[string,string,number][]=[</span><br><span class="line">    [<span class="string">'dajiao'</span>,<span class="string">'teacher'</span>,<span class="number">28</span>],</span><br><span class="line">    [<span class="string">'liuying'</span>,<span class="string">'teacher'</span>,<span class="number">18</span>],</span><br><span class="line">    [<span class="string">'cuihua'</span>,<span class="string">'teacher'</span>,<span class="number">25</span>],</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>要搞清楚元组和数组的区别，在理解后能在项目中适当的时候使用不同的类型。</p>
+<h1 id="TypeScript中的interface接口"><a href="#TypeScript中的interface接口" class="headerlink" title="TypeScript中的interface接口"></a>TypeScript中的interface接口</h1><p>现在公司要开始招聘小姐姐了，这时候你需要一些小姐姐的简历投递和自动筛选功能，就是不符合简历要求的会直接被筛选掉，符合的才可以进入下一轮的面试。那最好的解决方法就是写一个接口。TypeScript中的接口，就是用来规范类型的。</p>
+<h2 id="Interface接口初步了解"><a href="#Interface接口初步了解" class="headerlink" title="Interface接口初步了解"></a>Interface接口初步了解</h2><p>现在我们要作一个简历的自动筛选程序，很简单。年龄小于25岁，胸围大于90公分的，可以进入面试环节。我们最开始的写法是这样的。（新建一个文件Demo8.ts,然后编写如下代码）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> screenResume=<span class="function">(<span class="params"> name:string, age:number,bust:number</span>)=&gt;</span>&#123;</span><br><span class="line">    age&lt;<span class="number">24</span> &amp;&amp; bust&gt;=<span class="number">90</span> &amp;&amp; <span class="built_in">console</span>.log(name+<span class="string">'进入面试'</span>) </span><br><span class="line">    age&gt;<span class="number">24</span> || bust&lt;<span class="number">90</span>  &amp;&amp; <span class="built_in">console</span>.log(name+<span class="string">'你被淘汰'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">screenResume(<span class="string">'大脚'</span>,<span class="number">18</span>,<span class="number">94</span>)</span><br></pre></td></tr></table></figure>
+
+<p>写好后，好像我们的程序写的不错，可以在终端中使用<code>ts-node demo8.ts</code>进行查看。这时候老板又增加了需求，说我必须能看到这些女孩的简历。于是你又写了这样一个方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getResume=<span class="function">(<span class="params">name:string,age:number,bust:number</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name+<span class="string">'年龄是：'</span>+age)</span><br><span class="line">    <span class="built_in">console</span>.log(name+<span class="string">'胸围是：'</span>+bust)</span><br><span class="line">&#125;</span><br><span class="line">getResume(<span class="string">'大脚'</span>,<span class="number">18</span>,<span class="number">94</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这时候问题来了，程序开发中一直强调“代码重用”，两个方法用的类型注解一样，需要作个统一的约束。大上节课我们学了一个<code>类型别名</code>的知识可以解决代码重复的问题，这节课我们就学习一个更常用的语法<code>接口</code>（Interface）.</p>
+<p>我们可以把这两个重复的类型注解，定义成统一的接口。代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">interface Girl &#123;</span><br><span class="line">    name : string;</span><br><span class="line">    age  : number;</span><br><span class="line">    bust : number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有了接口后，我们的程序也要作一些修改，需要写成下面的样子。这样就更像是面向对象编程了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> screenResume=<span class="function">(<span class="params"> girl:Girl</span>)=&gt;</span>&#123;</span><br><span class="line">    girl.age&lt;<span class="number">24</span> &amp;&amp; girl.bust&gt;=<span class="number">90</span> &amp;&amp; <span class="built_in">console</span>.log(girl.name+<span class="string">'进入面试'</span>) </span><br><span class="line">    girl.age&gt;<span class="number">24</span> || girl.bust&lt;<span class="number">90</span>  &amp;&amp; <span class="built_in">console</span>.log(girl.name+<span class="string">'你被淘汰'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getResume=<span class="function">(<span class="params"> girl:Girl</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(girl.name+<span class="string">'年龄是：'</span>+girl.age)</span><br><span class="line">    <span class="built_in">console</span>.log(girl.name+<span class="string">'胸围是：'</span>+girl.bust)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> girl=&#123;</span><br><span class="line">    name:<span class="string">'大脚'</span>,</span><br><span class="line">    age:<span class="number">18</span>,</span><br><span class="line">    bust:<span class="number">94</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">screenResume(girl)</span><br><span class="line">getResume(girl)</span><br></pre></td></tr></table></figure>
+
+<p>这时候我们代码就显得专业了很多，以后再用到同样的接口也不怕了，直接使用<code>girl</code>就可以了。</p>
+<h2 id="接口和类型别名的区别"><a href="#接口和类型别名的区别" class="headerlink" title="接口和类型别名的区别"></a>接口和类型别名的区别</h2><p>现在我们学了<code>接口</code>，也学过了<code>类型别名</code>，这两个语法和用处好像一样，我先表个态，确实用起来基本一样，但是也有少许的不同。</p>
+<blockquote>
+<p>类型别名可以直接给类型，比如<code>string</code>，而接口必须代表对象。</p>
 </blockquote>
-<p>概念：真正意义上去解决异步回调的问题，同步流程表达异步操作。</p>
-<p>本质： Generator 的语法糖。</p>
-<p>async比之前的 Promise、Generator要好用一些。</p>
-<p>语法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">await</span> 异步操作;</span><br><span class="line">    <span class="keyword">await</span> 异步操作；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>比如我们的<code>类型别名</code>可以写出下面的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type Girl1= stirng</span><br></pre></td></tr></table></figure>
 
-<p>我们在普通的函数前面加上 async 关键字，就成了 async 函数。</p>
-<h3 id="async、Promise、Generator的对比（async的特点）"><a href="#async、Promise、Generator的对比（async的特点）" class="headerlink" title="async、Promise、Generator的对比（async的特点）"></a>async、Promise、Generator的对比（async的特点）</h3><p>1、不需要像Generator去调用next方法，遇到await等待，当前的异步操作完成就往下执行。</p>
-<p>2、async返回的总是Promise对象，可以用then方法进行下一步操作。</p>
-<p>3、async取代Generator函数的星号*，await取代Generator的yield。</p>
-<p>4、语意上更为明确，使用简单，经临床验证，暂时没有任何副作用。</p>
+<p>但是接口就不能这样写，它必须代表的是一个对象，也就是说，你初始化<code>girl</code>的时候，必须写出下面的形式.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> girl=&#123;</span><br><span class="line">    name:<span class="string">'大脚'</span>,</span><br><span class="line">    age:<span class="number">18</span>,</span><br><span class="line">    bust:<span class="number">94</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="接口非必选值得定义"><a href="#接口非必选值得定义" class="headerlink" title="接口非必选值得定义"></a>接口非必选值得定义</h2><p>这节课我们多学一点，因为接口这里的知识点还是挺多的。比如这时候老板又有了新的要求，要求尽量能看到小姐姐的腰围，但是不作强制要求，就是可选值吗。那接口如何定义那？其实<code>typeScript</code>已经为我们准备好了相应的办法，就是在<code>:</code>号前加一个<code>?</code></p>
+<p>比如把<code>Girl</code>的接口写成这样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">interface Girl &#123;</span><br><span class="line">    name : string;</span><br><span class="line">    age  : number;</span><br><span class="line">    bust : number;</span><br><span class="line">    waistline ?: number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后我们再修改一下<code>getResume</code>方法，写成这样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getResume=<span class="function">(<span class="params"> girl:Girl</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(girl.name+<span class="string">'年龄是：'</span>+girl.age)</span><br><span class="line">    <span class="built_in">console</span>.log(girl.name+<span class="string">'胸围是：'</span>+girl.bust)</span><br><span class="line">    girl.waistline &amp;&amp; <span class="built_in">console</span>.log(girl.name+<span class="string">'腰围是：'</span>+girl.waistline)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这时候在定义<code>girl</code>对象的时候，就可以写<code>saistline</code>（腰围），也可以不写了。</p>
+<p>好了，这节课就先到这里，<code>Interface</code>(接口)的知识并没有讲完，我们下节课接着讲。</p>
+<h1 id="TypeScript中的interface接口2"><a href="#TypeScript中的interface接口2" class="headerlink" title="TypeScript中的interface接口2"></a>TypeScript中的interface接口2</h1><h2 id="允许加入任意值"><a href="#允许加入任意值" class="headerlink" title="允许加入任意值"></a>允许加入任意值</h2><p>简历一般是有自由发挥的空间的，所以这时候需要一些任意值，就是自己愿意写什么就写什么。这时候<code>interface</code>接口也是支持的。方法如下： 我们接着上节课的代码，新建一个<code>demo6.ts</code>，然后把上节课代码拷贝过来。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">interface Girl &#123;</span><br><span class="line">    name : string;</span><br><span class="line">    age  : number;</span><br><span class="line">    bust : number;</span><br><span class="line">    waistline ?: number;</span><br><span class="line">    [propname:string]:any;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个的意思是，属性的名字是字符串类型，属性的值可以是任何类型。</p>
+<p>这时候我们在对象里给一个性别,代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> girl=&#123;</span><br><span class="line">    name:<span class="string">'大脚'</span>,</span><br><span class="line">    age:<span class="number">18</span>,</span><br><span class="line">    bust:<span class="number">94</span>,</span><br><span class="line">    waistline:<span class="number">21</span>,</span><br><span class="line">    sex:<span class="string">'女'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>再修改一下代码，这首就没有错误了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getResume=<span class="function">(<span class="params"> girl:Girl</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(girl.name+<span class="string">'年龄是：'</span>+girl.age)</span><br><span class="line">    <span class="built_in">console</span>.log(girl.name+<span class="string">'胸围是：'</span>+girl.bust)</span><br><span class="line">    girl.waistline &amp;&amp; <span class="built_in">console</span>.log(girl.name+<span class="string">'腰围是：'</span>+girl.waistline)</span><br><span class="line">    girl.sex &amp;&amp; <span class="built_in">console</span>.log(girl.name+<span class="string">'性别是：'</span>+girl.sex)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这时候我们的程序是不报错的，但是如果我们去掉刚才的设置，就会报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[propname:string]:any;  <span class="comment">//去掉</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="接口里的方法"><a href="#接口里的方法" class="headerlink" title="接口里的方法"></a>接口里的方法</h2><p>接口里不仅可以存属性，还可以存方法，比如这时候有个<code>say()</code>方法，返回值是<code>string</code>类型。这时候你就不要再想成简历了，你需要更面向对象化的编程，想象成一个人。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">interface Girl &#123;</span><br><span class="line">    name : string;</span><br><span class="line">    age  : number;</span><br><span class="line">    bust : number;</span><br><span class="line">    waistline ?: number;</span><br><span class="line">    [propname:string]:any;</span><br><span class="line">    say():string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>加上这个<code>say()</code>方法后，程序马上就会报错，因为我们对象里没有say方法。那我们就要给对象一个say方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> girl=&#123;</span><br><span class="line">    name:<span class="string">'大脚'</span>,</span><br><span class="line">    age:<span class="number">18</span>,</span><br><span class="line">    bust:<span class="number">94</span>,</span><br><span class="line">    waistline:<span class="number">21</span>,</span><br><span class="line">    sex:<span class="string">'女'</span>,</span><br><span class="line">    say()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'欢迎光临 ，XX公司！！'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="接口和类的约束"><a href="#接口和类的约束" class="headerlink" title="接口和类的约束"></a>接口和类的约束</h2><p>我们都知道JavaScript从<code>ES6</code>里是有类这个概念的，类可以和接口很好的结合，我们先来看一个例子。下面的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XiaoJieJie</span> <span class="title">implements</span> <span class="title">Girl</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这时候类会直接报错，所以我们需要把这个类写的完全点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XiaoJieJie</span> <span class="title">implements</span> <span class="title">Girl</span></span>&#123;</span><br><span class="line">    name=<span class="string">"刘英"</span></span><br><span class="line">    age=<span class="number">18</span></span><br><span class="line">    bust=<span class="number">90</span></span><br><span class="line">    say()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'欢迎光临 ，XX公司！！'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="接口间的继承"><a href="#接口间的继承" class="headerlink" title="接口间的继承"></a>接口间的继承</h2><p>接口也可以用于继承的，比如你新写一个<code>Teacher</code>接口，继承于<code>Person</code>接口。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Teacher extends Girl&#123;</span><br><span class="line">    teach():string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>比如这时候老板说了，只看Teacher级别的简历，那我们需要修改<code>getResume()</code>方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getResume=<span class="function">(<span class="params"> girl:Teacher</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(girl.name+<span class="string">'年龄是：'</span>+girl.age)</span><br><span class="line">    <span class="built_in">console</span>.log(girl.name+<span class="string">'胸围是：'</span>+girl.bust)</span><br><span class="line">    girl.waistline &amp;&amp; <span class="built_in">console</span>.log(girl.name+<span class="string">'腰围是：'</span>+girl.waistline)</span><br><span class="line">    girl.sex &amp;&amp; <span class="built_in">console</span>.log(girl.name+<span class="string">'性别是：'</span>+girl.sex)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改后，你就会发现下面我们调用<code>getResume()</code>方法的地方报错了,因为这时候传的值必须有<code>Teach</code>方法，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getResume(girl)</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>girle</code>对象，增加<code>teach（）</code>方法，这时候就不会报错了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> girl=&#123;</span><br><span class="line">    name:<span class="string">'大脚'</span>,</span><br><span class="line">    age:<span class="number">18</span>,</span><br><span class="line">    bust:<span class="number">94</span>,</span><br><span class="line">    waistline:<span class="number">21</span>,</span><br><span class="line">    sex:<span class="string">'女'</span>,</span><br><span class="line">    say()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'欢迎光临 ，XX公司！！'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    teach()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'我是一个老师'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>关于接口的知识就讲到这里吧，这基本包含了接口80%的知识，还有些基本不用的语法，我就不讲了。如果课程中遇到，我们再讲。学会了接口，你还需要明白一件事，就是接口只是对我们开发的约束，在生产环境中并没有体现。也可以说接口只是在TypeScript里帮我们作语法校验的工具，编译成正式的<code>js</code>代码，就不会有任何用处了。</p>
 
     
 
@@ -420,7 +580,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lifei-2019.github.io/ES6-5/" title="promise、async等" target="_blank">https://lifei-2019.github.io/ES6-5/</a>
+          <a href="https://lifei-2019.github.io/Typescript/" title="Typescript" target="_blank">https://lifei-2019.github.io/Typescript/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -440,10 +600,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
         		</li>
       		
 		</ul>
@@ -510,7 +666,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/ES6-5/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://lifei-2019.github.io/Typescript/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -525,18 +681,9 @@
 
 <nav id="article-nav">
   
-    <a href="/ES6-6/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          字符串、数组、对象的扩展
-        
-      </div>
-    </a>
   
-  
-    <a href="/ES6-4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ES6环境配置</div>
+    <a href="/element-ui-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">element-ui全部引入和按需引入</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -563,7 +710,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise"><span class="toc-number">2.</span> <span class="toc-text">Promise</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">2.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回调地狱的举例"><span class="toc-number">2.2.</span> <span class="toc-text">回调地狱的举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#promise对象的3个状态"><span class="toc-number">2.3.</span> <span class="toc-text">promise对象的3个状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用promise的基本步骤"><span class="toc-number">2.4.</span> <span class="toc-text">使用promise的基本步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax请求的举例（涉及到嵌套的回调）"><span class="toc-number">2.5.</span> <span class="toc-text">ajax请求的举例（涉及到嵌套的回调）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symbol"><span class="toc-number">3.</span> <span class="toc-text">Symbol</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述-1"><span class="toc-number">3.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建Symbol属性值"><span class="toc-number">3.2.</span> <span class="toc-text">创建Symbol属性值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、将Symbol作为对象的属性值"><span class="toc-number">3.3.</span> <span class="toc-text">1、将Symbol作为对象的属性值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建Symbol属性值时，传参作为标识"><span class="toc-number">3.4.</span> <span class="toc-text">创建Symbol属性值时，传参作为标识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义常量"><span class="toc-number">3.5.</span> <span class="toc-text">定义常量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#async函数（异步函数）"><span class="toc-number">4.</span> <span class="toc-text">async函数（异步函数）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述-2"><span class="toc-number">4.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#async、Promise、Generator的对比（async的特点）"><span class="toc-number">4.2.</span> <span class="toc-text">async、Promise、Generator的对比（async的特点）</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Typescript简介"><span class="toc-number">1.</span> <span class="toc-text">Typescript简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TypeScript开发环境搭建"><span class="toc-number">2.</span> <span class="toc-text">TypeScript开发环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装Node的运行环境"><span class="toc-number">2.1.</span> <span class="toc-text">1.安装Node的运行环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-全局安装TypeScript"><span class="toc-number">2.2.</span> <span class="toc-text">2.全局安装TypeScript</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-建立项目目录和编译TS文件"><span class="toc-number">2.3.</span> <span class="toc-text">3.建立项目目录和编译TS文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-ts-node的安装和使用"><span class="toc-number">2.4.</span> <span class="toc-text">4.ts-node的安装和使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TypeScript的静态类型"><span class="toc-number">3.</span> <span class="toc-text">TypeScript的静态类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何定义静态类型"><span class="toc-number">3.1.</span> <span class="toc-text">如何定义静态类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义静态类型"><span class="toc-number">3.2.</span> <span class="toc-text">自定义静态类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TypeScript基础静态类型和对象类型"><span class="toc-number">4.</span> <span class="toc-text">TypeScript基础静态类型和对象类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础静态类型"><span class="toc-number">4.1.</span> <span class="toc-text">基础静态类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象类型"><span class="toc-number">4.2.</span> <span class="toc-text">对象类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TypeScript中的类型注释和类型推断"><span class="toc-number">5.</span> <span class="toc-text">TypeScript中的类型注释和类型推断</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#type-annotation-类型注解"><span class="toc-number">5.1.</span> <span class="toc-text">type annotation 类型注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#type-inferrence-类型推断"><span class="toc-number">5.2.</span> <span class="toc-text">type inferrence 类型推断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工作使用问题（潜规则）"><span class="toc-number">5.3.</span> <span class="toc-text">工作使用问题（潜规则）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TypeScript函数参数和返回类型定义"><span class="toc-number">6.</span> <span class="toc-text">TypeScript函数参数和返回类型定义</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#简单类型定义"><span class="toc-number">6.1.</span> <span class="toc-text">简单类型定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数无返回值时定义方法"><span class="toc-number">6.2.</span> <span class="toc-text">函数无返回值时定义方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#never返回值类型"><span class="toc-number">6.3.</span> <span class="toc-text">never返回值类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数参数为对象-解构-时"><span class="toc-number">6.4.</span> <span class="toc-text">函数参数为对象(解构)时</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TypeScript中数组类型的定义"><span class="toc-number">7.</span> <span class="toc-text">TypeScript中数组类型的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一般数组类型的定义"><span class="toc-number">7.1.</span> <span class="toc-text">一般数组类型的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组中对象类型的定义"><span class="toc-number">7.2.</span> <span class="toc-text">数组中对象类型的定义</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TypeScript中元组的使用和类型约束"><span class="toc-number">8.</span> <span class="toc-text">TypeScript中元组的使用和类型约束</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#元组的基本应用"><span class="toc-number">8.1.</span> <span class="toc-text">元组的基本应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#元组的使用"><span class="toc-number">8.2.</span> <span class="toc-text">元组的使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TypeScript中的interface接口"><span class="toc-number">9.</span> <span class="toc-text">TypeScript中的interface接口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Interface接口初步了解"><span class="toc-number">9.1.</span> <span class="toc-text">Interface接口初步了解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口和类型别名的区别"><span class="toc-number">9.2.</span> <span class="toc-text">接口和类型别名的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口非必选值得定义"><span class="toc-number">9.3.</span> <span class="toc-text">接口非必选值得定义</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TypeScript中的interface接口2"><span class="toc-number">10.</span> <span class="toc-text">TypeScript中的interface接口2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#允许加入任意值"><span class="toc-number">10.1.</span> <span class="toc-text">允许加入任意值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口里的方法"><span class="toc-number">10.2.</span> <span class="toc-text">接口里的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口和类的约束"><span class="toc-number">10.3.</span> <span class="toc-text">接口和类的约束</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口间的继承"><span class="toc-number">10.4.</span> <span class="toc-text">接口间的继承</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
