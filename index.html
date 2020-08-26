@@ -87,7 +87,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数68
+		总文章数69
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -322,6 +322,110 @@
 
 
   
+    <article id="post-interview4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/interview4/">项目小技巧</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/interview4/" class="archive-article-date">
+        <time datetime="2020-08-25T09:02:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-25</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>这是实习期间对自己碰到的一些小技巧进行整理</p>
+    
+    <a class="article-more-a" href="/interview4/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/interview4/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Typescript" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -453,22 +557,9 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h1 id="UI组件–element-ui–全部引入和按需引入"><a href="#UI组件–element-ui–全部引入和按需引入" class="headerlink" title="UI组件–element-ui–全部引入和按需引入"></a>UI组件–element-ui–全部引入和按需引入</h1><p>主要就是一句话, 如果用到的组件少, 要按需引入, 如果用到的组件很多,就全部引入, 因为按需引入全部的, 和全部引入效果一样</p>
-<h4 id="完整引入"><a href="#完整引入" class="headerlink" title="完整引入"></a>完整引入</h4><p>在 main.js 中写入以下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import ElementUI from &apos;element-ui&apos;;</span><br><span class="line">import &apos;element-ui/lib/theme-chalk/index.css&apos;;</span><br><span class="line">import App from &apos;./App.vue&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(ElementUI);</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  render: h =&gt; h(App)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>以上代码便完成了 Element 的引入。需要注意的是，样式文件需要单独引入, 如果自定义主题, 则引入自定义主题.</p>
-<h4 id="按需引入"><a href="#按需引入" class="headerlink" title="按需引入"></a>按需引入</h4><p>借助 <a href="https://github.com/QingWei-Li/babel-plugin-component" target="_blank" rel="noopener">babel-plugin-component</a>，我们可以只引入需要的组件，以达到减小项目体积的目的。</p>
-<p>首先，安装 babel-plugin-component：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-plugin-component -D</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line">yarn add babel-plugin-component --dev</span><br></pre></td></tr></table></figure>
-
-<p>然后，将 .babel.config.js修改为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [[&quot;es2015&quot;, &#123; &quot;modules&quot;: false &#125;]],</span><br><span class="line">  &quot;plugins&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;component&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;libraryName&quot;: &quot;element-ui&quot;,</span><br><span class="line">        &quot;styleLibraryName&quot;: &quot;theme-chalk&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">根据原来的模板文件, 我的改为了:</span><br><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [&quot;env&quot;, &#123;</span><br><span class="line">      &quot;modules&quot;: false,</span><br><span class="line">      &quot;targets&quot;: &#123;</span><br><span class="line">        &quot;browsers&quot;: [&quot;&gt; 1%&quot;, &quot;last 2 versions&quot;, &quot;not ie &lt;= 8&quot;]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;],</span><br><span class="line">    &quot;stage-2&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;plugins&quot;: [</span><br><span class="line">    &quot;transform-vue-jsx&quot;, &quot;transform-runtime&quot;,</span><br><span class="line">    [</span><br><span class="line">      &quot;component&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;libraryName&quot;: &quot;element-ui&quot;,</span><br><span class="line">        &quot;styleLibraryName&quot;: &quot;~theme&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接下来，如果你只希望引入部分组件，比如 Button 和 Select，那么需要在 main.js 中写入以下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import &#123; Button, Select &#125; from &apos;element-ui&apos;;</span><br><span class="line">import App from &apos;./App.vue&apos;;</span><br><span class="line"></span><br><span class="line">Vue.component(Button.name, Button);</span><br><span class="line">Vue.component(Select.name, Select);</span><br><span class="line">/* 或写为</span><br><span class="line"> * Vue.use(Button)</span><br><span class="line"> * Vue.use(Select)</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  render: h =&gt; h(App)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>完整组件列表和引入方式（完整组件列表以 <a href="https://github.com/ElemeFE/element/blob/master/components.json" target="_blank" rel="noopener">components.json</a> 为准）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import &#123;</span><br><span class="line">  Pagination,</span><br><span class="line">  Dialog,</span><br><span class="line">  Autocomplete,</span><br><span class="line">  Dropdown,</span><br><span class="line">  DropdownMenu,</span><br><span class="line">  DropdownItem,</span><br><span class="line">  Menu,</span><br><span class="line">  Submenu,</span><br><span class="line">  MenuItem,</span><br><span class="line">  MenuItemGroup,</span><br><span class="line">  Input,</span><br><span class="line">  InputNumber,</span><br><span class="line">  Radio,</span><br><span class="line">  RadioGroup,</span><br><span class="line">  RadioButton,</span><br><span class="line">  Checkbox,</span><br><span class="line">  CheckboxButton,</span><br><span class="line">  CheckboxGroup,</span><br><span class="line">  Switch,</span><br><span class="line">  Select,</span><br><span class="line">  Option,</span><br><span class="line">  OptionGroup,</span><br><span class="line">  Button,</span><br><span class="line">  ButtonGroup,</span><br><span class="line">  Table,</span><br><span class="line">  TableColumn,</span><br><span class="line">  DatePicker,</span><br><span class="line">  TimeSelect,</span><br><span class="line">  TimePicker,</span><br><span class="line">  Popover,</span><br><span class="line">  Tooltip,</span><br><span class="line">  Breadcrumb,</span><br><span class="line">  BreadcrumbItem,</span><br><span class="line">  Form,</span><br><span class="line">  FormItem,</span><br><span class="line">  Tabs,</span><br><span class="line">  TabPane,</span><br><span class="line">  Tag,</span><br><span class="line">  Tree,</span><br><span class="line">  Alert,</span><br><span class="line">  Slider,</span><br><span class="line">  Icon,</span><br><span class="line">  Row,</span><br><span class="line">  Col,</span><br><span class="line">  Upload,</span><br><span class="line">  Progress,</span><br><span class="line">  Badge,</span><br><span class="line">  Card,</span><br><span class="line">  Rate,</span><br><span class="line">  Steps,</span><br><span class="line">  Step,</span><br><span class="line">  Carousel,</span><br><span class="line">  CarouselItem,</span><br><span class="line">  Collapse,</span><br><span class="line">  CollapseItem,</span><br><span class="line">  Cascader,</span><br><span class="line">  ColorPicker,</span><br><span class="line">  Transfer,</span><br><span class="line">  Container,</span><br><span class="line">  Header,</span><br><span class="line">  Aside,</span><br><span class="line">  Main,</span><br><span class="line">  Footer,</span><br><span class="line">  Loading,</span><br><span class="line">  MessageBox,</span><br><span class="line">  Message,</span><br><span class="line">  Notification</span><br><span class="line">&#125; from &apos;element-ui&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(Pagination);</span><br><span class="line">Vue.use(Dialog);</span><br><span class="line">Vue.use(Autocomplete);</span><br><span class="line">Vue.use(Dropdown);</span><br><span class="line">Vue.use(DropdownMenu);</span><br><span class="line">Vue.use(DropdownItem);</span><br><span class="line">Vue.use(Menu);</span><br><span class="line">Vue.use(Submenu);</span><br><span class="line">Vue.use(MenuItem);</span><br><span class="line">Vue.use(MenuItemGroup);</span><br><span class="line">Vue.use(Input);</span><br><span class="line">Vue.use(InputNumber);</span><br><span class="line">Vue.use(Radio);</span><br><span class="line">Vue.use(RadioGroup);</span><br><span class="line">Vue.use(RadioButton);</span><br><span class="line">Vue.use(Checkbox);</span><br><span class="line">Vue.use(CheckboxButton);</span><br><span class="line">Vue.use(CheckboxGroup);</span><br><span class="line">Vue.use(Switch);</span><br><span class="line">Vue.use(Select);</span><br><span class="line">Vue.use(Option);</span><br><span class="line">Vue.use(OptionGroup);</span><br><span class="line">Vue.use(Button);</span><br><span class="line">Vue.use(ButtonGroup);</span><br><span class="line">Vue.use(Table);</span><br><span class="line">Vue.use(TableColumn);</span><br><span class="line">Vue.use(DatePicker);</span><br><span class="line">Vue.use(TimeSelect);</span><br><span class="line">Vue.use(TimePicker);</span><br><span class="line">Vue.use(Popover);</span><br><span class="line">Vue.use(Tooltip);</span><br><span class="line">Vue.use(Breadcrumb);</span><br><span class="line">Vue.use(BreadcrumbItem);</span><br><span class="line">Vue.use(Form);</span><br><span class="line">Vue.use(FormItem);</span><br><span class="line">Vue.use(Tabs);</span><br><span class="line">Vue.use(TabPane);</span><br><span class="line">Vue.use(Tag);</span><br><span class="line">Vue.use(Tree);</span><br><span class="line">Vue.use(Alert);</span><br><span class="line">Vue.use(Slider);</span><br><span class="line">Vue.use(Icon);</span><br><span class="line">Vue.use(Row);</span><br><span class="line">Vue.use(Col);</span><br><span class="line">Vue.use(Upload);</span><br><span class="line">Vue.use(Progress);</span><br><span class="line">Vue.use(Badge);</span><br><span class="line">Vue.use(Card);</span><br><span class="line">Vue.use(Rate);</span><br><span class="line">Vue.use(Steps);</span><br><span class="line">Vue.use(Step);</span><br><span class="line">Vue.use(Carousel);</span><br><span class="line">Vue.use(CarouselItem);</span><br><span class="line">Vue.use(Collapse);</span><br><span class="line">Vue.use(CollapseItem);</span><br><span class="line">Vue.use(Cascader);</span><br><span class="line">Vue.use(ColorPicker);</span><br><span class="line">Vue.use(Transfer);</span><br><span class="line">Vue.use(Container);</span><br><span class="line">Vue.use(Header);</span><br><span class="line">Vue.use(Aside);</span><br><span class="line">Vue.use(Main);</span><br><span class="line">Vue.use(Footer);</span><br><span class="line"></span><br><span class="line">Vue.use(Loading.directive);</span><br><span class="line"></span><br><span class="line">Vue.prototype.$loading = Loading.service;</span><br><span class="line">Vue.prototype.$msgbox = MessageBox;</span><br><span class="line">Vue.prototype.$alert = MessageBox.alert;</span><br><span class="line">Vue.prototype.$confirm = MessageBox.confirm;</span><br><span class="line">Vue.prototype.$prompt = MessageBox.prompt;</span><br><span class="line">Vue.prototype.$notify = Notification;</span><br><span class="line">Vue.prototype.$message = Message;</span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/element-ui-1/#more">more >></a>
+    
     
 
     
@@ -629,7 +720,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/interview3/">interview3</a>
+	  <a class="article-title" href="/interview3/">面试篇</a>
 	
     </h1>
   
@@ -1134,110 +1225,6 @@
 
 
   
-    <article id="post-vue-路由元信息" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/vue-路由元信息/">终于搞明白了路由元信息是个啥了</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/vue-路由元信息/" class="archive-article-date">
-        <time datetime="2020-06-18T03:12:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-18</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="为什么会有路由元信息这个东西？"><a href="#为什么会有路由元信息这个东西？" class="headerlink" title="为什么会有路由元信息这个东西？"></a>为什么会有路由元信息这个东西？</h1><p>我们在做网站登录验证的时候，可以使用到beforeEach 钩子函数进行验证操作，如下面代码 ，如果页面path为’/goodsList’，那么就让它跳转到登录页面，实现了验证登录。</p>
-    
-    <a class="article-more-a" href="/vue-路由元信息/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/vue-路由元信息/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1416,11 +1403,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">babel</a>
+                <a href="javascript:void(0)" class="js-tag color2">Eslint</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Eslint</a>
+                <a href="javascript:void(0)" class="js-tag color1">babel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1432,11 +1419,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1456,10 +1443,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
@@ -1469,6 +1452,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
