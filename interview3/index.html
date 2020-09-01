@@ -18,10 +18,13 @@
 <meta property="og:site_name" content="春风十里不如你">
 <meta property="og:description" content="阿里盒马前端五面问题总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-26T09:03:51.923Z">
+<meta property="og:image" content="https://lifei-2019.github.io/interview3/OAuth.png">
+<meta property="og:image" content="https://lifei-2019.github.io/interview3/ssl1.png">
+<meta property="og:updated_time" content="2020-09-01T13:29:47.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试篇">
 <meta name="twitter:description" content="阿里盒马前端五面问题总结">
+<meta name="twitter:image" content="https://lifei-2019.github.io/interview3/OAuth.png">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -245,7 +248,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.8k字</span>
+      <span class="post-count">5.2k字</span>
     </span>
   </span>
 
@@ -254,7 +257,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
+      <span class="post-count">18分</span>
     </span>
   </span>
 </div>
@@ -318,6 +321,117 @@
 <h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>1.get：如果主要是为了获取数据，比如一些获取数据的get请求，且加上请求参数的url不会特别大（小于1k还是2k），且最好没有需要保密的字段，则用get请求； </p>
 <p>2.post：如果主要是为了提交一些数据，比如提交一些数据给后台保存，删除等（通常是一些写方法），无论是否有一定数据量均可使用post； </p>
 <p>3.以上没有严格划分，即使使用post提交请求来get一些数据也是可以的</p>
+<br>
+
+<br>
+
+<h1 id="HTTP常见状态码"><a href="#HTTP常见状态码" class="headerlink" title="HTTP常见状态码"></a>HTTP常见状态码</h1><p>1××：消息响应</p>
+<p>2××：成功响应</p>
+<p>3××：重定响应</p>
+<p>4××：客户端错误</p>
+<p>5××：服务器端错误</p>
+<p><br><br></p>
+<h2 id="500-内部服务器错误"><a href="#500-内部服务器错误" class="headerlink" title="500 内部服务器错误"></a>500 内部服务器错误</h2><h2 id="404-错误请求，"><a href="#404-错误请求，" class="headerlink" title="404 错误请求，"></a><strong>404 错误请求，</strong></h2><p><strong>因发送的请求语法错误,服务器无法正常读取</strong>。</p>
+<h2 id="403-禁止访问"><a href="#403-禁止访问" class="headerlink" title="403 禁止访问"></a><strong>403 禁止访问</strong></h2><p><strong>客户端没有权利访问所请求内容,服务器拒绝本次请求。</strong></p>
+<p>（状态码403通常代表客户端错误，是指的服务器端有能力处理该请求，但是拒绝授权访问。这个状态码类似于401，但是进入该状态后不能再继续进行验证，该访问是长期禁止的，并且与应用逻辑密切相关，比如密码不正确等。）</p>
+<h2 id="400-错误请求"><a href="#400-错误请求" class="headerlink" title="400 错误请求"></a><strong>400 错误请求</strong></h2><p><strong>因发送的请求语法错误,服务器无法正常读取。</strong></p>
+<p>（一般会因为前端提交数据的字段名称，或者是字段类型和后台的实体类不一致，导致无法封装。）</p>
+<h2 id="401-Unauthorized-未经授权"><a href="#401-Unauthorized-未经授权" class="headerlink" title="401 Unauthorized 未经授权"></a><strong>401 Unauthorized 未经授权</strong></h2><p><strong>需要身份验证后才能获取所请求的内容,</strong>类似于403错误.不同点是.401错误后,只要正确输入帐号密码,验证即可通过。</p>
+<h2 id="200-请求成功"><a href="#200-请求成功" class="headerlink" title="200 请求成功"></a><strong>200 请求成功</strong></h2><p><code>PUT</code> 和 <code>DELETE</code> 的请求成功通常并不是响应<code>200OK</code>的状态码而是 <code>204No Content</code> 表示无内容(或者 <code>201Created</code>表示一个资源首次被创建成功)。</p>
+<h2 id="206-部分内容"><a href="#206-部分内容" class="headerlink" title="206 部分内容"></a>206 部分内容</h2><p><strong>Partial Content 206 部分内容，当客户端通过使用range头字段进行文件分段下载时使用该状态码。</strong></p>
+<p>状态码206表示服务器已经成功处理了部分GET请求。类似于FlashGet或者迅雷这类的HTTP 下载工具都是使用此类响应实现断点续传或者将一个大文档分解为多个下载段同时下载。</p>
+<h2 id="301-永久重定向"><a href="#301-永久重定向" class="headerlink" title="301 永久重定向"></a>301 永久重定向</h2><p><strong>Moved Permanently 301 永久移动，该状态码表示所请求的URI资源路径已经改变,新的URL会在响应的Location:头字段里找到。</strong></p>
+<p>尽管标准要求浏览器在收到该响应并进行重定向时不应该修改http method和body，但是有一些浏览器可能会有问题。所以最好是在应对<code>GET</code> 或 <code>HEAD</code> 方法时使用301，其他情况使用<code>308</code> 来替代301。</p>
+<h2 id="302-临时重定向"><a href="#302-临时重定向" class="headerlink" title="302 临时重定向"></a>302 临时重定向</h2><p><strong>Found 302临时移动，该状态码表示所请求的URI资源路径临时改变,并且还可能继续改变.因此客户端在以后访问时还得继续使用该URI.新的URL会在响应的Location:头字段里找到。</strong></p>
+<p>即使规范要求浏览器在重定向时保证请求方法和请求主体不变，但并不是所有的用户代理都会遵循这一点，你依然可以看到有缺陷的软件的存在。所以推荐仅在响应 GET 或 HEAD 方法时采用 302 状态码，而在其他时候使用 307 Temporary Redirect 来替代，因为在这些场景下方法变换是明确禁止的。</p>
+<h2 id="502-无效网关"><a href="#502-无效网关" class="headerlink" title="502 无效网关"></a>502 无效网关</h2><p><strong>Bad Gateway 502 网关错误，服务器作为网关且从上游服务器获取到了一个无效的HTTP响应。</strong></p>
+<p>bad gateway502代表您所访问的网站出了问题，因为502 Bad Gateway 服务器作为网关或者代理时，是为了完成访问下一个服务器，但该服务器返回了非法的应答。也许是暂时的，也许是的。建议大家稍等一下再从新访问试试。</p>
+<p><br><br></p>
+<h1 id="前端鉴权"><a href="#前端鉴权" class="headerlink" title="前端鉴权"></a>前端鉴权</h1><ul>
+<li>HTTP Basic Authentication</li>
+<li>session-cookie机制</li>
+<li>Token验证</li>
+<li>OAuth开放授权</li>
+</ul>
+<br>
+
+<h2 id="1、HTTP-Basic-Authentication-基本不用"><a href="#1、HTTP-Basic-Authentication-基本不用" class="headerlink" title="1、HTTP Basic Authentication(基本不用)"></a><strong>1、HTTP Basic Authentication</strong>(基本不用)</h2><p>在HTTP中，基本认证是允许http用户代理（浏览器）在请求时，提供用户名和密码的一种方式。是一种十分简单的技术，使用的是HTTP头部字段强制用户访问网络资源，而不是通过cookie、sessionId、登陆页面等非获取访问控制的手段。</p>
+<p>很多网页浏览器都支持这个，但是很少可以在公网上使用，因为他并没有为传送凭证提供数据保护，使用简单的base64编码后直接发送，编码可逆且安全性低。<strong>还有一个缺点就是用户在打开浏览器的情况下用户无法登出，也就是无法注销你已登录。</strong>解决方法一般是服务器准备一个注销的账号，当服务器接收到的账号密码是注销账号时就会注销。</p>
+<p>如果用户在没有验证的情况下会返回401状态码提示用户进行授权，基本上就是一种密码机制，<strong>中间可能会被截取和修改字段</strong>，所以是很不安全的机制。</p>
+<h2 id="2、session-cookie机制（用的少）"><a href="#2、session-cookie机制（用的少）" class="headerlink" title="2、session-cookie机制（用的少）"></a><strong>2、session-cookie机制</strong>（用的少）</h2><p>利用服务端的session和浏览器的cookie来实现前后端鉴权，我们知道http是一种无状态的请求，用户请求完成就会关闭。如果要维持状态就需要<strong>浏览器第一次请求的时候在服务端创建一个session</strong>，session有一个唯一的标识就是sessionId。一般生产sessionId之后经过加密（可不用加密）返回给客户端，以cookie的形式保存在浏览器中。</p>
+<p>当下一次请求时就会在请求头中加入cookie信息，服务器取出sessionId与之前生成的sessionId比对是否一致，来判断请求是否合法。</p>
+<p>这种方法一般用在老版本的web系统，因为<strong>信息也是存储在cookie</strong>当中，也有不安全的成分在里面，一般现在的系统也不会采用这种形式的鉴权。</p>
+<h2 id="3-token"><a href="#3-token" class="headerlink" title="3.token"></a>3.token</h2><p>我们输入用户名和密码点击登陆的时候，加入网站是以Token进行鉴权的话，会有以下的步骤产生：</p>
+<ul>
+<li>用户名和密码请求登陆</li>
+<li>服务端验证是否为数据库用户</li>
+<li>成功，下发令牌Token给客户端</li>
+<li>客户端以后每次请求都会带上令牌</li>
+<li>服务端每次都会验证令牌</li>
+</ul>
+<p>其实看起来和上一个的验证方法差不多呀，到底有哪些区别呢？</p>
+<p>session和cookie机制是在客户端与服务端之间保持一个状态，服务端创建session对象也是需要开辟一定的内存空间来保存登陆状态的，但是利用Token的话就不会保持状态，只需比对令牌是否有效即可。</p>
+<p>也就是说Token是不存储在服务器的，这个Token本身就保存着登陆状态，服务器根据事先定义好的规则进行解密就可以知道该Token是否合理。初次之外，我们知道不只是浏览器是代理客户端，手机APP也是，在手机上面cookie是不起作用的，那么久限制了客户端类型，Token验证就不会有这个问题。</p>
+<h2 id="4、OAuth开放授权"><a href="#4、OAuth开放授权" class="headerlink" title="4、OAuth开放授权"></a><strong>4、OAuth开放授权</strong></h2><p>这种方法用的是最多的，我们常见的一些网站比如CSDN、掘金等都可以利用微信和QQ进行登陆的，无须使用其他的用户名和密码。这种方式就可以省略了很多步骤，使得用户体验良好。</p>
+<p>那么它是怎么操作的呢？</p>
+<ul>
+<li>向用户请求授权</li>
+<li>用户授权，返回凭证code给第三方（CSDN/掘金）</li>
+<li>利用code向授权服务器请求Access Token</li>
+<li>返回Access Token</li>
+<li>利用Access Token向资源服务器请求用户资源</li>
+<li>获取用户资源，登陆成功</li>
+</ul>
+<p><img src="/interview3/OAuth.png" alt></p>
+<p><a href="https://mp.weixin.qq.com/s/in_E1pKqQc8wkPXT61g8gQ" target="_blank" rel="noopener">OAuth2.0参考资料</a></p>
+<h1 id="5-说说https的内在原理，ssl握手过程"><a href="#5-说说https的内在原理，ssl握手过程" class="headerlink" title="5.说说https的内在原理，ssl握手过程"></a>5.说说https的内在原理，ssl握手过程</h1><h2 id="先验知识"><a href="#先验知识" class="headerlink" title="先验知识"></a>先验知识</h2><p>1、对称加密</p>
+<p>有流式、分组两种，加密和解密都是使用的同一个密钥。</p>
+<p>例如：DES、AES-GCM、ChaCha20-Poly1305等</p>
+<p>2、非对称加密</p>
+<p>加密使用的密钥和解密使用的密钥是不相同的，分别称为：公钥、私钥，公钥和算法都是公开的，私钥是保密的。非对称加密算法性能较低，但是安全性超强，由于其加密特性，非对称加密算法能加密的数据长度也是有限的。</p>
+<p>例如：RSA、DSA、ECDSA、 DH、ECDHE</p>
+<p>3、哈希算法</p>
+<p>将任意长度的信息转换为较短的固定长度的值，通常其长度要比信息小得多，且算法不可逆。</p>
+<p>例如：MD5、SHA-1、SHA-2、SHA-256 等</p>
+<p>4、数字签名</p>
+<p>签名就是在信息的后面再加上一段内容（信息经过hash后的值），可以证明信息没有被修改过。hash值一般都会加密后（也就是签名）再和信息一起发送，以保证这个hash值不被修改。</p>
+<h2 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h2><p>1、获取公钥</p>
+<p>（1）提供一个下载公钥的地址，回话前让客户端去下载。（缺点：下载地址有可能是假的；客户端每次在回话前都先去下载公钥也很麻烦）<br>（2）回话开始时，服务器把公钥发给客户端（缺点：黑客冒充服务器，发送给客户端假的公钥）</p>
+<p>2、那有木有一种方式既可以安全的获取公钥，又能防止黑客冒充呢？   那就需要用到终极武器了：SSL 证书（<a href="https://link.zhihu.com/?target=https%3A//console.upyun.com/toolbox/createCertificate/" target="_blank" rel="noopener">申购</a>）</p>
+<p><img src="/interview3/ssl1.png" alt></p>
+<p>如上图所示，在第 ② 步时服务器发送了一个SSL证书给客户端，SSL 证书中包含的具体内容有：</p>
+<p>（1）证书的发布机构CA</p>
+<p>（2）证书的有效期</p>
+<p>（3）公钥</p>
+<p>（4）证书所有者</p>
+<p>（5）签名</p>
+<p>………</p>
+<p>3、客户端在接受到服务端发来的SSL证书时，会对证书的真伪进行校验，以浏览器为例说明如下：</p>
+<p>（1）首先浏览器读取证书中的证书所有者、有效期等信息进行一一校验</p>
+<p>（2）浏览器开始查找操作系统中已内置的受信任的证书发布机构CA，与服务器发来的证书中的颁发者CA比对，用于校验证书是否为合法机构颁发 </p>
+<p>（3）如果找不到，浏览器就会报错，说明服务器发来的证书是不可信任的。</p>
+<p>（4）如果找到，那么浏览器就会从操作系统中取出  颁发者CA  的公钥，然后对服务器发来的证书里面的签名进行解密</p>
+<p>（5）浏览器使用相同的hash算法计算出服务器发来的证书的hash值，将这个计算的hash值与证书中签名做对比</p>
+<p>（6）对比结果一致，则证明服务器发来的证书合法，没有被冒充</p>
+<p>（7）此时浏览器就可以读取证书中的公钥，用于后续加密了</p>
+<p>4、所以通过发送SSL证书的形式，既解决了公钥获取问题，又解决了黑客冒充问题，一箭双雕，HTTPS加密过程也就此形成</p>
+<p>   所以相比HTTP，HTTPS 传输更加安全</p>
+<p>（1） 所有信息都是加密传播，黑客无法窃听。</p>
+<p>（2） 具有校验机制，一旦被篡改，通信双方会立刻发现。</p>
+<p>（3） 配备身份证书，防止身份被冒充。</p>
+<p><a href="https://zhuanlan.zhihu.com/p/27395037" target="_blank" rel="noopener">参考知乎上的文章</a></p>
+<h1 id="为什么要用非对称密钥，pms呢？公钥怎么了？"><a href="#为什么要用非对称密钥，pms呢？公钥怎么了？" class="headerlink" title="为什么要用非对称密钥，pms呢？公钥怎么了？"></a>为什么要用非对称密钥，pms呢？公钥怎么了？</h1><p>1）对称加密：两边需要使用相同的密钥，需要使用一种安全的方式交换密钥，单纯使用对称加密，无法实现密钥交换。</p>
+<p>2）非对称加密：只使用非对称加密是可以满足安全性要求的，但是由于非对称加密的计算耗时高于对称加密的2-3个数量级（相同安全加密级别），所以才先使用非对称交换密钥，之后再使用对称加密通信。</p>
+<p><strong>先补充说明一下SSL握手过程</strong>（算法列表，完整性鉴别，不重数…等细节略）<strong>：</strong></p>
+<p>客户端获取证书取得服务器公钥仅仅只是一个开始，之后客户端利用这个公钥发送给服务器一个PMS（Pre-Master Secret 前主密钥），双方共享了这个PMS之后利用特定的算法导出这次会话所要使用的对称密钥，然后这次对话的数据全都用这个对称密钥加密（非对称加密的计算开销太大，不能大量使用）</p>
+<p><strong>是否每次HTTPS请求都要进行SSL握手？</strong></p>
+<p>并不是。SSL是逻辑上独立于运输层的，并且是面向连接的，所以不管进行几次https请求，也不管tcp连接有没有更新，只要客户和服务器的SSL连接没有终止并且双方没有丢失这段SSL连接的识别号，客户和服务器之间就可以一直使用握手阶段生成的对称密钥进行应用层通信。只有重新进行SSL连接时才会再握手。</p>
+<h1 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h1><p>响应式布局：容器大小随窗口大小而变化，一套界面代码对应多种屏幕。</p>
+<p>自适应布局：容器大小不随窗口大小而变化，边距随窗口大小而变化。</p>
+<p><strong>优点：</strong></p>
+<p>智能响应式设计为客户提供了更高的浏览体验。</p>
+<p>响应式网站建设比传统网站更适合SEO排名。</p>
+<p>可以通过一个网站访问多个终端，从而降低了开发成本。</p>
 
     
 
@@ -507,7 +621,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？"><span class="toc-number">1.</span> <span class="toc-text">1.提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器请求后发生的完整过程"><span class="toc-number">1.1.</span> <span class="toc-text">浏览器请求后发生的完整过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-post和get的区别，列举一下"><span class="toc-number">2.</span> <span class="toc-text">2.post和get的区别，列举一下</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#区别"><span class="toc-number">2.1.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#联系"><span class="toc-number">2.2.</span> <span class="toc-text">联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-number">2.3.</span> <span class="toc-text">用法</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？"><span class="toc-number">1.</span> <span class="toc-text">1.提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器请求后发生的完整过程"><span class="toc-number">1.1.</span> <span class="toc-text">浏览器请求后发生的完整过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-post和get的区别，列举一下"><span class="toc-number">2.</span> <span class="toc-text">2.post和get的区别，列举一下</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#区别"><span class="toc-number">2.1.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#联系"><span class="toc-number">2.2.</span> <span class="toc-text">联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-number">2.3.</span> <span class="toc-text">用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP常见状态码"><span class="toc-number">3.</span> <span class="toc-text">HTTP常见状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#500-内部服务器错误"><span class="toc-number">3.1.</span> <span class="toc-text">500 内部服务器错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#404-错误请求，"><span class="toc-number">3.2.</span> <span class="toc-text">404 错误请求，</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#403-禁止访问"><span class="toc-number">3.3.</span> <span class="toc-text">403 禁止访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#400-错误请求"><span class="toc-number">3.4.</span> <span class="toc-text">400 错误请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#401-Unauthorized-未经授权"><span class="toc-number">3.5.</span> <span class="toc-text">401 Unauthorized 未经授权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#200-请求成功"><span class="toc-number">3.6.</span> <span class="toc-text">200 请求成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#206-部分内容"><span class="toc-number">3.7.</span> <span class="toc-text">206 部分内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#301-永久重定向"><span class="toc-number">3.8.</span> <span class="toc-text">301 永久重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#302-临时重定向"><span class="toc-number">3.9.</span> <span class="toc-text">302 临时重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#502-无效网关"><span class="toc-number">3.10.</span> <span class="toc-text">502 无效网关</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端鉴权"><span class="toc-number">4.</span> <span class="toc-text">前端鉴权</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、HTTP-Basic-Authentication-基本不用"><span class="toc-number">4.1.</span> <span class="toc-text">1、HTTP Basic Authentication(基本不用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、session-cookie机制（用的少）"><span class="toc-number">4.2.</span> <span class="toc-text">2、session-cookie机制（用的少）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-token"><span class="toc-number">4.3.</span> <span class="toc-text">3.token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、OAuth开放授权"><span class="toc-number">4.4.</span> <span class="toc-text">4、OAuth开放授权</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-说说https的内在原理，ssl握手过程"><span class="toc-number">5.</span> <span class="toc-text">5.说说https的内在原理，ssl握手过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#先验知识"><span class="toc-number">5.1.</span> <span class="toc-text">先验知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体过程"><span class="toc-number">5.2.</span> <span class="toc-text">具体过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为什么要用非对称密钥，pms呢？公钥怎么了？"><span class="toc-number">6.</span> <span class="toc-text">为什么要用非对称密钥，pms呢？公钥怎么了？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#响应式布局"><span class="toc-number">7.</span> <span class="toc-text">响应式布局</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -702,18 +816,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
@@ -723,6 +825,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">3D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -742,15 +852,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -766,7 +880,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -774,11 +888,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">

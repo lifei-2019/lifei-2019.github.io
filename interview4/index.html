@@ -18,10 +18,12 @@
 <meta property="og:site_name" content="春风十里不如你">
 <meta property="og:description" content="这是实习期间对自己碰到的一些小技巧进行整理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-26T09:03:34.508Z">
+<meta property="og:image" content="https://lifei-2019.github.io/interview4/deep.png">
+<meta property="og:updated_time" content="2020-08-27T09:41:00.140Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目小技巧">
 <meta name="twitter:description" content="这是实习期间对自己碰到的一些小技巧进行整理">
+<meta name="twitter:image" content="https://lifei-2019.github.io/interview4/deep.png">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -245,7 +247,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">390字</span>
+      <span class="post-count">678字</span>
     </span>
   </span>
 
@@ -254,7 +256,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -297,6 +299,20 @@
 <br>
 
 <br>
+
+<h1 id="Vue-使用Scss预处理Css，在使用深度作用选择器修改局部ui默认样式时，-deep-报错不生效"><a href="#Vue-使用Scss预处理Css，在使用深度作用选择器修改局部ui默认样式时，-deep-报错不生效" class="headerlink" title="Vue 使用Scss预处理Css，在使用深度作用选择器修改局部ui默认样式时，/deep/报错不生效"></a>Vue 使用Scss预处理Css，在使用深度作用选择器修改局部ui默认样式时，/deep/报错不生效</h1><p>深度作用选择器有&gt;&gt;&gt;和别名/deep/<br>&gt;&gt;&gt;基本在纯css中使用，类似Sass，less的Css预编译器一般都用/deep/。</p>
+<h2 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h2><p>最近在写项目的时候（使用eslint-standard代码校验），我用Sass(dart-Sass)使用/deep/修改局部默认ui样式的时候，发现终端报错，并指明是/deep/这块的错误。报错如下<br>!</p>
+<p><img src="/interview4/deep.png" alt></p>
+<p>无奈我只好另起一个style去写纯Css去修改默认ui样式。<br>之后经过一番查找，了解到现在可以使用::v-deep去代替/deep/</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">::v-deep</span> <span class="selector-class">.el-scrollbar__wrap</span> &#123;</span><br><span class="line">  <span class="attribute">overflow-x</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如此，成功修改默认ui样式，类名前缀成功添加！</p>
+<h1 id="vue-cli3项目解决npm-run-dev在浏览器打开两次的问题"><a href="#vue-cli3项目解决npm-run-dev在浏览器打开两次的问题" class="headerlink" title="vue-cli3项目解决npm run dev在浏览器打开两次的问题"></a>vue-cli3项目解决npm run dev在浏览器打开两次的问题</h1><ol>
+<li>删掉vue.config.js文件里面devServer下面的 open:true</li>
+<li>在package.json文件 scripts对象 dev键后面加 –open，（”dev”: “vue-cli-service serve –open”）</li>
+<li>ok 重新运行npm run dev (修改配置文件后要重新启动项目修改才会生效）</li>
+</ol>
+
     
 
     
@@ -476,7 +492,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue的href动态拼接绑定"><span class="toc-number">1.</span> <span class="toc-text">Vue的href动态拼接绑定</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串太长用“…”点开查看更多"><span class="toc-number">2.</span> <span class="toc-text">字符串太长用“…”点开查看更多</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#postcss-config-js-作用-amp-配置"><span class="toc-number">3.</span> <span class="toc-text">postcss.config.js 作用&amp;配置</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue的href动态拼接绑定"><span class="toc-number">1.</span> <span class="toc-text">Vue的href动态拼接绑定</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串太长用“…”点开查看更多"><span class="toc-number">2.</span> <span class="toc-text">字符串太长用“…”点开查看更多</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#postcss-config-js-作用-amp-配置"><span class="toc-number">3.</span> <span class="toc-text">postcss.config.js 作用&amp;配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-使用Scss预处理Css，在使用深度作用选择器修改局部ui默认样式时，-deep-报错不生效"><span class="toc-number">4.</span> <span class="toc-text">Vue 使用Scss预处理Css，在使用深度作用选择器修改局部ui默认样式时，/deep/报错不生效</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#出现的问题"><span class="toc-number">4.1.</span> <span class="toc-text">出现的问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vue-cli3项目解决npm-run-dev在浏览器打开两次的问题"><span class="toc-number">5.</span> <span class="toc-text">vue-cli3项目解决npm run dev在浏览器打开两次的问题</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -671,18 +687,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
@@ -692,6 +696,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">3D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -711,15 +723,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -735,7 +751,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -743,11 +759,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">
