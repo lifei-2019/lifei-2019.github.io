@@ -20,7 +20,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lifei-2019.github.io/interview3/OAuth.png">
 <meta property="og:image" content="https://lifei-2019.github.io/interview3/ssl1.png">
-<meta property="og:updated_time" content="2020-09-01T13:29:47.006Z">
+<meta property="og:updated_time" content="2020-09-02T13:51:33.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试篇">
 <meta name="twitter:description" content="阿里盒马前端五面问题总结">
@@ -248,7 +248,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">5.2k字</span>
+      <span class="post-count">6.2k字</span>
     </span>
   </span>
 
@@ -257,7 +257,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">18分</span>
+      <span class="post-count">22分</span>
     </span>
   </span>
 </div>
@@ -432,6 +432,19 @@
 <p>智能响应式设计为客户提供了更高的浏览体验。</p>
 <p>响应式网站建设比传统网站更适合SEO排名。</p>
 <p>可以通过一个网站访问多个终端，从而降低了开发成本。</p>
+<h1 id="响应式网页原理解析"><a href="#响应式网页原理解析" class="headerlink" title="响应式网页原理解析"></a>响应式网页原理解析</h1><p>@media 媒体查询就是根据不同设备给予不同的样式，我们用这个css3中的语句就可以设计我们网站的样式了</p>
+<p>这里我们还需要了解下“em”这样一个值，我们平时设计网页大小的时候都是使用的px（这样一个相对于屏幕大小的长度单位），而“em” 这个单位是相对于我们浏览器大小的尺寸单位，因为任意未调整浏览器默认字体高度都是16px,所以我们可以认为1em=16px.</p>
+<h2 id="响应式网站-媒体查询-弹性图片"><a href="#响应式网站-媒体查询-弹性图片" class="headerlink" title="响应式网站=媒体查询+弹性图片"></a>响应式网站=媒体查询+弹性图片</h2><p>@media 媒体查询就是根据不同设备给予不同的样式，我们用这个css3中的语句就可以设计我们网站的样式了</p>
+<p>这里我们还需要了解下“em”这样一个值，我们平时设计网页大小的时候都是使用的px（这样一个相对于屏幕大小的长度单位），而“em” 这个单位是相对于我们浏览器大小的尺寸单位，因为任意未调整浏览器默认字体高度都是16px,所以我们可以认为1em=16px.</p>
+<p>那么我们知道em这个单位到底有什么用处呢？</p>
+<p>先不要着急我们再来了解下rem这个单位，em是根据浏览器来进行大小评定的单位，而在支持rem的浏览器中，rem是根据HTML标签来进行定位的，他的参考是HTML的根元素。<br>1、IE9/IE10在用于伪元素时或者使用字体简写声明时不支持rem；<br>2、IOS Safari5.0-5.1虽然支持rem，但是在使用媒体查询时不支持rem。<br>如果你的网站面向是IE用户那么还是少量考虑rem了吧。</p>
+<p>知道了em和rem那么我是不是就可以通过监控这两个单位表示的数给予不同设备，不同的样式了能？那么我简单写了下面一些内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (max-width: 50em) &#123;</span><br><span class="line">    header .top ul li a &#123;</span><br><span class="line">        padding: 0 1rem;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">/*最大宽度为50em的时候给予一些样式设置*/</span><br><span class="line">@media only screen and (min-width: 30.0625em) and (max-width: 50em) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">/*在30.0625em和50em之间给予一个样式*/</span><br><span class="line">@media only screen and (max-width: 30em) &#123;</span><br><span class="line">    header .top .tel,</span><br><span class="line">    header .top ul li:nth-child(3),</span><br><span class="line">    /*规定属于header里.top的第四个子元素的每个li的*/</span><br><span class="line">    header .top ul li:nth-child(4) &#123;</span><br><span class="line">        display: none;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">/*30em以下给予一个样式*/</span><br><span class="line">/*大小数据根据你需要对于对应设备的响应而设置*/</span><br></pre></td></tr></table></figure>
+
+<p>通过上面一段简单的代码我们就可以对我们不同分辨率下网站的显示出来效果做不同的调整，更好的突出我们想展现的页面元素，尤其在移动设备上突出一些我们更想让用户看到的元素，减少我们一些表示意义并不大的元素。</p>
+<p>接下来解决一个我们想让在不同设备上都显示出来我们的高清图片这样一个问题，我们把它叫做弹性图片,这就要牵扯到h5的一个新的标签SOURCE,它里面有一个媒体资源类型属性media,可以设置浏览器在什么样的状态下选择什么样的图片就可以做到弹性图片了，下面是一些简单参考代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;dev class=&quot;ad&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;owl-carousel owl-theme&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;item&quot;&gt;</span><br><span class="line">            &lt;picture&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad001-l.png&quot; media=&quot;(min-width:50em)&quot;&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad001-m.png&quot; media=&quot;(min-width:30em)&quot;&gt;</span><br><span class="line">                    &lt;img src=&quot;img/ad001.png&quot;&gt;</span><br><span class="line">            &lt;/picture&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;item&quot;&gt;</span><br><span class="line">            &lt;picture&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad002-l.png&quot; media=&quot;(min-width:50em)&quot;&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad002-m.png&quot; media=&quot;(min-width:30em)&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;img/ad002.png&quot;&gt;</span><br><span class="line">            &lt;/picture&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;item&quot;&gt;</span><br><span class="line">            &lt;picture&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad003-l.png&quot; media=&quot;(min-width:50em)&quot;&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad003-m.png&quot; media=&quot;(min-width:30em)&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;img/ad003.png&quot;&gt;</span><br><span class="line">            &lt;/picture&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">&lt;/dev&gt;</span><br></pre></td></tr></table></figure>
+
 
     
 
@@ -621,7 +634,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？"><span class="toc-number">1.</span> <span class="toc-text">1.提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器请求后发生的完整过程"><span class="toc-number">1.1.</span> <span class="toc-text">浏览器请求后发生的完整过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-post和get的区别，列举一下"><span class="toc-number">2.</span> <span class="toc-text">2.post和get的区别，列举一下</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#区别"><span class="toc-number">2.1.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#联系"><span class="toc-number">2.2.</span> <span class="toc-text">联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-number">2.3.</span> <span class="toc-text">用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP常见状态码"><span class="toc-number">3.</span> <span class="toc-text">HTTP常见状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#500-内部服务器错误"><span class="toc-number">3.1.</span> <span class="toc-text">500 内部服务器错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#404-错误请求，"><span class="toc-number">3.2.</span> <span class="toc-text">404 错误请求，</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#403-禁止访问"><span class="toc-number">3.3.</span> <span class="toc-text">403 禁止访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#400-错误请求"><span class="toc-number">3.4.</span> <span class="toc-text">400 错误请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#401-Unauthorized-未经授权"><span class="toc-number">3.5.</span> <span class="toc-text">401 Unauthorized 未经授权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#200-请求成功"><span class="toc-number">3.6.</span> <span class="toc-text">200 请求成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#206-部分内容"><span class="toc-number">3.7.</span> <span class="toc-text">206 部分内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#301-永久重定向"><span class="toc-number">3.8.</span> <span class="toc-text">301 永久重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#302-临时重定向"><span class="toc-number">3.9.</span> <span class="toc-text">302 临时重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#502-无效网关"><span class="toc-number">3.10.</span> <span class="toc-text">502 无效网关</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端鉴权"><span class="toc-number">4.</span> <span class="toc-text">前端鉴权</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、HTTP-Basic-Authentication-基本不用"><span class="toc-number">4.1.</span> <span class="toc-text">1、HTTP Basic Authentication(基本不用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、session-cookie机制（用的少）"><span class="toc-number">4.2.</span> <span class="toc-text">2、session-cookie机制（用的少）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-token"><span class="toc-number">4.3.</span> <span class="toc-text">3.token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、OAuth开放授权"><span class="toc-number">4.4.</span> <span class="toc-text">4、OAuth开放授权</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-说说https的内在原理，ssl握手过程"><span class="toc-number">5.</span> <span class="toc-text">5.说说https的内在原理，ssl握手过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#先验知识"><span class="toc-number">5.1.</span> <span class="toc-text">先验知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体过程"><span class="toc-number">5.2.</span> <span class="toc-text">具体过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为什么要用非对称密钥，pms呢？公钥怎么了？"><span class="toc-number">6.</span> <span class="toc-text">为什么要用非对称密钥，pms呢？公钥怎么了？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#响应式布局"><span class="toc-number">7.</span> <span class="toc-text">响应式布局</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？"><span class="toc-number">1.</span> <span class="toc-text">1.提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器请求后发生的完整过程"><span class="toc-number">1.1.</span> <span class="toc-text">浏览器请求后发生的完整过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-post和get的区别，列举一下"><span class="toc-number">2.</span> <span class="toc-text">2.post和get的区别，列举一下</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#区别"><span class="toc-number">2.1.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#联系"><span class="toc-number">2.2.</span> <span class="toc-text">联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-number">2.3.</span> <span class="toc-text">用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP常见状态码"><span class="toc-number">3.</span> <span class="toc-text">HTTP常见状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#500-内部服务器错误"><span class="toc-number">3.1.</span> <span class="toc-text">500 内部服务器错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#404-错误请求，"><span class="toc-number">3.2.</span> <span class="toc-text">404 错误请求，</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#403-禁止访问"><span class="toc-number">3.3.</span> <span class="toc-text">403 禁止访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#400-错误请求"><span class="toc-number">3.4.</span> <span class="toc-text">400 错误请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#401-Unauthorized-未经授权"><span class="toc-number">3.5.</span> <span class="toc-text">401 Unauthorized 未经授权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#200-请求成功"><span class="toc-number">3.6.</span> <span class="toc-text">200 请求成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#206-部分内容"><span class="toc-number">3.7.</span> <span class="toc-text">206 部分内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#301-永久重定向"><span class="toc-number">3.8.</span> <span class="toc-text">301 永久重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#302-临时重定向"><span class="toc-number">3.9.</span> <span class="toc-text">302 临时重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#502-无效网关"><span class="toc-number">3.10.</span> <span class="toc-text">502 无效网关</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端鉴权"><span class="toc-number">4.</span> <span class="toc-text">前端鉴权</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、HTTP-Basic-Authentication-基本不用"><span class="toc-number">4.1.</span> <span class="toc-text">1、HTTP Basic Authentication(基本不用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、session-cookie机制（用的少）"><span class="toc-number">4.2.</span> <span class="toc-text">2、session-cookie机制（用的少）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-token"><span class="toc-number">4.3.</span> <span class="toc-text">3.token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、OAuth开放授权"><span class="toc-number">4.4.</span> <span class="toc-text">4、OAuth开放授权</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-说说https的内在原理，ssl握手过程"><span class="toc-number">5.</span> <span class="toc-text">5.说说https的内在原理，ssl握手过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#先验知识"><span class="toc-number">5.1.</span> <span class="toc-text">先验知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体过程"><span class="toc-number">5.2.</span> <span class="toc-text">具体过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为什么要用非对称密钥，pms呢？公钥怎么了？"><span class="toc-number">6.</span> <span class="toc-text">为什么要用非对称密钥，pms呢？公钥怎么了？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#响应式布局"><span class="toc-number">7.</span> <span class="toc-text">响应式布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#响应式网页原理解析"><span class="toc-number">8.</span> <span class="toc-text">响应式网页原理解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#响应式网站-媒体查询-弹性图片"><span class="toc-number">8.1.</span> <span class="toc-text">响应式网站=媒体查询+弹性图片</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -816,10 +829,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -829,6 +838,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,15 +857,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -860,11 +869,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Node</a>
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -880,6 +893,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
@@ -889,10 +906,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">新世界</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">
