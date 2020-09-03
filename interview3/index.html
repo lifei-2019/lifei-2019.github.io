@@ -6,23 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lifei-2019.github.io">
-  <title>面试篇 | 春风十里不如你</title>
+  <title>面试篇(1) | 春风十里不如你</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="阿里盒马前端五面问题总结">
 <meta name="keywords" content="前端,面试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试篇">
+<meta property="og:title" content="面试篇(1)">
 <meta property="og:url" content="https://lifei-2019.github.io/interview3/index.html">
 <meta property="og:site_name" content="春风十里不如你">
 <meta property="og:description" content="阿里盒马前端五面问题总结">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lifei-2019.github.io/interview3/OAuth.png">
 <meta property="og:image" content="https://lifei-2019.github.io/interview3/ssl1.png">
-<meta property="og:updated_time" content="2020-09-02T13:51:33.913Z">
+<meta property="og:image" content="https://lifei-2019.github.io/interview3/dom.png">
+<meta property="og:image" content="https://lifei-2019.github.io/interview3/zhuanyi.png">
+<meta property="og:updated_time" content="2020-09-03T12:51:57.428Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试篇">
+<meta name="twitter:title" content="面试篇(1)">
 <meta name="twitter:description" content="阿里盒马前端五面问题总结">
 <meta name="twitter:image" content="https://lifei-2019.github.io/interview3/OAuth.png">
   
@@ -88,7 +90,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数69
+		总文章数70
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -222,7 +224,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      面试篇
+      面试篇(1)
     </h1>
   
 
@@ -248,7 +250,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">6.2k字</span>
+      <span class="post-count">6.9k字</span>
     </span>
   </span>
 
@@ -257,7 +259,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">22分</span>
+      <span class="post-count">25分</span>
     </span>
   </span>
 </div>
@@ -306,7 +308,7 @@
 </li>
 </ul>
 <p><strong>参考资料</strong>：<a href="https://blog.csdn.net/weixin_42621338/article/details/87354737" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42621338/article/details/87354737</a></p>
-<p><br><br></p>
+<p><br><br><br><br></p>
 <h1 id="2-post和get的区别，列举一下"><a href="#2-post和get的区别，列举一下" class="headerlink" title="2.post和get的区别，列举一下"></a>2.post和get的区别，列举一下</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>1.get在浏览器后退时无害，不发送请求。post在浏览器后退时会再次发送请求。</p>
 <p>2.get参数通常放在url后面传递，post则通常放在Request body中传递。但实际上，get也可以用body少量传值，post也可以在url中少量传值，这在技术上是完全行的通的，只是不符合http的规定 </p>
 <p>3.get比post更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。 </p>
@@ -384,6 +386,7 @@
 </ul>
 <p><img src="/interview3/OAuth.png" alt></p>
 <p><a href="https://mp.weixin.qq.com/s/in_E1pKqQc8wkPXT61g8gQ" target="_blank" rel="noopener">OAuth2.0参考资料</a></p>
+<p><br><br><br><br></p>
 <h1 id="5-说说https的内在原理，ssl握手过程"><a href="#5-说说https的内在原理，ssl握手过程" class="headerlink" title="5.说说https的内在原理，ssl握手过程"></a>5.说说https的内在原理，ssl握手过程</h1><h2 id="先验知识"><a href="#先验知识" class="headerlink" title="先验知识"></a>先验知识</h2><p>1、对称加密</p>
 <p>有流式、分组两种，加密和解密都是使用的同一个密钥。</p>
 <p>例如：DES、AES-GCM、ChaCha20-Poly1305等</p>
@@ -420,13 +423,15 @@
 <p>（2） 具有校验机制，一旦被篡改，通信双方会立刻发现。</p>
 <p>（3） 配备身份证书，防止身份被冒充。</p>
 <p><a href="https://zhuanlan.zhihu.com/p/27395037" target="_blank" rel="noopener">参考知乎上的文章</a></p>
-<h1 id="为什么要用非对称密钥，pms呢？公钥怎么了？"><a href="#为什么要用非对称密钥，pms呢？公钥怎么了？" class="headerlink" title="为什么要用非对称密钥，pms呢？公钥怎么了？"></a>为什么要用非对称密钥，pms呢？公钥怎么了？</h1><p>1）对称加密：两边需要使用相同的密钥，需要使用一种安全的方式交换密钥，单纯使用对称加密，无法实现密钥交换。</p>
+<p><br><br><br><br></p>
+<h1 id="6-为什么要用非对称密钥，pms呢？公钥怎么了？"><a href="#6-为什么要用非对称密钥，pms呢？公钥怎么了？" class="headerlink" title="6.为什么要用非对称密钥，pms呢？公钥怎么了？"></a>6.为什么要用非对称密钥，pms呢？公钥怎么了？</h1><p>1）对称加密：两边需要使用相同的密钥，需要使用一种安全的方式交换密钥，单纯使用对称加密，无法实现密钥交换。</p>
 <p>2）非对称加密：只使用非对称加密是可以满足安全性要求的，但是由于非对称加密的计算耗时高于对称加密的2-3个数量级（相同安全加密级别），所以才先使用非对称交换密钥，之后再使用对称加密通信。</p>
 <p><strong>先补充说明一下SSL握手过程</strong>（算法列表，完整性鉴别，不重数…等细节略）<strong>：</strong></p>
 <p>客户端获取证书取得服务器公钥仅仅只是一个开始，之后客户端利用这个公钥发送给服务器一个PMS（Pre-Master Secret 前主密钥），双方共享了这个PMS之后利用特定的算法导出这次会话所要使用的对称密钥，然后这次对话的数据全都用这个对称密钥加密（非对称加密的计算开销太大，不能大量使用）</p>
 <p><strong>是否每次HTTPS请求都要进行SSL握手？</strong></p>
 <p>并不是。SSL是逻辑上独立于运输层的，并且是面向连接的，所以不管进行几次https请求，也不管tcp连接有没有更新，只要客户和服务器的SSL连接没有终止并且双方没有丢失这段SSL连接的识别号，客户和服务器之间就可以一直使用握手阶段生成的对称密钥进行应用层通信。只有重新进行SSL连接时才会再握手。</p>
-<h1 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h1><p>响应式布局：容器大小随窗口大小而变化，一套界面代码对应多种屏幕。</p>
+<p><br><br><br><br></p>
+<h1 id="7-响应式布局"><a href="#7-响应式布局" class="headerlink" title="7.响应式布局"></a>7.响应式布局</h1><p>响应式布局：容器大小随窗口大小而变化，一套界面代码对应多种屏幕。</p>
 <p>自适应布局：容器大小不随窗口大小而变化，边距随窗口大小而变化。</p>
 <p><strong>优点：</strong></p>
 <p>智能响应式设计为客户提供了更高的浏览体验。</p>
@@ -445,6 +450,40 @@
 <p>接下来解决一个我们想让在不同设备上都显示出来我们的高清图片这样一个问题，我们把它叫做弹性图片,这就要牵扯到h5的一个新的标签SOURCE,它里面有一个媒体资源类型属性media,可以设置浏览器在什么样的状态下选择什么样的图片就可以做到弹性图片了，下面是一些简单参考代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;dev class=&quot;ad&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;owl-carousel owl-theme&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;item&quot;&gt;</span><br><span class="line">            &lt;picture&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad001-l.png&quot; media=&quot;(min-width:50em)&quot;&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad001-m.png&quot; media=&quot;(min-width:30em)&quot;&gt;</span><br><span class="line">                    &lt;img src=&quot;img/ad001.png&quot;&gt;</span><br><span class="line">            &lt;/picture&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;item&quot;&gt;</span><br><span class="line">            &lt;picture&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad002-l.png&quot; media=&quot;(min-width:50em)&quot;&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad002-m.png&quot; media=&quot;(min-width:30em)&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;img/ad002.png&quot;&gt;</span><br><span class="line">            &lt;/picture&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;item&quot;&gt;</span><br><span class="line">            &lt;picture&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad003-l.png&quot; media=&quot;(min-width:50em)&quot;&gt;</span><br><span class="line">                &lt;source srcset=&quot;img/ad003-m.png&quot; media=&quot;(min-width:30em)&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;img/ad003.png&quot;&gt;</span><br><span class="line">            &lt;/picture&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">&lt;/dev&gt;</span><br></pre></td></tr></table></figure>
 
+<br>
+
+<br>
+
+<p><br><br></p>
+<h1 id="8-dom树和cssom树原理"><a href="#8-dom树和cssom树原理" class="headerlink" title="8.dom树和cssom树原理"></a>8.dom树和cssom树原理</h1><p>1 根据HTML构建HTML树（DOM）</p>
+<p>2 根据CSS构建CSS树（CSSOM）</p>
+<p>3 将两棵树合并成一颗渲染树（render tree）</p>
+<p>4 Layout布局（文档流，盒模型，计算大小和位置）</p>
+<p>5 Paint绘制 （把边框颜色，文字颜色，阴影等画出来）</p>
+<p>6 Compose 合成 （根据层叠关系展示画面）</p>
+<p><img src="/interview3/dom.png" alt></p>
+<p>如果DOM或CSSOM被修改，您只能在执行一遍以上的步骤，以确定哪些像素需要在屏幕上进行重新渲染。</p>
+<p>优化关键渲染路径就是指最大限度缩短执行上述第一步至第五步耗费的总时间。这样一来，就能尽快将内弄渲染到屏幕上，此外还能缩短首次渲染后屏幕刷新的时间，即为交互式内容实现更高的刷新率。</p>
+<h1 id="9-为什么link要在前，script标签要在后面呢？"><a href="#9-为什么link要在前，script标签要在后面呢？" class="headerlink" title="9.为什么link要在前，script标签要在后面呢？"></a>9.为什么link要在前，script标签要在后面呢？</h1><p><code>CSS</code> 不会阻塞 <code>DOM</code> 的解析，但会阻塞 <code>DOM</code> 渲染。<br> <code>JS</code> 阻塞 <code>DOM</code> 解析，但浏览器会”偷看”<code>DOM</code>，预先下载相关资源。<br> 浏览器遇到 <code>&lt;script&gt;</code>且没有<code>defer</code>或<code>async</code>属性的 标签时，会触发页面渲染，因而如果前面<code>CSS</code>资源尚未加载完毕时，浏览器会等待它加载完毕在执行脚本。</p>
+<p>所以，<code>&lt;script&gt;</code>最好放底部，<code>&lt;link&gt;</code>最好放头部，如果头部同时有<code>&lt;script&gt;</code>与<code>&lt;link&gt;</code>的情况下，最好将<code>&lt;script&gt;</code>放在<code>&lt;link&gt;</code></p>
+<p><br><br><br><br></p>
+<h1 id="10-XSS攻击"><a href="#10-XSS攻击" class="headerlink" title="10.XSS攻击"></a>10.XSS攻击</h1><p>1，escapeHTML将&lt; &gt; &amp; “ ‘转成字符实体 </p>
+<p>使用场景： </p>
+<p>（1）用户在页面中录入（比如输入框）<code>&lt;script&gt;alert(2);&lt;/script&gt;</code>， js将该内容提交给后端保存 </p>
+<p>（2）显示时，后端将字符串返回前端；js接收到之后： </p>
+<p>a, 使用escapeHTML，将字符串转为 &lt;script&gt;alert(2);&lt;/script&gt;此时，浏览器将能正确解析，因为浏览器接收到实体字符后，转成对应的尖括号等。 </p>
+<p>b, 不使用escapeHTML，浏览器一看到&lt;，便认为是html标签的开始，直接把刚才的字符串当脚本执行了，这就是xss漏洞。 </p>
+<br>
+
+<p>2，unescapeHTML将字符实体转成&lt; &gt; &amp; “ ‘ </p>
+<p>使用场景： </p>
+<p>后端将已经转义后的内容显示到页面；比如&lt;script&gt;alert(2);&lt;/script&gt;<br>js收到后： </p>
+<p>a，前端进行unescapeHTML，则可以直接dom操作，将标签显示到页面。 </p>
+<p>b，前端没有unescapeHTML，则原样输出<code>&lt;script&gt;alert(2);&lt;/script&gt;</code>，但此时并没有执行。 </p>
+<p><strong>转义字符：</strong> </p>
+<p><img src="/interview3/zhuanyi.png" alt></p>
+<p>提示：使用实体名而不是数字的好处是，名称易于记忆。不过坏处是，浏览器也许并不支持所有实体名称（对实体数字的支持却很好）。</p>
+<p>除此之外，还可以限制上传文件的文件类型。</p>
 
     
 
@@ -491,7 +530,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://lifei-2019.github.io/interview3/" title="面试篇" target="_blank">https://lifei-2019.github.io/interview3/</a>
+          <a href="https://lifei-2019.github.io/interview3/" title="面试篇(1)" target="_blank">https://lifei-2019.github.io/interview3/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -634,7 +673,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？"><span class="toc-number">1.</span> <span class="toc-text">1.提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器请求后发生的完整过程"><span class="toc-number">1.1.</span> <span class="toc-text">浏览器请求后发生的完整过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-post和get的区别，列举一下"><span class="toc-number">2.</span> <span class="toc-text">2.post和get的区别，列举一下</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#区别"><span class="toc-number">2.1.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#联系"><span class="toc-number">2.2.</span> <span class="toc-text">联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-number">2.3.</span> <span class="toc-text">用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP常见状态码"><span class="toc-number">3.</span> <span class="toc-text">HTTP常见状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#500-内部服务器错误"><span class="toc-number">3.1.</span> <span class="toc-text">500 内部服务器错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#404-错误请求，"><span class="toc-number">3.2.</span> <span class="toc-text">404 错误请求，</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#403-禁止访问"><span class="toc-number">3.3.</span> <span class="toc-text">403 禁止访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#400-错误请求"><span class="toc-number">3.4.</span> <span class="toc-text">400 错误请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#401-Unauthorized-未经授权"><span class="toc-number">3.5.</span> <span class="toc-text">401 Unauthorized 未经授权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#200-请求成功"><span class="toc-number">3.6.</span> <span class="toc-text">200 请求成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#206-部分内容"><span class="toc-number">3.7.</span> <span class="toc-text">206 部分内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#301-永久重定向"><span class="toc-number">3.8.</span> <span class="toc-text">301 永久重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#302-临时重定向"><span class="toc-number">3.9.</span> <span class="toc-text">302 临时重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#502-无效网关"><span class="toc-number">3.10.</span> <span class="toc-text">502 无效网关</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端鉴权"><span class="toc-number">4.</span> <span class="toc-text">前端鉴权</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、HTTP-Basic-Authentication-基本不用"><span class="toc-number">4.1.</span> <span class="toc-text">1、HTTP Basic Authentication(基本不用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、session-cookie机制（用的少）"><span class="toc-number">4.2.</span> <span class="toc-text">2、session-cookie机制（用的少）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-token"><span class="toc-number">4.3.</span> <span class="toc-text">3.token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、OAuth开放授权"><span class="toc-number">4.4.</span> <span class="toc-text">4、OAuth开放授权</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-说说https的内在原理，ssl握手过程"><span class="toc-number">5.</span> <span class="toc-text">5.说说https的内在原理，ssl握手过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#先验知识"><span class="toc-number">5.1.</span> <span class="toc-text">先验知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体过程"><span class="toc-number">5.2.</span> <span class="toc-text">具体过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为什么要用非对称密钥，pms呢？公钥怎么了？"><span class="toc-number">6.</span> <span class="toc-text">为什么要用非对称密钥，pms呢？公钥怎么了？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#响应式布局"><span class="toc-number">7.</span> <span class="toc-text">响应式布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#响应式网页原理解析"><span class="toc-number">8.</span> <span class="toc-text">响应式网页原理解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#响应式网站-媒体查询-弹性图片"><span class="toc-number">8.1.</span> <span class="toc-text">响应式网站=媒体查询+弹性图片</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？"><span class="toc-number">1.</span> <span class="toc-text">1.提交表单，常用的方法有哪些？应用层，通信层发生了哪些过程？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器请求后发生的完整过程"><span class="toc-number">1.1.</span> <span class="toc-text">浏览器请求后发生的完整过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-post和get的区别，列举一下"><span class="toc-number">2.</span> <span class="toc-text">2.post和get的区别，列举一下</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#区别"><span class="toc-number">2.1.</span> <span class="toc-text">区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#联系"><span class="toc-number">2.2.</span> <span class="toc-text">联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-number">2.3.</span> <span class="toc-text">用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP常见状态码"><span class="toc-number">3.</span> <span class="toc-text">HTTP常见状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#500-内部服务器错误"><span class="toc-number">3.1.</span> <span class="toc-text">500 内部服务器错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#404-错误请求，"><span class="toc-number">3.2.</span> <span class="toc-text">404 错误请求，</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#403-禁止访问"><span class="toc-number">3.3.</span> <span class="toc-text">403 禁止访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#400-错误请求"><span class="toc-number">3.4.</span> <span class="toc-text">400 错误请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#401-Unauthorized-未经授权"><span class="toc-number">3.5.</span> <span class="toc-text">401 Unauthorized 未经授权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#200-请求成功"><span class="toc-number">3.6.</span> <span class="toc-text">200 请求成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#206-部分内容"><span class="toc-number">3.7.</span> <span class="toc-text">206 部分内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#301-永久重定向"><span class="toc-number">3.8.</span> <span class="toc-text">301 永久重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#302-临时重定向"><span class="toc-number">3.9.</span> <span class="toc-text">302 临时重定向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#502-无效网关"><span class="toc-number">3.10.</span> <span class="toc-text">502 无效网关</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端鉴权"><span class="toc-number">4.</span> <span class="toc-text">前端鉴权</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、HTTP-Basic-Authentication-基本不用"><span class="toc-number">4.1.</span> <span class="toc-text">1、HTTP Basic Authentication(基本不用)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、session-cookie机制（用的少）"><span class="toc-number">4.2.</span> <span class="toc-text">2、session-cookie机制（用的少）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-token"><span class="toc-number">4.3.</span> <span class="toc-text">3.token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、OAuth开放授权"><span class="toc-number">4.4.</span> <span class="toc-text">4、OAuth开放授权</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-说说https的内在原理，ssl握手过程"><span class="toc-number">5.</span> <span class="toc-text">5.说说https的内在原理，ssl握手过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#先验知识"><span class="toc-number">5.1.</span> <span class="toc-text">先验知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体过程"><span class="toc-number">5.2.</span> <span class="toc-text">具体过程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-为什么要用非对称密钥，pms呢？公钥怎么了？"><span class="toc-number">6.</span> <span class="toc-text">6.为什么要用非对称密钥，pms呢？公钥怎么了？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-响应式布局"><span class="toc-number">7.</span> <span class="toc-text">7.响应式布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#响应式网页原理解析"><span class="toc-number">8.</span> <span class="toc-text">响应式网页原理解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#响应式网站-媒体查询-弹性图片"><span class="toc-number">8.1.</span> <span class="toc-text">响应式网站=媒体查询+弹性图片</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-dom树和cssom树原理"><span class="toc-number">9.</span> <span class="toc-text">8.dom树和cssom树原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-为什么link要在前，script标签要在后面呢？"><span class="toc-number">10.</span> <span class="toc-text">9.为什么link要在前，script标签要在后面呢？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-XSS攻击"><span class="toc-number">11.</span> <span class="toc-text">10.XSS攻击</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -829,15 +868,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3D</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,7 +888,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">babel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3D</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -861,19 +908,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -897,11 +936,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">

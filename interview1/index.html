@@ -20,7 +20,9 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lifei-2019.github.io/interview1/token.jpg">
 <meta property="og:image" content="https://lifei-2019.github.io/interview1/css%E9%80%89%E6%8B%A9%E5%99%A8.png">
-<meta property="og:updated_time" content="2020-08-11T06:07:28.542Z">
+<meta property="og:image" content="https://lifei-2019.github.io/interview1/event1.png">
+<meta property="og:image" content="https://lifei-2019.github.io/interview1/event2.png">
+<meta property="og:updated_time" content="2020-09-03T12:46:56.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础篇">
 <meta name="twitter:description" content="闭包找到的是同一地址中父级函数中对应变量最终的值">
@@ -88,7 +90,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数69
+		总文章数70
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -248,7 +250,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.1k字</span>
+      <span class="post-count">1.8k字</span>
     </span>
   </span>
 
@@ -257,7 +259,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -323,6 +325,60 @@
 <br>
 
 <p><strong>理解方式1</strong><br>       因为权值不能跃迁，也就意味着无论有多少个0级的选择器，生效的仍然是1级选择器，因   为<strong>选择器的权级无法跃迁</strong>。<br><strong>理解方式2</strong><br>       CSS里面的进制并不是10进制，而是256进制，所以10个低级选择器并不能等于1个高级选择器</p>
+<br>
+
+<br>
+
+<h1 id="eventloop"><a href="#eventloop" class="headerlink" title="eventloop"></a>eventloop</h1><p>setTimeout, setInterval, setImmediate 属于 macro-tasks</p>
+<p>Promise, MutantObserver 属于 micro-tasks</p>
+<h2 id="举例：去窗口办理业务"><a href="#举例：去窗口办理业务" class="headerlink" title="举例：去窗口办理业务"></a>举例：去窗口办理业务</h2><p><strong>正常 task</strong></p>
+<ul>
+<li>同志你好，这是我的资料</li>
+<li>好的，我现在处理。处理完了，请下一位</li>
+</ul>
+<p><strong>Promise</strong> </p>
+<ul>
+<li>同志你好，这是我资料</li>
+<li>你这资料这没填对，你这样，你填完后重新排到队尾好吧，咱们别阻碍别人的业务</li>
+<li>好的好的，谢谢</li>
+</ul>
+<p><strong>setTimeout</strong></p>
+<ul>
+<li>同志你好，这是我资料</li>
+<li>你的证件带了吗？</li>
+<li>哎！我忘家了，我现在回去拿！</li>
+<li>哎 …，你回去拿哈，回来了重新叫号重新排队</li>
+<li>好的好的，不好意思同志</li>
+</ul>
+<hr>
+<p>所以 Promise 的优先级会高于 setTimeout。micro-tasks 列队结束后会(通常)会触发一次 update rendering。整个流程差不多是：</p>
+<ul>
+<li>有没有 macrotask 任务？有就来一个</li>
+<li>有没有 microtask 任务？有就把这个列队的任务全弄完</li>
+<li>弄完了，需要更新视图(update rendering)吗？需要就更新</li>
+</ul>
+<br>
+
+<br>
+
+<p>上代码！</p>
+<p><img src="/interview1/event1.png" alt></p>
+<p>上面的执行结果是2，1。<br>从规范上来讲，setTimeout有一个4ms的最短时间，也就是说不管你设定多少，反正最少都要间隔4ms才运行里面的回调。而Promise的异步没有这个问题。</p>
+<p>从具体实现上来说，这两个的异步队列不一样，Promise所在的那个异步队列优先级要高一些。具体讲解看第二个例子：</p>
+<p><img src="/interview1/event2.png" alt></p>
+<p>执行结果1，2，3，5，4</p>
+<p>为什么执行这样的结果？</p>
+<p>1、创建Promise实例是同步执行的。所以先输出1，2，3，这三行代码都是同步执行。</p>
+<p>2、promise.then和setTimeout都是异步执行，会先执行谁呢？</p>
+<p>setTimeout异步会放到异步队列中等待执行。</p>
+<p>promise.then异步会放到microtask queue中。microtask队列中的内容经常是为了需要直接在当前脚本执行完后立即发生的事，所以当同步脚本执行完之后，就调用microtask队列中的内容，然后把异步队列中的setTimeout放入执行栈中执行，所以最终结果是先执行promise.then异步，然后再执行setTimeout异步。</p>
+<blockquote>
+<p>这是由于：<br>Promise 的回调函数属于异步任务，会在同步任务之后执行。<br>但是，Promise 的回调函数不是正常的异步任务，而是微任务（microtask）。它们的区别在于，正常任务追加到下一轮事件循环，微任务追加到本轮事件循环。这意味着，微任务的执行时间一定早于正常任务。</p>
+</blockquote>
+<p>注意：目前microtask队列中常用的就是promise.then。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">  console.log(7)</span><br><span class="line">&#125;, 0)</span><br><span class="line">new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">  console.log(3);</span><br><span class="line">  resolve();</span><br><span class="line">  console.log(4);</span><br><span class="line">&#125;).then(() =&gt; &#123;</span><br><span class="line">  console.log(6)</span><br><span class="line">&#125;)</span><br><span class="line">console.log(5)</span><br></pre></td></tr></table></figure>
+
+<p>执行结果3，4，5，6，7</p>
 
     
 
@@ -512,7 +568,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#闭包"><span class="toc-number">1.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量提升"><span class="toc-number">2.</span> <span class="toc-text">变量提升</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#session-token-cokkies"><span class="toc-number">3.</span> <span class="toc-text">session,token,cokkies</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Session"><span class="toc-number">3.1.</span> <span class="toc-text">Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tokens"><span class="toc-number">3.2.</span> <span class="toc-text">tokens</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie"><span class="toc-number">3.3.</span> <span class="toc-text">Cookie</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS选择器权重"><span class="toc-number">4.</span> <span class="toc-text">CSS选择器权重</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#权值可以相加"><span class="toc-number">4.1.</span> <span class="toc-text">权值可以相加</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权值相同时"><span class="toc-number">4.2.</span> <span class="toc-text">权值相同时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权值不同时"><span class="toc-number">4.3.</span> <span class="toc-text">权值不同时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权值跃迁"><span class="toc-number">4.4.</span> <span class="toc-text">权值跃迁</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#闭包"><span class="toc-number">1.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量提升"><span class="toc-number">2.</span> <span class="toc-text">变量提升</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#session-token-cokkies"><span class="toc-number">3.</span> <span class="toc-text">session,token,cokkies</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Session"><span class="toc-number">3.1.</span> <span class="toc-text">Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tokens"><span class="toc-number">3.2.</span> <span class="toc-text">tokens</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie"><span class="toc-number">3.3.</span> <span class="toc-text">Cookie</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS选择器权重"><span class="toc-number">4.</span> <span class="toc-text">CSS选择器权重</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#权值可以相加"><span class="toc-number">4.1.</span> <span class="toc-text">权值可以相加</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权值相同时"><span class="toc-number">4.2.</span> <span class="toc-text">权值相同时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权值不同时"><span class="toc-number">4.3.</span> <span class="toc-text">权值不同时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权值跃迁"><span class="toc-number">4.4.</span> <span class="toc-text">权值跃迁</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#eventloop"><span class="toc-number">5.</span> <span class="toc-text">eventloop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#举例：去窗口办理业务"><span class="toc-number">5.1.</span> <span class="toc-text">举例：去窗口办理业务</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -707,15 +763,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3D</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -731,7 +783,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">babel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3D</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -739,19 +803,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -775,11 +831,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
