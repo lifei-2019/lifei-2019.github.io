@@ -87,7 +87,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数70
+		总文章数71
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -293,6 +293,139 @@
     
     <p class="article-more-link">
       <a class="article-more-a" href="/sentences/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-interview6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/interview6/">力扣刷题总结</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/interview6/" class="archive-article-date">
+        <time datetime="2020-09-07T10:18:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-07</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>本文主要是对刷题过程中遇到的一些技巧进行总结。</p>
+<h1 id="js中的-gt-gt-和-gt-gt-gt-运算符"><a href="#js中的-gt-gt-和-gt-gt-gt-运算符" class="headerlink" title="js中的&gt;&gt;和&gt;&gt;&gt;运算符"></a>js中的&gt;&gt;和&gt;&gt;&gt;运算符</h1><p>js中的&gt;&gt;表示有符号位移，&gt;&gt;&gt;表示无符号位移，当操作一个正数的时候，两者无差别。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">10&gt;&gt;1</span><br><span class="line">// 5</span><br><span class="line">10&gt;&gt;&gt;1</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+
+<p>因为10的二进制是1010，向右移动一个就是101，十进制里代表5</p>
+<p>但是如果是对于负数，相差就很大</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-2&gt;&gt;1</span><br><span class="line">// -1</span><br><span class="line">-2&gt;&gt;&gt;1</span><br><span class="line">// 2147483647</span><br></pre></td></tr></table></figure>
+
+<p>-2在计算机中是以补码存在(补码=反码+1)，也就是11111111111111111111111111111110（32位，4个字节）</p>
+<p>1.如果是&gt;&gt;1，表示有符号的位移，右面移去了一个0，左面补充了一个1</p>
+<p>2.如果是&gt;&gt;&gt;1，表示无符号的位移，右面移去了一个0，左面补充了一个0（无视正数，负数，一直补充0，即<strong>把有符号数转为无符号数字</strong>），变成01111111111111111111111111111111，现在变成了一个正数（首位数0表示正，1表示负数），就是2147483647。</p>
+<h1 id="n-0-和0的位或运算"><a href="#n-0-和0的位或运算" class="headerlink" title="n | 0      和0的位或运算"></a>n | 0      和0的位或运算</h1><p>可以用于返回32位带符号整数。</p>
+<h1 id="a-b"><a href="#a-b" class="headerlink" title="a**b"></a>a**b</h1><p>a的b平方</p>
+<br>
+
+<h1 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h1><h2 id="arr-slice-start-end"><a href="#arr-slice-start-end" class="headerlink" title="arr.slice(start, end)"></a>arr.slice(start, end)</h2><p>返回一个<strong>数组</strong>的一段</p>
+<p>可使用负值从数组的尾部选取元素。</p>
+<p>如果 end 未被规定，那么 slice() 方法会选取从 start 到数组结尾的所有元素。</p>
+<br>
+
+
+
+<h2 id="arr-concat"><a href="#arr-concat" class="headerlink" title="arr.concat()"></a>arr.concat()</h2><p><strong>连接两个或多个数组</strong></p>
+<br>
+
+<h2 id="利用JSON-stringify和JSON-parse"><a href="#利用JSON-stringify和JSON-parse" class="headerlink" title="利用JSON.stringify和JSON.parse"></a><strong>利用JSON.stringify和JSON.parse</strong></h2><p>只针对json数据这样的键值对有效</p>
+<br>
+
+<h1 id="js遍历数组的方法"><a href="#js遍历数组的方法" class="headerlink" title="js遍历数组的方法"></a>js遍历数组的方法</h1><p>由于数组内部属性值为引用对象，因此使用slice和concat对对象数组的拷贝，整个拷贝还是浅拷贝，拷贝之后数组各个值的指针还是指向相同的存储地址。</p>
+<p>因此，slice和concat这两个方法，仅适用于对不包含引用对象的一维数组的深拷贝（一般数组对象现在没什么问题）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">arry1, arry2</span>)</span>&#123;</span><br><span class="line">　　<span class="keyword">var</span> length = arry1.length;</span><br><span class="line">　　<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">　　　　arry2[i] = arry1[i];</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/interview6/">展开全文 >></a>
     </p>
     
 
@@ -760,15 +893,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CSS3</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">3D</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		
 		</ul>
@@ -1138,113 +1271,9 @@
 
 
   
-    <article id="post-interview1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/interview1/">基础篇</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/interview1/" class="archive-article-date">
-        <time datetime="2020-07-10T08:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>找到的是同一地址中父级函数中对应变量最终的值</p>
-    
-    <a class="article-more-a" href="/interview1/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/编程//" class="article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/interview1/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1396,19 +1425,23 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1420,19 +1453,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">babel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3D</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">babel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1440,7 +1469,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1460,11 +1489,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1472,7 +1497,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">

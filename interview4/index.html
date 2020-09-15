@@ -19,7 +19,7 @@
 <meta property="og:description" content="这是实习期间对自己碰到的一些小技巧进行整理">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://lifei-2019.github.io/interview4/deep.png">
-<meta property="og:updated_time" content="2020-08-27T09:41:00.140Z">
+<meta property="og:updated_time" content="2020-09-15T07:52:24.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目小技巧">
 <meta name="twitter:description" content="这是实习期间对自己碰到的一些小技巧进行整理">
@@ -87,7 +87,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数70
+		总文章数71
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -247,7 +247,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">678字</span>
+      <span class="post-count">857字</span>
     </span>
   </span>
 
@@ -312,7 +312,15 @@
 <li>在package.json文件 scripts对象 dev键后面加 –open，（”dev”: “vue-cli-service serve –open”）</li>
 <li>ok 重新运行npm run dev (修改配置文件后要重新启动项目修改才会生效）</li>
 </ol>
+<h1 id="jenkins的时间格式"><a href="#jenkins的时间格式" class="headerlink" title="jenkins的时间格式"></a>jenkins的时间格式</h1><p><code>Jenkins</code>时间表使用的UNIX知名的<code>Cron</code>语法</p>
+<p><strong>Cron语法包括以空格分隔的五个字段，示意如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* * * * *</span><br><span class="line">第一个*  分钟 [0,59]</span><br><span class="line">第二个*  小时 [0,23]</span><br><span class="line">第三个*  月的一天 [1,31]</span><br><span class="line">第四个*  月 [1,12]</span><br><span class="line">第五个*  周的一天 [0,7] 0和7是星期日</span><br><span class="line">123456</span><br></pre></td></tr></table></figure>
 
+<p><strong>值的范围表示方法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 9-17 * * *      表示每天上午9点和下午17点之间的每一分钟</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+
+<p><strong>间隔的时间表示方法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">H/2 * * * *       表示每隔2分钟</span><br><span class="line">H H/2 * * *       表示每隔2小时</span><br><span class="line">H H H/2 * *       表示每隔2天</span><br><span class="line">H H H H/2 *       表示每隔2个月</span><br><span class="line">H H 10-17 * 6     表示每隔每个月的10-17号的每个星期六</span><br></pre></td></tr></table></figure>
     
 
     
@@ -501,7 +509,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue的href动态拼接绑定"><span class="toc-number">1.</span> <span class="toc-text">Vue的href动态拼接绑定</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串太长用“…”点开查看更多"><span class="toc-number">2.</span> <span class="toc-text">字符串太长用“…”点开查看更多</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#postcss-config-js-作用-amp-配置"><span class="toc-number">3.</span> <span class="toc-text">postcss.config.js 作用&amp;配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-使用Scss预处理Css，在使用深度作用选择器修改局部ui默认样式时，-deep-报错不生效"><span class="toc-number">4.</span> <span class="toc-text">Vue 使用Scss预处理Css，在使用深度作用选择器修改局部ui默认样式时，/deep/报错不生效</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#出现的问题"><span class="toc-number">4.1.</span> <span class="toc-text">出现的问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vue-cli3项目解决npm-run-dev在浏览器打开两次的问题"><span class="toc-number">5.</span> <span class="toc-text">vue-cli3项目解决npm run dev在浏览器打开两次的问题</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue的href动态拼接绑定"><span class="toc-number">1.</span> <span class="toc-text">Vue的href动态拼接绑定</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串太长用“…”点开查看更多"><span class="toc-number">2.</span> <span class="toc-text">字符串太长用“…”点开查看更多</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#postcss-config-js-作用-amp-配置"><span class="toc-number">3.</span> <span class="toc-text">postcss.config.js 作用&amp;配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-使用Scss预处理Css，在使用深度作用选择器修改局部ui默认样式时，-deep-报错不生效"><span class="toc-number">4.</span> <span class="toc-text">Vue 使用Scss预处理Css，在使用深度作用选择器修改局部ui默认样式时，/deep/报错不生效</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#出现的问题"><span class="toc-number">4.1.</span> <span class="toc-text">出现的问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vue-cli3项目解决npm-run-dev在浏览器打开两次的问题"><span class="toc-number">5.</span> <span class="toc-text">vue-cli3项目解决npm run dev在浏览器打开两次的问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jenkins的时间格式"><span class="toc-number">6.</span> <span class="toc-text">jenkins的时间格式</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -696,19 +704,23 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,19 +732,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">babel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3D</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">babel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -740,7 +748,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -760,11 +768,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -772,7 +776,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">

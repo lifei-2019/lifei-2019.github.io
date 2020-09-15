@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://lifei-2019.github.io/babel/1.png">
 <meta property="og:image" content="https://lifei-2019.github.io/babel/2.png">
 <meta property="og:image" content="https://lifei-2019.github.io/babel/3.png">
-<meta property="og:updated_time" content="2019-12-02T02:17:39.916Z">
+<meta property="og:updated_time" content="2020-09-08T12:22:20.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【踩坑】babel二三事">
 <meta name="twitter:description" content="babel再次教会除了python有很多是更新后不和上一代兼容的。">
@@ -89,7 +89,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数70
+		总文章数71
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -249,7 +249,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">404字</span>
+      <span class="post-count">640字</span>
     </span>
   </span>
 
@@ -258,7 +258,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -275,6 +275,7 @@
 </blockquote>
 <a id="more"></a>
 
+<p><strong>简单讲 Babel 是 Javascript 编译器 ,将 ES6,ES7 ,ES8 转换成 浏览器都支持的ES5 语法,并提供一些插件来兼容浏览器API的工具。是怎么实现的勒, Babel 会将源码转换 AST(抽象语法树)之后，通过便利AST树，对树做一些修改，然后再将AST转成code，即成源码,通俗讲就是整了个容，浏览器觉得挺漂亮的,让代码在浏览器上耍撒</strong></p>
 <p>写在前言：随着越来越多的人投身互联网行业，“老师”层出不穷，没有对前辈不尊敬的意思，只是每个人遇到的情况不同，很多时候更需要自己去读控制台的错误信息，而不是单纯的复制下来去百度。</p>
 <p>昨晚在学习babel的时候，因为视屏是在去年录制的，过了一年很多配置更新了，于是参照b站视屏下面的带佬的教程，也有很多人表示方法很好用</p>
 <p><img src="/babel/1.png" alt></p>
@@ -294,6 +295,14 @@
 <p>如果硬要像上述截图中一定要使用babel-loader7不安装最新的话，那安装的所有插件都要用<code>-</code>形式的。</p>
 <p>下面是我最终的配置</p>
 <p><img src="/babel/3.png" alt></p>
+<ul>
+<li>@babel/core AST转换的核心</li>
+<li>@babel/cli 打包工具</li>
+<li>@babel/plugin* Babel 插件机制，Babel基础功能不满足的时候,手动添加些</li>
+<li>@babel/preset-env <em>把许多 @babel/plugin</em> 综合了下，减少配置</li>
+<li>@babel/polyfill 把浏览器某些不支持API，兼容性代码全部导入到项目,不管你是不是用到,缺点是代码体积特别大</li>
+<li>@babel/runtime 把你使用到的浏览器某些不支持API，按需导入,代码少</li>
+</ul>
 <blockquote>
 <p>学前端千万不要怕麻烦！</p>
 </blockquote>
@@ -681,19 +690,23 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -705,19 +718,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">babel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3D</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">babel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -725,7 +734,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,11 +754,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -757,7 +762,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">

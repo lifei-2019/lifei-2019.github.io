@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://img.smyhvae.com/20180317_1134.png">
 <meta property="og:image" content="http://img.smyhvae.com/20180317_1134.png">
 <meta property="og:image" content="http://img.smyhvae.com/20180317_1134.png">
-<meta property="og:updated_time" content="2020-05-17T12:48:15.610Z">
+<meta property="og:updated_time" content="2020-09-06T13:00:43.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="promise、async等">
 <meta name="twitter:description" content="前言文本主要内容：  Promise（比较重要）  Symbol  async函数">
@@ -91,7 +91,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数70
+		总文章数71
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -251,7 +251,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.9k字</span>
+      <span class="post-count">2.2k字</span>
     </span>
   </span>
 
@@ -260,7 +260,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">7分</span>
+      <span class="post-count">8分</span>
     </span>
   </span>
 </div>
@@ -374,6 +374,23 @@
 <p>2、async返回的总是Promise对象，可以用then方法进行下一步操作。</p>
 <p>3、async取代Generator函数的星号*，await取代Generator的yield。</p>
 <p>4、语意上更为明确，使用简单，经临床验证，暂时没有任何副作用。</p>
+<h2 id="promise有几种状态，什么时候会进入catch？"><a href="#promise有几种状态，什么时候会进入catch？" class="headerlink" title="promise有几种状态，什么时候会进入catch？"></a><strong>promise有几种状态，什么时候会进入catch？</strong></h2><blockquote>
+<p>三个状态：<br>pending、fulfilled、reject</p>
+<p>两个过程：<br>padding -&gt; fulfilled、padding -&gt; rejected当pending为rejectd时，会进入catch</p>
+</blockquote>
+<h2 id="设计一个对象，键名的类型至少包含一个symbol类型，并且实现遍历所有key"><a href="#设计一个对象，键名的类型至少包含一个symbol类型，并且实现遍历所有key" class="headerlink" title="设计一个对象，键名的类型至少包含一个symbol类型，并且实现遍历所有key"></a><strong>设计一个对象，键名的类型至少包含一个symbol类型，并且实现遍历所有key</strong></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="built_in">Symbol</span>(<span class="string">'name'</span>);</span><br><span class="line"> <span class="keyword">let</span> product = &#123;</span><br><span class="line">    [name]:<span class="string">"洗衣机"</span>,    </span><br><span class="line">    <span class="string">"price"</span>:<span class="number">799</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">Reflect</span>.ownKeys(product);</span><br></pre></td></tr></table></figure>
+
+<h2 id="下面Set结构，打印出的size值是多少"><a href="#下面Set结构，打印出的size值是多少" class="headerlink" title="下面Set结构，打印出的size值是多少"></a><strong>下面Set结构，打印出的size值是多少</strong></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = newSet();</span><br><span class="line">s.add([<span class="number">1</span>]);s.add([<span class="number">1</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(s.size);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>答案：2<br>两个数组[1]并不是同一个值，它们分别定义的数组，在内存中分别对应着不同的存储地址，因此并不是相同的值都能存储到Set结构中，所以size为2</p>
+</blockquote>
+<h2 id="Promise-中reject-和-catch-处理上有什么区别"><a href="#Promise-中reject-和-catch-处理上有什么区别" class="headerlink" title="Promise 中reject 和 catch 处理上有什么区别"></a><strong>Promise 中reject 和 catch 处理上有什么区别</strong></h2><blockquote>
+<p>reject 是用来抛出异常，catch 是用来处理异常</p>
+<p>reject 是 Promise 的方法，而 catch 是 Promise 实例的方法</p>
+<p>reject后的东西，一定会进入then中的第二个回调，如果then中没有写第二个回调，则进入catch</p>
+<p>网络异常（比如断网），会直接进入catch而不会进入then的第二个回调</p>
+</blockquote>
 
     
 
@@ -563,7 +580,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise"><span class="toc-number">2.</span> <span class="toc-text">Promise</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">2.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回调地狱的举例"><span class="toc-number">2.2.</span> <span class="toc-text">回调地狱的举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#promise对象的3个状态"><span class="toc-number">2.3.</span> <span class="toc-text">promise对象的3个状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用promise的基本步骤"><span class="toc-number">2.4.</span> <span class="toc-text">使用promise的基本步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax请求的举例（涉及到嵌套的回调）"><span class="toc-number">2.5.</span> <span class="toc-text">ajax请求的举例（涉及到嵌套的回调）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symbol"><span class="toc-number">3.</span> <span class="toc-text">Symbol</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述-1"><span class="toc-number">3.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建Symbol属性值"><span class="toc-number">3.2.</span> <span class="toc-text">创建Symbol属性值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、将Symbol作为对象的属性值"><span class="toc-number">3.3.</span> <span class="toc-text">1、将Symbol作为对象的属性值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建Symbol属性值时，传参作为标识"><span class="toc-number">3.4.</span> <span class="toc-text">创建Symbol属性值时，传参作为标识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义常量"><span class="toc-number">3.5.</span> <span class="toc-text">定义常量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#async函数（异步函数）"><span class="toc-number">4.</span> <span class="toc-text">async函数（异步函数）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述-2"><span class="toc-number">4.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#async、Promise、Generator的对比（async的特点）"><span class="toc-number">4.2.</span> <span class="toc-text">async、Promise、Generator的对比（async的特点）</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise"><span class="toc-number">2.</span> <span class="toc-text">Promise</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">2.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回调地狱的举例"><span class="toc-number">2.2.</span> <span class="toc-text">回调地狱的举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#promise对象的3个状态"><span class="toc-number">2.3.</span> <span class="toc-text">promise对象的3个状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用promise的基本步骤"><span class="toc-number">2.4.</span> <span class="toc-text">使用promise的基本步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax请求的举例（涉及到嵌套的回调）"><span class="toc-number">2.5.</span> <span class="toc-text">ajax请求的举例（涉及到嵌套的回调）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symbol"><span class="toc-number">3.</span> <span class="toc-text">Symbol</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述-1"><span class="toc-number">3.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建Symbol属性值"><span class="toc-number">3.2.</span> <span class="toc-text">创建Symbol属性值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1、将Symbol作为对象的属性值"><span class="toc-number">3.3.</span> <span class="toc-text">1、将Symbol作为对象的属性值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建Symbol属性值时，传参作为标识"><span class="toc-number">3.4.</span> <span class="toc-text">创建Symbol属性值时，传参作为标识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义常量"><span class="toc-number">3.5.</span> <span class="toc-text">定义常量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#async函数（异步函数）"><span class="toc-number">4.</span> <span class="toc-text">async函数（异步函数）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述-2"><span class="toc-number">4.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#async、Promise、Generator的对比（async的特点）"><span class="toc-number">4.2.</span> <span class="toc-text">async、Promise、Generator的对比（async的特点）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#promise有几种状态，什么时候会进入catch？"><span class="toc-number">5.</span> <span class="toc-text">promise有几种状态，什么时候会进入catch？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计一个对象，键名的类型至少包含一个symbol类型，并且实现遍历所有key"><span class="toc-number">6.</span> <span class="toc-text">设计一个对象，键名的类型至少包含一个symbol类型，并且实现遍历所有key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面Set结构，打印出的size值是多少"><span class="toc-number">7.</span> <span class="toc-text">下面Set结构，打印出的size值是多少</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-中reject-和-catch-处理上有什么区别"><span class="toc-number">8.</span> <span class="toc-text">Promise 中reject 和 catch 处理上有什么区别</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -758,19 +775,23 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -782,19 +803,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">babel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3D</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">babel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -802,7 +819,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -822,11 +839,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -834,7 +847,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">

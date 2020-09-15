@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="春风十里不如你">
 <meta property="og:description" content="主要是一些ES6基础知识，代码已上传至我的github地址">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-14T00:32:08.833Z">
+<meta property="og:updated_time" content="2020-09-06T11:54:06.691Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6-1">
 <meta name="twitter:description" content="主要是一些ES6基础知识，代码已上传至我的github地址">
@@ -85,7 +85,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数70
+		总文章数71
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -245,7 +245,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">651字</span>
+      <span class="post-count">1.7k字</span>
     </span>
   </span>
 
@@ -254,7 +254,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">7分</span>
     </span>
   </span>
 </div>
@@ -328,7 +328,42 @@
 <h1 id="函数默认函数值、字符串方法和for-of"><a href="#函数默认函数值、字符串方法和for-of" class="headerlink" title="函数默认函数值、字符串方法和for of"></a>函数默认函数值、字符串方法和for of</h1><p>函数定义有参数，但引用时未传值时返回的是undefined</p>
 <p>字符串方法includes,startswith,endswith</p>
 <p>for of感觉可以用map替代</p>
+<h2 id="forEach、for-in、for-of三者区别"><a href="#forEach、for-in、for-of三者区别" class="headerlink" title="forEach、for in、for of三者区别"></a><strong>forEach、for in、for of三者区别</strong></h2><blockquote>
+<p>forEach更多的用来遍历数组</p>
+<p>for in 一般常用来遍历对象或json</p>
+<p>for of数组对象都可以遍历，遍历对象需要通过和Object.keys()</p>
+<p>for in循环出的是key，for of循环出的是value</p>
+</blockquote>
+<h2 id="使用class-手写一个promise"><a href="#使用class-手写一个promise" class="headerlink" title="使用class 手写一个promise"></a><strong>使用class 手写一个promise</strong></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个Promise的类</span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Promise</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(executer)&#123;<span class="comment">//构造函数constructor里面是个执行器</span></span><br><span class="line">      <span class="keyword">this</span>.status = <span class="string">'pending'</span>;<span class="comment">//默认的状态 pending</span></span><br><span class="line">      <span class="keyword">this</span>.value = <span class="literal">undefined</span><span class="comment">//成功的值默认undefined</span></span><br><span class="line">      <span class="keyword">this</span>.reason = <span class="literal">undefined</span><span class="comment">//失败的值默认undefined</span></span><br><span class="line">      <span class="comment">//状态只有在pending时候才能改变</span></span><br><span class="line">      <span class="keyword">let</span> resolveFn = <span class="function"><span class="params">value</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="comment">//判断只有等待时才能resolve成功</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.status == pending)&#123;</span><br><span class="line">          <span class="keyword">this</span>.status = <span class="string">'resolve'</span>;</span><br><span class="line">          <span class="keyword">this</span>.value = value;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//判断只有等待时才能reject失败</span></span><br><span class="line">      <span class="keyword">let</span> rejectFn = <span class="function"><span class="params">reason</span> =&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.status == pending)&#123;</span><br><span class="line">          <span class="keyword">this</span>.status = <span class="string">'reject'</span>;</span><br><span class="line">          <span class="keyword">this</span>.reason = reason;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;    </span><br><span class="line">      <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="comment">//把resolve和reject两个函数传给执行器executer</span></span><br><span class="line">        executer(resolve,reject);</span><br><span class="line">      &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">        reject(e);<span class="comment">//失败的话进catch</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    then(onFufilled,onReject)&#123;</span><br><span class="line">      <span class="comment">//如果状态成功调用onFufilled</span></span><br><span class="line">      <span class="keyword">if</span>(<span class="keyword">this</span>.status = <span class="string">'resolve'</span>)&#123;</span><br><span class="line">        onFufilled(<span class="keyword">this</span>.value);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//如果状态失败调用onReject</span></span><br><span class="line">      <span class="keyword">if</span>(<span class="keyword">this</span>.status = <span class="string">'reject'</span>)&#123;</span><br><span class="line">        onReject(<span class="keyword">this</span>.reason);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="如何使用Set去重"><a href="#如何使用Set去重" class="headerlink" title="如何使用Set去重"></a><strong>如何使用Set去重</strong></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">12</span>,<span class="number">43</span>,<span class="number">23</span>,<span class="number">43</span>,<span class="number">68</span>,<span class="number">12</span>];</span><br><span class="line"><span class="keyword">let</span> item = [...new <span class="built_in">Set</span>(arr)];</span><br><span class="line"><span class="built_in">console</span>.log(item);<span class="comment">//[12, 43, 23, 68]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="将下面for循环改成for-of形式"><a href="#将下面for循环改成for-of形式" class="headerlink" title="将下面for循环改成for of形式"></a><strong>将下面for循环改成for of形式</strong></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>,<span class="number">55</span>];</span><br><span class="line"><span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">    sum += arr[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>答案：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>,<span class="number">55</span>];</span><br><span class="line"><span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(value <span class="keyword">of</span> arr)&#123;</span><br><span class="line">    sum += value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="理解-async-await以及对Generator的优势"><a href="#理解-async-await以及对Generator的优势" class="headerlink" title="理解 async/await以及对Generator的优势"></a><strong>理解 async/await以及对Generator的优势</strong></h2><blockquote>
+<p>async await 是用来解决异步的，async函数是Generator函数的语法糖<br>使用关键字async来表示，在函数内部使用 await 来表示异步<br>async函数返回一个 Promise 对象，可以使用then方法添加回调函数<br>当函数执行的时候，一旦遇到await就会先返回，等到异步操作完成，再接着执行函数体内后面的语句<br><strong>async较Generator的优势：</strong><br>（1）内置执行器。Generator 函数的执行必须依靠执行器，而 Aysnc 函数自带执行器，调用方式跟普通函数的调用一样</p>
+<p>（2）更好的语义。async 和 await 相较于 * 和 yield 更加语义化　　<br>（3）更广的适用性。yield命令后面只能是 Thunk 函数或 Promise对象，async函数的await后面可以是Promise也可以是原始类型的值<br>（4）返回值是 Promise。async 函数返回的是 Promise 对象，比Generator函数返回的Iterator对象方便，可以直接使用 then() 方法进行调用</p>
+</blockquote>
+<br>
+
+<p><strong>JavaScript</strong> 在发展过程中，共经历了回调函数、<strong>Promise</strong> 对象、<strong>Generator</strong> 函数，<strong>async</strong> 函数来处理异步。我们接下来就来看一下 <strong>async</strong> 函数如何更优雅的处理异步。</p>
+<p>假设我们需要分别读取 a、b、c 三个文件，具体代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对 fs 模块进行 Promise 封装</span></span><br><span class="line"><span class="keyword">const</span> readFile = <span class="function"><span class="keyword">function</span>(<span class="params">src</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">        fs.readFile(src,(err,data) =&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span>(err) reject(err);</span><br><span class="line">            resolve(data);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Promise 的写法</span></span><br><span class="line"></span><br><span class="line">readFile(<span class="string">'./a.txt'</span>).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">    <span class="keyword">return</span> readFile(<span class="string">'./b.txt'</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">    <span class="keyword">return</span> readFile(<span class="string">'./c.txt'</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Generator 函数写法</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> * <span class="title">ascReadFile</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> readFile(<span class="string">'./a.txt'</span>);</span><br><span class="line">    <span class="keyword">yield</span> readFile(<span class="string">'./b.txt'</span>);</span><br><span class="line">    <span class="keyword">yield</span> readFile(<span class="string">'./c.txt'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> g = ascReadFile();</span><br><span class="line">g.next().value.then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">    <span class="keyword">return</span> g.next().value;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">    <span class="keyword">return</span> g.next().value;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// async 函数写法</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncReadFile</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="keyword">await</span> readFile(<span class="string">'./a.txt'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a.toString());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> b = <span class="keyword">await</span> readFile(<span class="string">'./b.txt'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(b.toString());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> c = <span class="keyword">await</span> readFile(<span class="string">'./c.txt'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(c.toString());</span><br><span class="line">&#125;</span><br><span class="line">asyncReadFile();</span><br></pre></td></tr></table></figure>
+
+<h2 id="说一下es6的导入导出模块"><a href="#说一下es6的导入导出模块" class="headerlink" title="说一下es6的导入导出模块"></a><strong>说一下es6的导入导出模块</strong></h2><blockquote>
+<p>导入通过import关键字</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只导入一个</span></span><br><span class="line"><span class="keyword">import</span> &#123;sum&#125; <span class="keyword">from</span> <span class="string">"./example.js"</span></span><br><span class="line"><span class="comment">// 导入多个</span></span><br><span class="line"><span class="keyword">import</span> &#123;sum,multiply,time&#125; <span class="keyword">from</span> <span class="string">"./exportExample.js"</span></span><br><span class="line"><span class="comment">// 导入一整个模块</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> example <span class="keyword">from</span> <span class="string">"./exportExample.js"</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>导出通过export关键字</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可以将export放在任何变量,函数或类声明的前面</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"><span class="comment">//也可以使用大括号指定所要输出的一组变量</span></span><br><span class="line"><span class="keyword">var</span> firstName = <span class="string">'Michael'</span>;</span><br><span class="line"><span class="keyword">var</span> lastName = <span class="string">'Jackson'</span>;</span><br><span class="line"><span class="keyword">var</span> year = <span class="number">1958</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;firstName, lastName, year&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用export default时，对应的import语句不需要使用大括号</span></span><br><span class="line"><span class="keyword">let</span> bosh = <span class="function"><span class="keyword">function</span> <span class="title">crs</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> bosh;</span><br><span class="line"><span class="keyword">import</span> crc <span class="keyword">from</span> <span class="string">'crc'</span>;</span><br><span class="line"><span class="comment">//不使用export default时，对应的import语句需要使用大括号</span></span><br><span class="line"><span class="keyword">let</span> bosh = <span class="function"><span class="keyword">function</span> <span class="title">crs</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> bosh;</span><br><span class="line"><span class="keyword">import</span> &#123;crc&#125; <span class="keyword">from</span> <span class="string">'crc'</span>;</span><br></pre></td></tr></table></figure>
     
 
     
@@ -517,7 +552,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ES6"><span class="toc-number">1.</span> <span class="toc-text">ES6</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#let、const和var的区别"><span class="toc-number">2.</span> <span class="toc-text">let、const和var的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#箭头函数"><span class="toc-number">3.</span> <span class="toc-text">箭头函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模版字符串"><span class="toc-number">4.</span> <span class="toc-text">模版字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Set和Map"><span class="toc-number">5.</span> <span class="toc-text">Set和Map</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#set"><span class="toc-number">5.1.</span> <span class="toc-text">set</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-number">5.2.</span> <span class="toc-text">map</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解构数值"><span class="toc-number">6.</span> <span class="toc-text">解构数值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#剩余和扩展函数"><span class="toc-number">7.</span> <span class="toc-text">剩余和扩展函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数默认函数值、字符串方法和for-of"><span class="toc-number">8.</span> <span class="toc-text">函数默认函数值、字符串方法和for of</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ES6"><span class="toc-number">1.</span> <span class="toc-text">ES6</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#let、const和var的区别"><span class="toc-number">2.</span> <span class="toc-text">let、const和var的区别</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#箭头函数"><span class="toc-number">3.</span> <span class="toc-text">箭头函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模版字符串"><span class="toc-number">4.</span> <span class="toc-text">模版字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Set和Map"><span class="toc-number">5.</span> <span class="toc-text">Set和Map</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#set"><span class="toc-number">5.1.</span> <span class="toc-text">set</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-number">5.2.</span> <span class="toc-text">map</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解构数值"><span class="toc-number">6.</span> <span class="toc-text">解构数值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#剩余和扩展函数"><span class="toc-number">7.</span> <span class="toc-text">剩余和扩展函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数默认函数值、字符串方法和for-of"><span class="toc-number">8.</span> <span class="toc-text">函数默认函数值、字符串方法和for of</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#forEach、for-in、for-of三者区别"><span class="toc-number">8.1.</span> <span class="toc-text">forEach、for in、for of三者区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用class-手写一个promise"><span class="toc-number">8.2.</span> <span class="toc-text">使用class 手写一个promise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何使用Set去重"><span class="toc-number">8.3.</span> <span class="toc-text">如何使用Set去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将下面for循环改成for-of形式"><span class="toc-number">8.4.</span> <span class="toc-text">将下面for循环改成for of形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理解-async-await以及对Generator的优势"><span class="toc-number">8.5.</span> <span class="toc-text">理解 async/await以及对Generator的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#说一下es6的导入导出模块"><span class="toc-number">8.6.</span> <span class="toc-text">说一下es6的导入导出模块</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -712,19 +747,23 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">3D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">读书</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,19 +775,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">babel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">3D</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">babel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,7 +791,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -776,11 +811,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -788,7 +819,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">
