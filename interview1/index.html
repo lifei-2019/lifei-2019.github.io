@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://lifei-2019.github.io/interview1/css%E9%80%89%E6%8B%A9%E5%99%A8.png">
 <meta property="og:image" content="https://lifei-2019.github.io/interview1/event1.png">
 <meta property="og:image" content="https://lifei-2019.github.io/interview1/event2.png">
-<meta property="og:updated_time" content="2020-09-03T12:46:56.846Z">
+<meta property="og:updated_time" content="2020-09-24T06:08:30.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础篇">
 <meta name="twitter:description" content="闭包找到的是同一地址中父级函数中对应变量最终的值">
@@ -273,6 +273,8 @@
     
     <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>找到的是同一地址中父级函数中对应变量最终的值</p>
 <a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function a() &#123;</span><br><span class="line">	const b = 2</span><br><span class="line">	console.log(b)</span><br><span class="line">&#125;</span><br><span class="line">a()</span><br><span class="line">此时运行a()后里面的b被释放</span><br><span class="line"></span><br><span class="line">function a() &#123;</span><br><span class="line">	const b = 2</span><br><span class="line">	return function c()&#123;</span><br><span class="line">		console.log(b)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">a()</span><br><span class="line">此时运行完a()后b仍然保留在内存里。</span><br></pre></td></tr></table></figure>
 
 <h1 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h1><p>在非严格模式下，JavaScript中存在变量提升的特点。</p>
 <ol>
@@ -763,6 +765,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -771,7 +781,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -779,7 +789,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -787,11 +797,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">babel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -799,15 +805,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">babel</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -831,15 +833,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">-tools</a>
               </li>
              
               <li class="article-tag-list-item">
