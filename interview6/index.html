@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="本文主要是对刷题过程中遇到的一些技巧进行总结。 js中的&amp;gt;&amp;gt;和&amp;gt;&amp;gt;&amp;gt;运算符js中的&amp;gt;&amp;gt;表示有符号位移，&amp;gt;&amp;gt;&amp;gt;表示无符号位移，当操作一个正数的时候，两者无差别。 123410&amp;gt;&amp;gt;1// 510&amp;gt;&amp;gt;&amp;gt;15  因为10的二进制是1010，向右移动一个就是101，十进制里代表5 但是如果是对于负数，相差就很大 123">
+  <meta name="description" content="本文主要是对刷题过程中遇到的一些技巧进行总结。 js中的&amp;gt;&amp;gt;和&amp;gt;&amp;gt;&amp;gt;运算符js中的&amp;gt;&amp;gt;表示有符号位移，&amp;gt;&amp;gt;&amp;gt;表示无符号位移，当操作一个正数的时候，两者无差别。 123410&amp;gt;&amp;gt;1// 510&amp;gt;&amp;gt;&amp;gt;15  因为10的二进制是1010，向右移动一个就是101，十进制里代表5 但是如果是对于负数，相差就很大">
 <meta name="keywords" content="前端,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="力扣刷题总结">
 <meta property="og:url" content="https://lifei-2019.github.io/interview6/index.html">
 <meta property="og:site_name" content="春风十里不如你">
-<meta property="og:description" content="本文主要是对刷题过程中遇到的一些技巧进行总结。 js中的&amp;gt;&amp;gt;和&amp;gt;&amp;gt;&amp;gt;运算符js中的&amp;gt;&amp;gt;表示有符号位移，&amp;gt;&amp;gt;&amp;gt;表示无符号位移，当操作一个正数的时候，两者无差别。 123410&amp;gt;&amp;gt;1// 510&amp;gt;&amp;gt;&amp;gt;15  因为10的二进制是1010，向右移动一个就是101，十进制里代表5 但是如果是对于负数，相差就很大 123">
+<meta property="og:description" content="本文主要是对刷题过程中遇到的一些技巧进行总结。 js中的&amp;gt;&amp;gt;和&amp;gt;&amp;gt;&amp;gt;运算符js中的&amp;gt;&amp;gt;表示有符号位移，&amp;gt;&amp;gt;&amp;gt;表示无符号位移，当操作一个正数的时候，两者无差别。 123410&amp;gt;&amp;gt;1// 510&amp;gt;&amp;gt;&amp;gt;15  因为10的二进制是1010，向右移动一个就是101，十进制里代表5 但是如果是对于负数，相差就很大">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-09-15T02:06:41.797Z">
+<meta property="og:updated_time" content="2021-05-26T02:36:55.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="力扣刷题总结">
-<meta name="twitter:description" content="本文主要是对刷题过程中遇到的一些技巧进行总结。 js中的&amp;gt;&amp;gt;和&amp;gt;&amp;gt;&amp;gt;运算符js中的&amp;gt;&amp;gt;表示有符号位移，&amp;gt;&amp;gt;&amp;gt;表示无符号位移，当操作一个正数的时候，两者无差别。 123410&amp;gt;&amp;gt;1// 510&amp;gt;&amp;gt;&amp;gt;15  因为10的二进制是1010，向右移动一个就是101，十进制里代表5 但是如果是对于负数，相差就很大 123">
+<meta name="twitter:description" content="本文主要是对刷题过程中遇到的一些技巧进行总结。 js中的&amp;gt;&amp;gt;和&amp;gt;&amp;gt;&amp;gt;运算符js中的&amp;gt;&amp;gt;表示有符号位移，&amp;gt;&amp;gt;&amp;gt;表示无符号位移，当操作一个正数的时候，两者无差别。 123410&amp;gt;&amp;gt;1// 510&amp;gt;&amp;gt;&amp;gt;15  因为10的二进制是1010，向右移动一个就是101，十进制里代表5 但是如果是对于负数，相差就很大">
   
     <link rel="alternative" href="/atom.xml" title="春风十里不如你" type="application/atom+xml">
   
@@ -85,7 +85,7 @@
 			</ul>
 		</nav>
 		<nav>
-		总文章数71
+		总文章数73
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -272,6 +272,8 @@
 
 <p>因为10的二进制是1010，向右移动一个就是101，十进制里代表5</p>
 <p>但是如果是对于负数，相差就很大</p>
+<a id="more"></a>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-2&gt;&gt;1</span><br><span class="line">// -1</span><br><span class="line">-2&gt;&gt;&gt;1</span><br><span class="line">// 2147483647</span><br></pre></td></tr></table></figure>
 
 <p>-2在计算机中是以补码存在(补码=反码+1)，也就是11111111111111111111111111111110（32位，4个字节）</p>
@@ -449,6 +451,15 @@
 
 <nav id="article-nav">
   
+    <a href="/cybersec1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          cybersec1
+        
+      </div>
+    </a>
+  
   
     <a href="/interview5/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">面试篇(2)</div>
@@ -533,7 +544,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019-2020 Raphael_Li
+    		&copy; 2019-2021 Raphael_Li
     	</div>
       	<div class="footer-right">
 			
@@ -673,11 +684,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+                <a href="javascript:void(0)" class="js-tag color3">读书</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,7 +696,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">读书</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,7 +716,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color3">网安</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -717,15 +724,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -733,11 +744,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,7 +764,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+                <a href="javascript:void(0)" class="js-tag color4">新世界</a>
               </li>
              
               <li class="article-tag-list-item">
